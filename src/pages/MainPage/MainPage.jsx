@@ -3,9 +3,20 @@ import PageLayout from "../../components/PageComponents/PageLayout/PageLayout";
 import * as s from "./style";
 import main from "../../assets/img/main.jpg";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { useState } from "react";
+import ProfileModal from "../../components/Modal/ProfileModal/ProfileModal";
 
 function MainPage(props) {
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <PageLayout>
       <div css={s.layout}>
@@ -29,13 +40,16 @@ function MainPage(props) {
               소통을 기반으로 협업을 통해 고객 요구에 맞는 효과적인 솔루션을
               제공할 수 있습니다.
             </p>
-            <div css={s.look}><IoMdInformationCircleOutline/>상세 정보</div>
+            <button css={s.look} onClick={handleOpenModal}>
+              <IoMdInformationCircleOutline />상세 정보
+            </button>
           </div>
           <div css={s.profileLayout}>
             <div css={s.test}></div>
           </div>
         </div>
       </div>
+      {isModalOpen && <ProfileModal onClose={handleCloseModal} />} {/* 모달을 조건부 렌더링 */}
     </PageLayout>
   );
 }

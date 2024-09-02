@@ -2,8 +2,10 @@
 import PageLayout from "../../components/PageComponents/PageLayout/PageLayout";
 import * as s from "./style";
 import main from "../../assets/img/main.jpg";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 function MainPage(props) {
+  
   return (
     <PageLayout>
       <div css={s.layout}>
@@ -27,6 +29,7 @@ function MainPage(props) {
               소통을 기반으로 협업을 통해 고객 요구에 맞는 효과적인 솔루션을
               제공할 수 있습니다.
             </p>
+            <div css={s.look}><IoMdInformationCircleOutline/>상세 정보</div>
           </div>
           <div css={s.profileLayout}>
             <div css={s.test}></div>

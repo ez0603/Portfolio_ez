@@ -25,6 +25,11 @@ export const aboutme = css`
   max-height: 100vh;
   background-color: #ffffff;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5%;
   overflow: hidden;
 
   @font-face {
@@ -44,26 +49,19 @@ export const aboutme = css`
   }
 
   h1 {
-    position: absolute;
-    top: 25%;
-    left: 15%;
-    transform: translate(-50%, -50%);
     font-size: 5vw;
     color: white;
-    text-align: center;
     z-index: 2;
     font-family: "CWDangamAsac-Bold", sans-serif;
+    margin: 0;
   }
 
   p {
-    position: absolute;
-    top: 50%;
-    left: 22%;
-    transform: translate(-50%, -50%);
-    font-size: 1vw;
+    font-size: clamp(5px, 1.5vw, 23px);
     color: white;
     z-index: 2;
     font-family: "Pretendard-Regular", sans-serif;
+    margin: 10px 0;
   }
 
   img {
@@ -93,6 +91,34 @@ export const aboutme = css`
       linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 10%);
     z-index: 1;
     pointer-events: none;
+  }
+`;
+
+export const look = css`
+  padding: 0.5vw 1vw;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-size: clamp(12px, 2vw, 20px);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #dbdbdb;
+  }
+
+  svg {
+    width: clamp(10px, 3vw, 40px); /* 아이콘의 폭을 반응형으로 설정 */
+    height: clamp(10px, 3vw, 40px); /* 아이콘의 높이를 반응형으로 설정 */
   }
 `;
 

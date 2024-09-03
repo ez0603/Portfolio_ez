@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Portfolio_ez/static/css/main.e6c13ad2.css",
-    "main.js": "/Portfolio_ez/static/js/main.dd93237e.js",
-    "static/js/453.d0ded385.chunk.js": "/Portfolio_ez/static/js/453.d0ded385.chunk.js",
+    "main.js": "/Portfolio_ez/static/js/main.0d968d25.js",
+    "static/js/453.477fd2bd.chunk.js": "/Portfolio_ez/static/js/453.477fd2bd.chunk.js",
     "static/media/이지언2.jpg": "/Portfolio_ez/static/media/이지언2.080e66a9d04618054453.jpg",
     "static/media/이지언.jpg": "/Portfolio_ez/static/media/이지언.ee26304654e23e80103d.jpg",
     "static/media/main.jpg": "/Portfolio_ez/static/media/main.bfbfdf9b5e3bab7a1509.jpg",
@@ -16,11 +16,11 @@
     "static/media/React.png": "/Portfolio_ez/static/media/React.98ff38735baa4c1b0381.png",
     "index.html": "/Portfolio_ez/index.html",
     "main.e6c13ad2.css.map": "/Portfolio_ez/static/css/main.e6c13ad2.css.map",
-    "main.dd93237e.js.map": "/Portfolio_ez/static/js/main.dd93237e.js.map",
-    "453.d0ded385.chunk.js.map": "/Portfolio_ez/static/js/453.d0ded385.chunk.js.map"
+    "main.0d968d25.js.map": "/Portfolio_ez/static/js/main.0d968d25.js.map",
+    "453.477fd2bd.chunk.js.map": "/Portfolio_ez/static/js/453.477fd2bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.dd93237e.js"
+    "static/js/main.0d968d25.js"
   ]
 }

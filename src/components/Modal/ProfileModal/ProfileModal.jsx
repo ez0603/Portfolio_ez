@@ -10,7 +10,6 @@ import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import spring from "../../../assets/icon/Spring.png";
 import css from "../../../assets/icon/CSS3.png";
-import aws from "../../../assets/icon/AWS.png";
 import firebase from "../../../assets/icon/Firebase.png";
 import html from "../../../assets/icon/HTML5.png";
 import java from "../../../assets/icon/Java.png";
@@ -55,23 +54,31 @@ function ProfileModal({ onClose }) {
               <MdEmail fontSize={20} />
               <span>dlwldjs3132@naver.com</span>
               <button
-                onClick={() => copyToClipboard("dlwldjs3132@naver.com", "email")}
+                onClick={() =>
+                  copyToClipboard("dlwldjs3132@naver.com", "email")
+                }
                 css={s.copy}
               >
                 Copy
               </button>
-              {copiedField === "email" && <span css={s.copySuccess}>Copied!</span>}
+              {copiedField === "email" && (
+                <span css={s.copySuccess}>Copied!</span>
+              )}
             </div>
             <div css={s.iconText}>
               <FaGithub fontSize={20} />
               <span>https://github.com/ez0603</span>
               <button
-                onClick={() => copyToClipboard("https://github.com/ez0603", "github")}
+                onClick={() =>
+                  copyToClipboard("https://github.com/ez0603", "github")
+                }
                 css={s.copy}
               >
                 Copy
               </button>
-              {copiedField === "github" && <span css={s.copySuccess}>Copied!</span>}
+              {copiedField === "github" && (
+                <span css={s.copySuccess}>Copied!</span>
+              )}
             </div>
             <div css={s.skillLayout}>
               <h3>Front</h3>
@@ -102,10 +109,6 @@ function ProfileModal({ onClose }) {
                 <div css={s.slillbox}>
                   <img src={spring} alt="" />
                   <p>SPRINGBOOT</p>
-                </div>
-                <div css={s.slillbox}>
-                  <img src={aws} alt="" />
-                  <p>AMAZON AWS</p>
                 </div>
               </div>
               <h3>DataBase</h3>

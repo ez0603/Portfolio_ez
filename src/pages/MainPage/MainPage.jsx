@@ -51,7 +51,6 @@ function MainPage(props) {
         </div>
       </div>
       {isModalOpen && <ProfileModal onClose={handleCloseModal} />}{" "}
-      {/* 모달을 조건부 렌더링 */}
     </PageLayout>
   );
 }

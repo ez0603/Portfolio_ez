@@ -6,7 +6,7 @@ import main from "../../assets/img/rotated_바다사진.jpg";
 import profile from "../../assets/img/이지언2.jpg";
 import spring from "../../assets/icon/Spring.png";
 import cssIcon from "../../assets/icon/CSS3.png";
-import aws from "../../assets/icon/AWS.png";
+import Git from "../../assets/icon/GitHub.png";
 import firebase from "../../assets/icon/Firebase.png";
 import html from "../../assets/icon/HTML5.png";
 import java from "../../assets/icon/Java.png";
@@ -30,7 +30,7 @@ function AboutMePage(props) {
       if (list.scrollLeft >= list.scrollWidth - list.clientWidth) {
         list.scrollLeft = 0;
       }
-    }, 20);
+    }, 15);
   };
 
   const stopAutoScroll = () => {
@@ -58,12 +58,12 @@ function AboutMePage(props) {
   const images = [
     reactIcon,
     [cssIcon, html], // cssIcon과 html을 묶어서 하나의 항목으로 추가
-    spring,
     js,
     java,
+    spring,
     mysql,
     firebase,
-    aws,
+    Git
   ];
 
   const duplicatedImages = [...images, ...images];
@@ -107,7 +107,7 @@ function AboutMePage(props) {
                           alt={`Content ${(index % images.length) + 1}-${
                             subIndex + 1
                           }`}
-                          style={{ width: "50%", height: "50%" }}
+                          // style={{ width: "50%", height: "50%" }}
                         />
                       ))
                     ) : (
@@ -115,7 +115,7 @@ function AboutMePage(props) {
                       <img
                         src={img}
                         alt={`Content ${(index % images.length) + 1}`}
-                        style={{ width: "50%", height: "50%" }}
+                        // style={{ width: "50%", height: "50%" }}
                       />
                     )}
                     <div className="hover-content">

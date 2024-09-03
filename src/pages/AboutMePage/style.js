@@ -214,7 +214,7 @@ export const contentCard = css`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -35%);
     color: black;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -239,7 +239,7 @@ export const contentCard = css`
 
   p {
     margin-top: 5px;
-    font-size: clamp(3px, 0.9vw, 9px);
+    font-size: clamp(6px, 0.9vw, 9px);
     line-height: 1.4;
     flex-grow: 1; /* 내용의 높이를 고정된 비율로 설정 */
   }

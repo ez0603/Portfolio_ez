@@ -41,7 +41,8 @@ function MainPage(props) {
               제공할 수 있습니다.
             </p>
             <button css={s.look} onClick={handleOpenModal}>
-              <IoMdInformationCircleOutline />상세 정보
+              <IoMdInformationCircleOutline />
+              상세 정보
             </button>
           </div>
           <div css={s.profileLayout}>
@@ -49,7 +50,8 @@ function MainPage(props) {
           </div>
         </div>
       </div>
-      {isModalOpen && <ProfileModal onClose={handleCloseModal} />} {/* 모달을 조건부 렌더링 */}
+      {isModalOpen && <ProfileModal onClose={handleCloseModal} />}{" "}
+      {/* 모달을 조건부 렌더링 */}
     </PageLayout>
   );
 }

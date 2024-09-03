@@ -3,11 +3,11 @@ import { css } from "@emotion/react";
 export const layout = css`
   z-index: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* 부모 요소인 body의 높이를 100%로 상속받음 */
   background-color: #141414;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 `;
@@ -30,23 +30,8 @@ export const aboutme = css`
   justify-content: center;
   align-items: flex-start;
   padding-left: 5%;
+  padding-right: 5%;
   overflow: hidden;
-
-  @font-face {
-    font-family: "CWDangamAsac-Bold";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Pretendard-Regular";
-    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-      format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
 
   h1 {
     font-size: 5vw;
@@ -62,6 +47,7 @@ export const aboutme = css`
     z-index: 2;
     font-family: "Pretendard-Regular", sans-serif;
     margin: 20px 0;
+    max-width: 60%;
   }
 
   img {
@@ -92,44 +78,76 @@ export const aboutme = css`
     z-index: 1;
     pointer-events: none;
   }
-`;
 
-export const look = css`
-  padding: 0.5vw 1vw;
-  background-color: #fff;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  font-size: clamp(12px, 2vw, 20px);
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5vw;
-  z-index: 2;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-
-  &:hover {
-    background-color: #dbdbdb;
-  }
-
-  svg {
-    width: clamp(10px, 3vw, 40px); /* 아이콘의 폭을 반응형으로 설정 */
-    height: clamp(10px, 3vw, 40px); /* 아이콘의 높이를 반응형으로 설정 */
+  .profile {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(100%, -50%);
+    width: 20%;
+    height: auto;
+    z-index: 2;
+    object-fit: cover;
   }
 `;
 
 export const profileLayout = css`
   width: 100%;
-  height: 500px;
-  background-color: #2d4949;
+  height: 250px;
+  background-color: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const listLayout = css`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+`;
+
+export const contentWrapper = css`
+  position: relative;
+  width: 180px;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+`;
+
+export const contentBackground = css`
+  position: absolute;
+  top: 50%;
+  left: -70%;
+  transform: translate(50%, -50%);
+  font-size: 200px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  pointer-events: none;
+`;
+
+export const contentCard = css`
+  position: relative;
+  z-index: 2;
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  color: white;
+
+  img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+  }
 `;
 
 export const test = css`
   width: 100%;
-  height: 250px;
+  height: 500px;
   background-color: orange;
 `;
+

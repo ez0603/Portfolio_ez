@@ -8,10 +8,10 @@
     // 클라이언트 측 경로를 index.html로 리디렉션
     var pathname = window.location.pathname;
     var origin = window.location.origin;
-    var newUrl = origin + "/Portfolio_ez" + pathname + (window.location.search || '') + (window.location.hash || '');
     
-    // 사용자가 이미 최상위 경로에 있다면 리디렉션하지 않음
-    if (pathname !== '/Portfolio_ez/' && pathname !== '/Portfolio_ez') {
+    // 이미 리디렉션된 상태인지 확인
+    if (!pathname.startsWith('/Portfolio_ez/') || pathname === '/Portfolio_ez/') {
+      var newUrl = origin + "/Portfolio_ez" + (window.location.search || '') + (window.location.hash || '');
       window.location.replace(newUrl);
     }
   </script>

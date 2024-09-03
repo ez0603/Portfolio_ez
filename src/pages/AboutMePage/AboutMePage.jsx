@@ -13,41 +13,53 @@ import java from "../../assets/icon/Java.png";
 import js from "../../assets/icon/JavaScript.png";
 import mysql from "../../assets/icon/MySQL.png";
 import reactIcon from "../../assets/icon/React.png";
+import useContent from "../../hooks/useContent"; // 커스텀 훅을 가져옵니다.
 
 function AboutMePage(props) {
   const listRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const scrollIntervalRef = useRef(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const content = useContent(); // 커스텀 훅에서 내용을 가져옵니다.
 
-  useEffect(() => {
+  const startAutoScroll = () => {
     const list = listRef.current;
     const scrollSpeed = 1;
-    let scrollInterval;
 
-    const startAutoScroll = () => {
-      scrollInterval = setInterval(() => {
-        if (!isHovered) { // 호버 상태가 아닐 때만 스크롤
-          list.scrollLeft += scrollSpeed;
+    scrollIntervalRef.current = setInterval(() => {
+      list.scrollLeft += scrollSpeed;
+      if (list.scrollLeft >= list.scrollWidth - list.clientWidth) {
+        list.scrollLeft = 0;
+      }
+    }, 20);
+  };
 
-          if (list.scrollLeft >= list.scrollWidth - list.clientWidth) {
-            list.scrollLeft = 0;
-          }
-        }
-      }, 20);
-    };
+  const stopAutoScroll = () => {
+    clearInterval(scrollIntervalRef.current);
+  };
 
+  useEffect(() => {
     startAutoScroll();
 
     return () => {
-      clearInterval(scrollInterval);
+      stopAutoScroll();
     };
-  }, [isHovered]);
+  }, []);
+
+  const handleMouseEnter = (index) => {
+    stopAutoScroll();
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    startAutoScroll();
+    setHoveredIndex(null);
+  };
 
   const images = [
     reactIcon,
-    cssIcon,
-    js,
+    [cssIcon, html], // cssIcon과 html을 묶어서 하나의 항목으로 추가
     spring,
-    html,
+    js,
     java,
     mysql,
     firebase,
@@ -83,13 +95,33 @@ function AboutMePage(props) {
                   </div>
                   <div
                     css={s.contentCard}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
                   >
-                    <img
-                      src={img}
-                      alt={`Content ${(index % images.length) + 1}`}
-                    />
+                    {Array.isArray(img) ? (
+                      // img가 배열인 경우, 각각의 이미지를 렌더링
+                      img.map((subImg, subIndex) => (
+                        <img
+                          key={subIndex}
+                          src={subImg}
+                          alt={`Content ${(index % images.length) + 1}-${
+                            subIndex + 1
+                          }`}
+                          style={{ width: "50%", height: "50%" }}
+                        />
+                      ))
+                    ) : (
+                      // img가 배열이 아닌 경우, 단일 이미지를 렌더링
+                      <img
+                        src={img}
+                        alt={`Content ${(index % images.length) + 1}`}
+                        style={{ width: "50%", height: "50%" }}
+                      />
+                    )}
+                    <div className="hover-content">
+                      <h3>{content[index % content.length].title}</h3>
+                      <p>{content[index % content.length].text}</p>
+                    </div>
                   </div>
                 </div>
               ))}

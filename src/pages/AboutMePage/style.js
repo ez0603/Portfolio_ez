@@ -120,7 +120,7 @@ export const subheading = css`
 
 export const profileLayout = css`
   width: 100%;
-  height: 250px;
+  height: 270px;
   background-color: #141414;
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@ export const listLayout = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px; 
+  gap: 50px;
   overflow-x: auto;
   padding: 20px;
   padding-left: 40px;
@@ -142,12 +142,11 @@ export const listLayout = css`
   /* 스크롤바 숨김 */
   -ms-overflow-style: none; /* IE 및 Edge */
   scrollbar-width: none; /* Firefox */
-  
+
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
 `;
-
 
 export const contentWrapper = css`
   position: relative;
@@ -159,6 +158,7 @@ export const contentWrapper = css`
   align-items: center;
   justify-content: center;
   margin-right: 50px;
+  overflow: visible;
 `;
 
 export const contentBackground = css`
@@ -166,7 +166,7 @@ export const contentBackground = css`
   top: 45%;
   left: -80%;
   transform: translate(50%, -50%);
-  font-size: 220px;
+  font-size: 200px;
   font-weight: bold;
   color: #000000;
   z-index: 1;
@@ -178,9 +178,9 @@ export const contentBackground = css`
 `;
 
 export const contentCard = css`
-  height: 65%;
-  width: 140px;
   position: relative;
+  height: 55%;
+  width: 170px;
   z-index: 2;
   background-color: #ffffff;
   border-radius: 10px;
@@ -191,18 +191,69 @@ export const contentCard = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease; /* 호버 시 크기가 부드럽게 커지도록 전환 추가 */
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+
+  transform-origin: center;
 
   &:hover {
-    transform: scale(1.1); /* 호버 시 크기 확대 */
+    transform: scale(1.8);
+    width: clamp(150px, 20vw, 250px);
+    z-index: 10;
+    position: absolute;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.562);
   }
 
   img {
     width: 50%;
     height: 50%;
     border-radius: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: pre;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* 타이틀과 내용을 균등하게 분배 */
+    align-items: center; /* 중앙 정렬 */
+    padding: 10px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: clamp(10px, 0.9vw, 15px);
+    font-weight: 700;
+    flex-shrink: 0; /* 타이틀의 높이를 고정 */
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: clamp(3px, 0.9vw, 9px);
+    line-height: 1.4;
+    flex-grow: 1; /* 내용의 높이를 고정된 비율로 설정 */
+  }
+
+  &:hover .hover-content {
+    opacity: 1;
+  }
+
+  &:hover img {
+    opacity: 0.3;
+    transform: translate(0%, -70%) scale(0.5);
   }
 `;
+
 
 export const test = css`
   width: 100%;

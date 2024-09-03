@@ -62,7 +62,7 @@ function AboutMePage(props) {
         <div css={s.container}>
           <div css={s.aboutme}>
             <img src={main} alt="main" />
-            <h1>이지언h</h1>
+            <h1>이지언</h1>
             <p>시련은 있어도 실패는 없다</p>
             <p># 사용자가 편리한 UI</p>
             <p># 더 나은 서비스 구축</p>

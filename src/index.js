@@ -14,7 +14,7 @@ root.render(
 
     <QueryClientProvider client={queryClient}>
         <RecoilRoot>
-            <BrowserRouter basename="/Portfolio_ez">
+            <BrowserRouter>
                 <App/>
             </BrowserRouter>
         </RecoilRoot>

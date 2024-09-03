@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <script>
-    // 클라이언트 측에서 잘못된 경로가 발생할 때 리디렉션
-    var pathname = window.location.pathname;
-    var origin = window.location.origin;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 현재 경로에서 프로젝트 이름을 추출하여 재구성
+      var pathname = window.location.pathname;
 
-    // 새로운 URL 설정
-    var newUrl = origin + "/Portfolio_ez" + pathname;
-
-    // 이미 리디렉션된 경우가 아니라면 리디렉션 수행
-    if (!window.location.pathname.includes('index.html')) {
-      window.location.replace(newUrl);
-    }
-  </script>
-</head>
-<body>
-  <h1>Redirecting...</h1>
-</body>
+      // GitHub Pages에서 올바른 경로로 리디렉션
+      if (pathname.startsWith('/Portfolio_ez')) {
+        window.location.replace(window.location.origin + '/Portfolio_ez/');
+      } else {
+        // 404로 접근했을 경우 index.html로 리디렉션
+        window.location.replace(window.location.origin + '/Portfolio_ez' + pathname);
+      }
+    </script>
+  </body>
 </html>

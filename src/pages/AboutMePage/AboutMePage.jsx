@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PageLayout from "../../components/PageComponents/PageLayout/PageLayout";
 import * as s from "./style";
 import main from "../../assets/img/rotated_바다사진.jpg";
@@ -16,30 +16,31 @@ import reactIcon from "../../assets/icon/React.png";
 
 function AboutMePage(props) {
   const listRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const list = listRef.current;
-
-    const scrollSpeed = 1; // 스크롤 속도 설정
+    const scrollSpeed = 1;
     let scrollInterval;
 
     const startAutoScroll = () => {
       scrollInterval = setInterval(() => {
-        list.scrollLeft += scrollSpeed;
+        if (!isHovered) { // 호버 상태가 아닐 때만 스크롤
+          list.scrollLeft += scrollSpeed;
 
-        // 스크롤이 끝에 도달하면, 처음으로 돌아가는 효과
-        if (list.scrollLeft >= list.scrollWidth / 2) {
-          list.scrollLeft = 0;
+          if (list.scrollLeft >= list.scrollWidth - list.clientWidth) {
+            list.scrollLeft = 0;
+          }
         }
-      }, 20); // 20ms마다 스크롤 업데이트
+      }, 20);
     };
 
-    startAutoScroll(); // 컴포넌트 마운트 시 자동 스크롤 시작
+    startAutoScroll();
 
     return () => {
-      clearInterval(scrollInterval); // 컴포넌트 언마운트 시 자동 스크롤 중지
+      clearInterval(scrollInterval);
     };
-  }, []);
+  }, [isHovered]);
 
   const images = [
     reactIcon,
@@ -53,7 +54,6 @@ function AboutMePage(props) {
     aws,
   ];
 
-  // 리스트 아이템을 두 번 렌더링하여 무한 스크롤 효과
   const duplicatedImages = [...images, ...images];
 
   return (
@@ -70,7 +70,9 @@ function AboutMePage(props) {
             <img src={profile} className="profile" alt="profile" />
           </div>
           <div css={s.subheading}>
-            <h2>SKILLS <b>RANKING</b></h2>
+            <h2>
+              SKILLS <b>RANKING</b>
+            </h2>
           </div>
           <div css={s.profileLayout}>
             <div css={s.listLayout} ref={listRef}>
@@ -79,7 +81,11 @@ function AboutMePage(props) {
                   <div css={s.contentBackground}>
                     {(index % images.length) + 1}
                   </div>
-                  <div css={s.contentCard}>
+                  <div
+                    css={s.contentCard}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  >
                     <img
                       src={img}
                       alt={`Content ${(index % images.length) + 1}`}

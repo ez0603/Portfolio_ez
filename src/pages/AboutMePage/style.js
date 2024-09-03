@@ -133,14 +133,21 @@ export const listLayout = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 50px; 
   overflow-x: auto;
   padding: 20px;
   padding-left: 40px;
   padding-right: 40px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+  /* 스크롤바 숨김 */
+  -ms-overflow-style: none; /* IE 및 Edge */
+  scrollbar-width: none; /* Firefox */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 `;
+
 
 export const contentWrapper = css`
   position: relative;
@@ -151,6 +158,7 @@ export const contentWrapper = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 50px;
 `;
 
 export const contentBackground = css`

@@ -40,14 +40,6 @@ export const aboutme = css`
     font-style: normal;
   }
 
-  @font-face {
-    font-family: "Pretendard-Regular";
-    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-      format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
-
   h1 {
     font-size: 5vw;
     color: white;
@@ -60,7 +52,6 @@ export const aboutme = css`
     font-size: clamp(5px, 1.5vw, 23px);
     color: white;
     z-index: 2;
-    font-family: "Pretendard-Regular", sans-serif;
     margin: 20px 0;
     max-width: 60%;
   }

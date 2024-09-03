@@ -88,13 +88,12 @@ export const header = css`
     top: 5%;
     right: 5%;
     transform: translate(-100%, 100%);
-    font-size: clamp(16px, 3vw, 100px);
-    font-family: "Paperlogy-8ExtraBold";
+    font-size: clamp(16px, 2.5vw, 100px);
   }
 
   img {
-    width: clamp(50px, 20vw, 200px);
-    height: 280px;
+    width: clamp(120px, 15vw, 200px);
+    height: clamp(150px, 20vw, 270px);
     transform: translate(-50%, 0);
   }
 `;
@@ -114,7 +113,7 @@ export const iconText = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 35%;
+  width: 40%;
   margin: 10px 0;
   gap: 10px;
 

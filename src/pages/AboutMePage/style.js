@@ -133,7 +133,7 @@ export const listLayout = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
   overflow-x: auto;
   padding: 20px;
   padding-left: 40px;
@@ -157,21 +157,27 @@ export const contentWrapper = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 50px;
+  margin-right: 80px;
   overflow: visible;
 `;
 
 export const contentBackground = css`
   position: absolute;
-  top: 45%;
-  left: -80%;
+  top: 50%;
+  left: -85%;
   transform: translate(50%, -50%);
-  font-size: 200px;
+  font-size: 220px;
   font-weight: bold;
+  font-family: Freesentation-9Black;
   color: #000000;
   z-index: 1;
   pointer-events: none;
-
+  @font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
   text-shadow: 3px 3px 0 #595959, -3px -3px 0 #595959, -3px 3px 0 #595959,
     3px -3px 0 #595959, 3px 0 0 #595959, -3px 0 0 #595959, 0 3px 0 #595959,
     0 -3px 0 #595959;

@@ -94,7 +94,7 @@ export const header = css`
 
   img {
     width: clamp(50px, 20vw, 200px);
-    height: auto;
+    height: 280px;
     transform: translate(-50%, 0);
   }
 `;

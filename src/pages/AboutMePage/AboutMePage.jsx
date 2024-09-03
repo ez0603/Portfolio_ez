@@ -16,58 +16,49 @@ import reactIcon from "../../assets/icon/React.png";
 
 function AboutMePage(props) {
   const listRef = useRef(null);
-  const pageRef = useRef(null);
 
   useEffect(() => {
     const list = listRef.current;
-    const page = pageRef.current;
-  
-    const handleWheel = (e) => {
-      const atStart = list.scrollLeft === 0;
-      const atEnd = list.scrollLeft >= list.scrollWidth - list.clientWidth;
-  
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        // 사용자 스크롤이 가로 방향일 때 가로 스크롤 처리
-        if (!atEnd || (!atStart && e.deltaX < 0)) {
-          e.preventDefault();
-          list.scrollLeft += e.deltaX * 0.5; // 가로 스크롤 속도 조정
+
+    const scrollSpeed = 1; // 스크롤 속도 설정
+    let scrollInterval;
+
+    const startAutoScroll = () => {
+      scrollInterval = setInterval(() => {
+        list.scrollLeft += scrollSpeed;
+
+        // 스크롤이 끝에 도달하면, 처음으로 돌아가는 효과
+        if (list.scrollLeft >= list.scrollWidth / 2) {
+          list.scrollLeft = 0;
         }
-      } else {
-        // 세로 스크롤 처리
-        if ((atEnd && e.deltaY > 0) || (atStart && e.deltaY < 0)) {
-          page.scrollTop += e.deltaY;
-        } else {
-          e.preventDefault();
-          list.scrollLeft += e.deltaY * 0.5; // 가로 스크롤 속도 조정
-        }
-      }
+      }, 20); // 20ms마다 스크롤 업데이트
     };
-  
-    page.addEventListener("wheel", handleWheel, { passive: false });
-  
+
+    startAutoScroll(); // 컴포넌트 마운트 시 자동 스크롤 시작
+
     return () => {
-      page.removeEventListener("wheel", handleWheel);
+      clearInterval(scrollInterval); // 컴포넌트 언마운트 시 자동 스크롤 중지
     };
   }, []);
-  
-  
 
   const images = [
-    profile,
-    spring,
+    reactIcon,
     cssIcon,
-    aws,
-    firebase,
+    js,
+    spring,
     html,
     java,
-    js,
     mysql,
-    reactIcon,
+    firebase,
+    aws,
   ];
+
+  // 리스트 아이템을 두 번 렌더링하여 무한 스크롤 효과
+  const duplicatedImages = [...images, ...images];
 
   return (
     <PageLayout>
-      <div css={s.layout} ref={pageRef}>
+      <div css={s.layout}>
         <div css={s.container}>
           <div css={s.aboutme}>
             <img src={main} alt="main" />
@@ -78,13 +69,21 @@ function AboutMePage(props) {
             <p># 학습하고 성장할 수 있는 기회</p>
             <img src={profile} className="profile" alt="profile" />
           </div>
+          <div css={s.subheading}>
+            <h2>SKILLS <b>RANKING</b></h2>
+          </div>
           <div css={s.profileLayout}>
             <div css={s.listLayout} ref={listRef}>
-              {images.map((img, index) => (
+              {duplicatedImages.map((img, index) => (
                 <div css={s.contentWrapper} key={index}>
-                  <div css={s.contentBackground}>{index + 1}</div>
+                  <div css={s.contentBackground}>
+                    {(index % images.length) + 1}
+                  </div>
                   <div css={s.contentCard}>
-                    <img src={img} alt={`Content ${index + 1}`} />
+                    <img
+                      src={img}
+                      alt={`Content ${(index % images.length) + 1}`}
+                    />
                   </div>
                 </div>
               ))}

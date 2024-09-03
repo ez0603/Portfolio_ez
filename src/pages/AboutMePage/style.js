@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 export const layout = css`
   z-index: 0;
   width: 100%;
-  height: 100%; /* 부모 요소인 body의 높이를 100%로 상속받음 */
+  height: 100%;
   background-color: #141414;
   display: flex;
   flex-direction: column;
@@ -32,6 +32,21 @@ export const aboutme = css`
   padding-left: 5%;
   padding-right: 5%;
   overflow: hidden;
+  @font-face {
+    font-family: "CWDangamAsac-Bold";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
 
   h1 {
     font-size: 5vw;
@@ -91,6 +106,18 @@ export const aboutme = css`
   }
 `;
 
+export const subheading = css`
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-weight: 300;
+    color: white;
+  }
+`;
+
 export const profileLayout = css`
   width: 100%;
   height: 250px;
@@ -101,46 +128,70 @@ export const profileLayout = css`
 `;
 
 export const listLayout = css`
-  width: 90%;
+  width: 85%;
   height: 100%;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
   overflow-x: auto;
   padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 export const contentWrapper = css`
   position: relative;
   width: 180px;
+  height: 100%;
   scroll-snap-align: start;
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const contentBackground = css`
   position: absolute;
-  top: 50%;
-  left: -70%;
+  top: 45%;
+  left: -80%;
   transform: translate(50%, -50%);
-  font-size: 200px;
+  font-size: 220px;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.1);
+  color: #000000;
   z-index: 1;
   pointer-events: none;
+
+  text-shadow: 3px 3px 0 #595959, -3px -3px 0 #595959, -3px 3px 0 #595959,
+    3px -3px 0 #595959, 3px 0 0 #595959, -3px 0 0 #595959, 0 3px 0 #595959,
+    0 -3px 0 #595959;
 `;
 
 export const contentCard = css`
+  height: 65%;
+  width: 140px;
   position: relative;
   z-index: 2;
-  background-color: #222;
+  background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   padding: 10px;
   text-align: center;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* 호버 시 크기가 부드럽게 커지도록 전환 추가 */
+
+  &:hover {
+    transform: scale(1.1); /* 호버 시 크기 확대 */
+  }
 
   img {
     width: 50%;
-    height: auto;
+    height: 50%;
     border-radius: 10px;
   }
 `;
@@ -150,4 +201,3 @@ export const test = css`
   height: 500px;
   background-color: orange;
 `;
-

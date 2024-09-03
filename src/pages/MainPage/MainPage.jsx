@@ -17,12 +17,16 @@ function MainPage(props) {
     setIsModalOpen(false);
   };
 
+  const handleContextMenu = (event) => {
+    event.preventDefault(); // 우클릭 방지
+  };
+
   return (
     <PageLayout>
       <div css={s.layout}>
         <div css={s.container}>
           <div css={s.aboutme}>
-            <img src={main} alt="main" />
+            <img src={main} alt="main" onContextMenu={handleContextMenu} />
             <h1>
               끈기있는
               <br />

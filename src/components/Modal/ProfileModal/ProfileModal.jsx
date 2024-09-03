@@ -37,6 +37,10 @@ function ProfileModal({ onClose }) {
       .catch((err) => console.error("Error copying text: ", err));
   };
 
+  const handleContextMenu = (event) => {
+    event.preventDefault(); // 우클릭 방지
+  };
+
   return (
     <>
       <div css={s.modalOverlayStyle} onClick={onClose} />
@@ -47,7 +51,7 @@ function ProfileModal({ onClose }) {
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>
-            <img src={profile} alt="" />
+            <img src={profile} alt="" onContextMenu={handleContextMenu} />
           </div>
           <div css={s.profile}>
             <div css={s.iconText}>
@@ -84,41 +88,49 @@ function ProfileModal({ onClose }) {
               <h3>Front</h3>
               <div css={s.slillboxContainer}>
                 <div css={s.slillbox}>
-                  <img src={react} alt="" />
+                  <img src={react} alt="" onContextMenu={handleContextMenu} />
                   <p>REACT</p>
                 </div>
                 <div css={s.slillbox}>
-                  <img src={css} alt="" />
+                  <img src={css} alt="" onContextMenu={handleContextMenu} />
                   <p>CSS3</p>
                 </div>
                 <div css={s.slillbox}>
-                  <img src={js} alt="" />
+                  <img src={js} alt="" onContextMenu={handleContextMenu} />
                   <p>JAVASCRIPT</p>
                 </div>
                 <div css={s.slillbox}>
-                  <img src={html} alt="" />
+                  <img src={html} alt="" onContextMenu={handleContextMenu} />
                   <p>HTML5</p>
                 </div>
               </div>
               <h3>Back</h3>
               <div css={s.slillboxContainer}>
                 <div css={s.slillbox}>
-                  <img src={java} alt="" />
+                  <img src={java} alt="" onContextMenu={handleContextMenu} />
                   <p>JAVA</p>
                 </div>
                 <div css={s.slillbox}>
-                  <img src={spring} alt="" />
+                  <img
+                    src={spring}
+                    alt=""
+                    onContextMenu={handleContextMenu}
+                  />
                   <p>SPRINGBOOT</p>
                 </div>
               </div>
               <h3>DataBase</h3>
               <div css={s.slillboxContainer}>
                 <div css={s.slillbox}>
-                  <img src={mysql} alt="" />
+                  <img src={mysql} alt="" onContextMenu={handleContextMenu} />
                   <p>MYSQL</p>
                 </div>
                 <div css={s.slillbox}>
-                  <img src={firebase} alt="" />
+                  <img
+                    src={firebase}
+                    alt=""
+                    onContextMenu={handleContextMenu}
+                  />
                   <p>FIREBASE</p>
                 </div>
               </div>
@@ -126,7 +138,7 @@ function ProfileModal({ onClose }) {
             <div css={s.boxLayout}>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={deu} alt="" />
+                  <img src={deu} alt="" onContextMenu={handleContextMenu} />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2018.03 ~ 2023.02</h3>
@@ -138,7 +150,11 @@ function ProfileModal({ onClose }) {
               </div>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={Highschool} alt="" />
+                  <img
+                    src={Highschool}
+                    alt=""
+                    onContextMenu={handleContextMenu}
+                  />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2015.03 ~ 2018.02</h3>
@@ -150,7 +166,7 @@ function ProfileModal({ onClose }) {
               </div>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={it} alt="" />
+                  <img src={it} alt="" onContextMenu={handleContextMenu} />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2024.12 ~ 2024.05</h3>
@@ -161,7 +177,7 @@ function ProfileModal({ onClose }) {
               </div>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={it} alt="" />
+                  <img src={it} alt="" onContextMenu={handleContextMenu} />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2024.12 ~ 2024.07</h3>

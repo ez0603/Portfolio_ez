@@ -55,6 +55,10 @@ function AboutMePage(props) {
     setHoveredIndex(null);
   };
 
+  const handleContextMenu = (event) => {
+    event.preventDefault();
+  };
+
   const images = [
     reactIcon,
     [cssIcon, html],
@@ -73,13 +77,13 @@ function AboutMePage(props) {
       <div css={s.layout}>
         <div css={s.container}>
           <div css={s.aboutme}>
-            <img src={main} alt="main" />
+            <img src={main} alt="main" onContextMenu={handleContextMenu} />
             <h1>이지언</h1>
             <p className="wave">시련은 있어도 실패는 없다</p>
             <p className="wave"># 사용자가 편리한 UI</p>
             <p className="wave"># 더 나은 서비스 구축</p>
             <p className="wave"># 학습하고 성장할 수 있는 기회</p>
-            <img src={profile} className="profile" alt="profile" />
+            <img src={profile} className="profile" alt="profile" onContextMenu={handleContextMenu} />
           </div>
           <div css={s.subheading}>
             <h2>
@@ -106,12 +110,14 @@ function AboutMePage(props) {
                           alt={`Content ${(index % images.length) + 1}-${
                             subIndex + 1
                           }`}
+                          onContextMenu={handleContextMenu}
                         />
                       ))
                     ) : (
                       <img
                         src={img}
                         alt={`Content ${(index % images.length) + 1}`}
+                        onContextMenu={handleContextMenu}
                       />
                     )}
                     <div className="hover-content">

@@ -11,6 +11,7 @@ const wave = keyframes`
     transform: translateY(0);
   }
 `;
+
 export const layout = css`
   z-index: 0;
   width: 100%;
@@ -131,7 +132,6 @@ export const aboutme = css`
   }
 `;
 
-
 export const subheading = css`
   width: 20%;
   display: flex;
@@ -167,12 +167,11 @@ export const listLayout = css`
   padding-left: 40px;
   padding-right: 40px;
 
-  /* 스크롤바 숨김 */
-  -ms-overflow-style: none; /* IE 및 Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
   }
 `;
 
@@ -243,6 +242,7 @@ export const contentCard = css`
     height: 50%;
     border-radius: 10px;
     transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .hover-content {
@@ -260,8 +260,8 @@ export const contentCard = css`
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; /* 타이틀과 내용을 균등하게 분배 */
-    align-items: center; /* 중앙 정렬 */
+    justify-content: space-evenly;
+    align-items: center;
     padding: 10px;
   }
 
@@ -269,14 +269,14 @@ export const contentCard = css`
     margin: 0;
     font-size: clamp(10px, 0.9vw, 15px);
     font-weight: 700;
-    flex-shrink: 0; /* 타이틀의 높이를 고정 */
+    flex-shrink: 0;
   }
 
   p {
     margin-top: 5px;
     font-size: clamp(6px, 0.9vw, 9px);
     line-height: 1.4;
-    flex-grow: 1; /* 내용의 높이를 고정된 비율로 설정 */
+    flex-grow: 1;
   }
 
   &:hover .hover-content {

@@ -30,7 +30,6 @@ function Header() {
         <img src={logo} alt="Logo" onClick={handleLogoClick} />
       </div>
       <div css={s.categoryLayout}>
-      
         <Link to="/AboutMe" css={s.link}>
           About Me
         </Link>

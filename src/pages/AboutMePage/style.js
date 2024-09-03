@@ -1,5 +1,16 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 
+const wave = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
 export const layout = css`
   z-index: 0;
   width: 100%;
@@ -10,6 +21,7 @@ export const layout = css`
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  cursor: default;
 `;
 
 export const container = css`
@@ -52,8 +64,30 @@ export const aboutme = css`
     font-size: clamp(5px, 1.5vw, 23px);
     color: white;
     z-index: 2;
-    margin: 20px 0;
+    margin: clamp(0px, 1vw, 20px) 0;
     max-width: 60%;
+  }
+
+  .wave {
+    display: inline-block;
+    animation: ${wave} 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+  }
+
+  .wave:nth-of-type(1) {
+    --i: 1;
+  }
+
+  .wave:nth-of-type(2) {
+    --i: 2;
+  }
+
+  .wave:nth-of-type(3) {
+    --i: 3;
+  }
+
+  .wave:nth-of-type(4) {
+    --i: 4;
   }
 
   img {
@@ -97,6 +131,7 @@ export const aboutme = css`
   }
 `;
 
+
 export const subheading = css`
   width: 20%;
   display: flex;
@@ -106,6 +141,8 @@ export const subheading = css`
   h2 {
     font-weight: 300;
     color: white;
+    font-size: clamp(15px, 2vw, 25px);
+    margin: 20px clamp(20px, 1vw, 0px);
   }
 `;
 
@@ -164,11 +201,12 @@ export const contentBackground = css`
   z-index: 1;
   pointer-events: none;
   @font-face {
-    font-family: 'Freesentation-9Black';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-family: "Freesentation-9Black";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+      format("woff2");
     font-weight: 900;
     font-style: normal;
-}
+  }
   text-shadow: 3px 3px 0 #595959, -3px -3px 0 #595959, -3px 3px 0 #595959,
     3px -3px 0 #595959, 3px 0 0 #595959, -3px 0 0 #595959, 0 3px 0 #595959,
     0 -3px 0 #595959;
@@ -250,7 +288,6 @@ export const contentCard = css`
     transform: translate(0%, -70%) scale(0.5);
   }
 `;
-
 
 export const test = css`
   width: 100%;

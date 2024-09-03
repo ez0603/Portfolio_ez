@@ -13,13 +13,13 @@ import java from "../../assets/icon/Java.png";
 import js from "../../assets/icon/JavaScript.png";
 import mysql from "../../assets/icon/MySQL.png";
 import reactIcon from "../../assets/icon/React.png";
-import useContent from "../../hooks/useContent"; // 커스텀 훅을 가져옵니다.
+import useContent from "../../hooks/useContent";
 
 function AboutMePage(props) {
   const listRef = useRef(null);
   const scrollIntervalRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const content = useContent(); // 커스텀 훅에서 내용을 가져옵니다.
+  const content = useContent();
 
   const startAutoScroll = () => {
     const list = listRef.current;
@@ -57,13 +57,13 @@ function AboutMePage(props) {
 
   const images = [
     reactIcon,
-    [cssIcon, html], // cssIcon과 html을 묶어서 하나의 항목으로 추가
+    [cssIcon, html],
     js,
     java,
     spring,
     mysql,
     firebase,
-    Git
+    Git,
   ];
 
   const duplicatedImages = [...images, ...images];
@@ -75,10 +75,10 @@ function AboutMePage(props) {
           <div css={s.aboutme}>
             <img src={main} alt="main" />
             <h1>이지언</h1>
-            <p>시련은 있어도 실패는 없다</p>
-            <p># 사용자가 편리한 UI</p>
-            <p># 더 나은 서비스 구축</p>
-            <p># 학습하고 성장할 수 있는 기회</p>
+            <p className="wave">시련은 있어도 실패는 없다</p>
+            <p className="wave"># 사용자가 편리한 UI</p>
+            <p className="wave"># 더 나은 서비스 구축</p>
+            <p className="wave"># 학습하고 성장할 수 있는 기회</p>
             <img src={profile} className="profile" alt="profile" />
           </div>
           <div css={s.subheading}>
@@ -99,7 +99,6 @@ function AboutMePage(props) {
                     onMouseLeave={handleMouseLeave}
                   >
                     {Array.isArray(img) ? (
-                      // img가 배열인 경우, 각각의 이미지를 렌더링
                       img.map((subImg, subIndex) => (
                         <img
                           key={subIndex}
@@ -107,15 +106,12 @@ function AboutMePage(props) {
                           alt={`Content ${(index % images.length) + 1}-${
                             subIndex + 1
                           }`}
-                          // style={{ width: "50%", height: "50%" }}
                         />
                       ))
                     ) : (
-                      // img가 배열이 아닌 경우, 단일 이미지를 렌더링
                       <img
                         src={img}
                         alt={`Content ${(index % images.length) + 1}`}
-                        // style={{ width: "50%", height: "50%" }}
                       />
                     )}
                     <div className="hover-content">

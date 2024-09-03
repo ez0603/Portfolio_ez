@@ -2,14 +2,14 @@ import { css } from "@emotion/react";
 
 export const layout = css`
   width: 100%;
-  height: 70px;
+  height: clamp(20px, 10vw, 80px);
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   z-index: 999;
-  padding: 0 60px;
+  padding: 0 clamp(10px, 3vw, 60px);
   background-color: transparent;
   transition: background-color 0.3s ease;
 `;
@@ -21,13 +21,14 @@ export const scrolledLayout = css`
 export const logoLayout = css`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 
   img {
-    width: 100px;
-    height: 35px;
+    width: clamp(50px, 10vw, 130px);
+    height: clamp(7px, 4vw, 40px);
     cursor: pointer;
     position: relative;
+    top: 3px;
   }
 `;
 
@@ -35,17 +36,17 @@ export const categoryLayout = css`
   width: 25%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-left: 30px;
+  margin-left: 20px;
+  align-items: center;
 `;
 
 export const link = css`
-  width: 100px;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
   color: #ccc;
-  font-size: 20px;
+  font-size: clamp(10px, 2vw, 20px);
 `;

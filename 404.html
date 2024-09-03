@@ -8,11 +8,11 @@
     // 클라이언트 측 경로를 index.html로 리디렉션
     var pathname = window.location.pathname;
     var origin = window.location.origin;
+    var correctPath = "/Portfolio_ez" + (window.location.search || '') + (window.location.hash || '');
     
-    // 이미 리디렉션된 상태인지 확인
-    if (!pathname.startsWith('/Portfolio_ez/') || pathname === '/Portfolio_ez/') {
-      var newUrl = origin + "/Portfolio_ez" + (window.location.search || '') + (window.location.hash || '');
-      window.location.replace(newUrl);
+    // 현재 경로가 올바른 경로가 아닌 경우에만 리디렉션
+    if (pathname !== correctPath) {
+      window.location.replace(origin + correctPath);
     }
   </script>
 </head>

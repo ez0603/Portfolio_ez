@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; URL='/Portfolio_ez/index.html'" />
   <title>Redirecting...</title>
   <script>
-    // GitHub Pages에서 클라이언트 측 경로를 index.html로 리디렉션
+    // 클라이언트 측 경로를 index.html로 리디렉션
     var pathname = window.location.pathname;
     var origin = window.location.origin;
-    window.location.replace(origin + "/Portfolio_ez" + pathname.substring(pathname.lastIndexOf('/')));
+    var newUrl = origin + "/Portfolio_ez" + pathname + (window.location.search || '') + (window.location.hash || '');
+    
+    // 사용자가 이미 최상위 경로에 있다면 리디렉션하지 않음
+    if (pathname !== '/Portfolio_ez/' && pathname !== '/Portfolio_ez') {
+      window.location.replace(newUrl);
+    }
   </script>
 </head>
 <body>
+  <h1>Redirecting...</h1>
 </body>
 </html>

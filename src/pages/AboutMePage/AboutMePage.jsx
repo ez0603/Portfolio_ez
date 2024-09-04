@@ -12,14 +12,32 @@ import html from "../../assets/icon/HTML5.png";
 import java from "../../assets/icon/Java.png";
 import js from "../../assets/icon/JavaScript.png";
 import mysql from "../../assets/icon/MySQL.png";
+import value from "../../assets/img/내가 추구하는 가치.jpg";
 import reactIcon from "../../assets/icon/React.png";
 import useContent from "../../hooks/useContent";
+import AboutMeModal from "../../components/Modal/AboutMeModal/AboutMeModal";
+import AboutMeList from "../../components/AboutMeList/AboutMeList";
 
 function AboutMePage(props) {
   const listRef = useRef(null);
   const scrollIntervalRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const content = useContent();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    title: "",
+    description: "",
+    image: "",
+  });
+
+  const handleOpenModal = (title, description, image) => {
+    setModalContent({ title, description, image });
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const startAutoScroll = () => {
     const list = listRef.current;
@@ -144,8 +162,19 @@ function AboutMePage(props) {
               ))}
             </div>
           </div>
-          <div>
-            <div css={s.test}>추가 내용</div>
+          <div css={s.aboutmeExLayout}>
+            <div css={s.exContainer}>
+              <h2># 나에 관하여</h2>
+              <AboutMeList onImageClick={handleOpenModal} />
+            </div>
+            {isModalOpen && (
+              <AboutMeModal
+                title={modalContent.title}
+                description={modalContent.description}
+                image={modalContent.image}
+                onClose={handleCloseModal}
+              />
+            )}
           </div>
         </div>
       </div>

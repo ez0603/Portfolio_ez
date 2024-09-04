@@ -33,6 +33,7 @@ export const container = css`
   align-items: center;
   justify-content: center;
   background-color: #141414;
+  padding-bottom: clamp(30px, 10vw, 50px);
 `;
 
 export const aboutme = css`
@@ -313,8 +314,22 @@ export const contentCard = css`
   }
 `;
 
-export const test = css`
+export const aboutmeExLayout = css`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const exContainer = css`
   width: 100%;
-  height: 500px;
-  background-color: orange;
+  height: 100%;
+
+  h2 {
+    font-weight: 300;
+    color: white;
+    font-size: clamp(15px, 2vw, 25px);
+  }
 `;

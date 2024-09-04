@@ -115,6 +115,7 @@ function AboutMePage(props) {
               alt="profile"
               onContextMenu={handleContextMenu}
               draggable="false"
+             
             />
           </div>
           <div css={s.subheading}>

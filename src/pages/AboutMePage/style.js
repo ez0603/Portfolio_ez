@@ -20,6 +20,7 @@ export const layout = css`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden; 
   -ms-overflow-style: none;
   scrollbar-width: none;
   cursor: default;
@@ -27,6 +28,7 @@ export const layout = css`
 
 export const container = css`
   width: 100%;
+  max-width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -51,7 +53,7 @@ export const aboutme = css`
   padding-right: 5%;
   overflow: hidden;
   pointer-events: none;
-  
+
   @font-face {
     font-family: "CWDangamAsac-Bold";
     src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
@@ -332,5 +334,3 @@ export const exContainer = css`
     font-size: clamp(15px, 2vw, 25px);
   }
 `;
-
-

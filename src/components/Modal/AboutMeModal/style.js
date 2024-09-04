@@ -1,4 +1,15 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
+
+const popIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+`;
 
 export const modalOverlay = css`
   position: fixed;
@@ -6,11 +17,34 @@ export const modalOverlay = css`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.671);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+`;
+
+export const modalContentStyle = css`
+  position: fixed;
+  width: 50%;
+  height: 90%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  background-color: #181818;
+  animation: ${popIn} 0.5s ease-out;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @media (max-width: 700px) {
+    width: 90%;
+    height: 90vh;
+    max-width: none;
+    max-height: none;
+  }
 `;
 
 export const modalContent = css`
@@ -18,10 +52,9 @@ export const modalContent = css`
   border-radius: 10px;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  width: 90%;
-  max-width: 900px;
-  position: relative;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
 `;
 
 export const closeButton = css`
@@ -37,15 +70,22 @@ export const closeButton = css`
 `;
 
 export const iconStyle = css`
-  color: white; /* X 부분 하얀색 */
+  color: white;
   transform: translate(0%, 10%);
 `;
 
 export const modalImage = css`
   width: 100%;
-  height: clamp(150px, 20vw, 350px);
+  height: 350px;
   object-fit: cover;
-  margin-bottom: 20px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  transition: height 0.2s ease-in-out;
+
+  @media (max-width: 500px) {
+    height: 250px;
+  }
+  @media (max-width: 360px) {
+    height: 150px;
+  }
 `;

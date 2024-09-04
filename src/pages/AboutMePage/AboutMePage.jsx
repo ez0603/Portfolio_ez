@@ -28,23 +28,6 @@ function AboutMePage(props) {
     image: "",
   });
 
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isModalOpen]);
-
-  const handleOpenModal = (title, description, image) => {
-    setModalContent({ title, description, image });
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
   const startAutoScroll = () => {
     const list = listRef.current;
     const scrollSpeed = 1;
@@ -61,12 +44,26 @@ function AboutMePage(props) {
     clearInterval(scrollIntervalRef.current);
   };
 
+  // 모달 상태에 따라 무한 스크롤 제어
   useEffect(() => {
-    startAutoScroll();
+    if (isModalOpen) {
+      stopAutoScroll(); // 모달이 열리면 무한 스크롤 멈춤
+    } else {
+      startAutoScroll(); // 모달이 닫히면 무한 스크롤 재개
+    }
     return () => {
-      stopAutoScroll();
+      stopAutoScroll(); // 컴포넌트가 언마운트되면 무한 스크롤 멈춤
     };
-  }, []);
+  }, [isModalOpen]); // 모달 상태가 변할 때마다 실행
+
+  const handleOpenModal = (title, description, image) => {
+    setModalContent({ title, description, image });
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleMouseEnter = (index) => {
     stopAutoScroll();

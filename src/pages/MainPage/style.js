@@ -10,6 +10,7 @@ export const layout = css`
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: hidden;
 `;
 
 export const container = css`
@@ -72,7 +73,6 @@ export const aboutme = css`
     top: 0;
     left: 0;
     z-index: 0;
-    /* Prevent image drag and selection */
     -webkit-user-drag: none;
     user-drag: none;
     -webkit-user-select: none;
@@ -122,8 +122,8 @@ export const look = css`
   }
 
   svg {
-    width: clamp(10px, 3vw, 40px); /* 아이콘의 폭을 반응형으로 설정 */
-    height: clamp(10px, 3vw, 40px); /* 아이콘의 높이를 반응형으로 설정 */
+    width: clamp(10px, 3vw, 40px); 
+    height: clamp(10px, 3vw, 40px); 
   }
 `;
 

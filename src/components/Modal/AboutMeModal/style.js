@@ -59,19 +59,23 @@ export const modalContent = css`
 
 export const closeButton = css`
   position: absolute;
-  top: 10px;
-  right: clamp(8px, 1vw, 15px);
+  top: clamp(13px, 2vw, 25px);
+  right: clamp(13px, 1vw, 20px);
   background-color: #181818;
   border-radius: 50%;
   border: none;
-  color: white;
   cursor: pointer;
-  font-size: clamp(10px, 5vw, 30px);
+  width: clamp(10px, 6vw, 40px);
+  height: clamp(10px, 6vw, 40px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 `;
 
 export const iconStyle = css`
   color: white;
-  transform: translate(0%, 10%);
+  font-size: clamp(15px, 10vw, 28px);
 `;
 
 export const modalImage = css`

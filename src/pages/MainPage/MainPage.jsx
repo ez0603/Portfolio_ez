@@ -18,7 +18,7 @@ function MainPage(props) {
   };
 
   const handleContextMenu = (event) => {
-    event.preventDefault(); // 우클릭 방지
+    event.preventDefault(); 
   };
 
   return (
@@ -30,7 +30,7 @@ function MainPage(props) {
               src={main}
               alt="main"
               onContextMenu={handleContextMenu}
-              draggable="false" // 드래그 방지
+              draggable="false" 
             />
             <h1>
               끈기있는

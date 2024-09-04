@@ -1,16 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { IoMdClose } from "react-icons/io";
-import * as s from "./style"; //
+import * as s from "./style";
 
-function AboutMeModal({ title, description, image, onClose }) {
+function AboutMeModal({ description, image, onClose }) {
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div css={s.modalOverlay}>
+    <div css={s.modalOverlay} onClick={handleOverlayClick}>
       <div css={s.modalContent}>
         <button onClick={onClose} css={s.closeButton}>
-          <IoMdClose size={24} />
+          <IoMdClose css={s.iconStyle} />
         </button>
-        <h2>{title}</h2>
-        <img src={image} alt={title} css={s.modalImage} />
+        <img src={image} alt="" css={s.modalImage} />
         <p>{description}</p>
       </div>
     </div>

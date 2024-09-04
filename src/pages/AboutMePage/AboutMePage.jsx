@@ -12,7 +12,6 @@ import html from "../../assets/icon/HTML5.png";
 import java from "../../assets/icon/Java.png";
 import js from "../../assets/icon/JavaScript.png";
 import mysql from "../../assets/icon/MySQL.png";
-import value from "../../assets/img/내가 추구하는 가치.jpg";
 import reactIcon from "../../assets/icon/React.png";
 import useContent from "../../hooks/useContent";
 import AboutMeModal from "../../components/Modal/AboutMeModal/AboutMeModal";
@@ -25,10 +24,17 @@ function AboutMePage(props) {
   const content = useContent();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({
-    title: "",
     description: "",
     image: "",
   });
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isModalOpen]);
 
   const handleOpenModal = (title, description, image) => {
     setModalContent({ title, description, image });
@@ -57,7 +63,6 @@ function AboutMePage(props) {
 
   useEffect(() => {
     startAutoScroll();
-
     return () => {
       stopAutoScroll();
     };
@@ -99,7 +104,7 @@ function AboutMePage(props) {
               src={main}
               alt="main"
               onContextMenu={handleContextMenu}
-              draggable="false" /* Prevent image drag */
+              draggable="false"
             />
             <div css={s.introduce}>
               <h1>이지언</h1>
@@ -113,7 +118,7 @@ function AboutMePage(props) {
               className="profile"
               alt="profile"
               onContextMenu={handleContextMenu}
-              draggable="false" /* Prevent image drag */
+              draggable="false"
             />
           </div>
           <div css={s.subheading}>
@@ -142,7 +147,7 @@ function AboutMePage(props) {
                             subIndex + 1
                           }`}
                           onContextMenu={handleContextMenu}
-                          draggable="false" /* Prevent image drag */
+                          draggable="false"
                         />
                       ))
                     ) : (
@@ -150,7 +155,7 @@ function AboutMePage(props) {
                         src={img}
                         alt={`Content ${(index % images.length) + 1}`}
                         onContextMenu={handleContextMenu}
-                        draggable="false" /* Prevent image drag */
+                        draggable="false"
                       />
                     )}
                     <div className="hover-content">
@@ -169,7 +174,6 @@ function AboutMePage(props) {
             </div>
             {isModalOpen && (
               <AboutMeModal
-                title={modalContent.title}
                 description={modalContent.description}
                 image={modalContent.image}
                 onClose={handleCloseModal}

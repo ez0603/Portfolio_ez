@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/Portfolio_ez/static/css/main.8697d359.css",
-    "main.js": "/Portfolio_ez/static/js/main.95ef371e.js",
+    "main.js": "/Portfolio_ez/static/js/main.945954e3.js",
     "static/js/453.d0ded385.chunk.js": "/Portfolio_ez/static/js/453.d0ded385.chunk.js",
     "static/media/이지언2.jpg": "/Portfolio_ez/static/media/이지언2.080e66a9d04618054453.jpg",
     "static/media/이지언.jpg": "/Portfolio_ez/static/media/이지언.ee26304654e23e80103d.jpg",
     "static/media/main.jpg": "/Portfolio_ez/static/media/main.bfbfdf9b5e3bab7a1509.jpg",
+    "static/media/악마는 프라다를 입는다.webp": "/Portfolio_ez/static/media/악마는 프라다를 입는다.cfbf8d789d0479421666.webp",
     "static/media/rotated_바다사진.jpg": "/Portfolio_ez/static/media/rotated_바다사진.26fc36b03d47ebba88fc.jpg",
+    "static/media/내가 추구하는 가치.jpg": "/Portfolio_ez/static/media/내가 추구하는 가치.aa0df9f80afd425f5f08.jpg",
     "static/media/포트폴리오 로고.png": "/Portfolio_ez/static/media/포트폴리오 로고.756c4012aa270ed10cac.png",
     "static/media/삼정고.png": "/Portfolio_ez/static/media/삼정고.68bdffa2f79bc57e70a4.png",
     "static/media/HTML5.png": "/Portfolio_ez/static/media/HTML5.2cd5d05c9660ec55992e.png",
@@ -16,11 +18,11 @@
     "static/media/React.png": "/Portfolio_ez/static/media/React.98ff38735baa4c1b0381.png",
     "index.html": "/Portfolio_ez/index.html",
     "main.8697d359.css.map": "/Portfolio_ez/static/css/main.8697d359.css.map",
-    "main.95ef371e.js.map": "/Portfolio_ez/static/js/main.95ef371e.js.map",
+    "main.945954e3.js.map": "/Portfolio_ez/static/js/main.945954e3.js.map",
     "453.d0ded385.chunk.js.map": "/Portfolio_ez/static/js/453.d0ded385.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8697d359.css",
-    "static/js/main.95ef371e.js"
+    "static/js/main.945954e3.js"
   ]
 }

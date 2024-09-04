@@ -61,7 +61,7 @@ export const aboutme = css`
     color: white;
     z-index: 2;
     font-family: "Pretendard-Regular", sans-serif;
-    margin: 20px 0;
+    margin: clamp(0px, 1vw, 20px) 0;
   }
 
   img {
@@ -72,6 +72,11 @@ export const aboutme = css`
     top: 0;
     left: 0;
     z-index: 0;
+    /* Prevent image drag and selection */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   &::before {

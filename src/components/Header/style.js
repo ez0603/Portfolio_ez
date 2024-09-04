@@ -48,5 +48,5 @@ export const link = css`
   text-decoration: none;
   cursor: pointer;
   color: #ccc;
-  font-size: clamp(10px, 2vw, 20px);
+  font-size: clamp(5px, 2vw, 20px);
 `;

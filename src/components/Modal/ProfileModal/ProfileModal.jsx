@@ -9,7 +9,7 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import spring from "../../../assets/icon/Spring.png";
-import css from "../../../assets/icon/CSS3.png";
+import cssIcon from "../../../assets/icon/CSS3.png";
 import firebase from "../../../assets/icon/Firebase.png";
 import html from "../../../assets/icon/HTML5.png";
 import java from "../../../assets/icon/Java.png";
@@ -51,7 +51,12 @@ function ProfileModal({ onClose }) {
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>
-            <img src={profile} alt="" onContextMenu={handleContextMenu} />
+            <img
+              src={profile}
+              alt="Profile"
+              onContextMenu={handleContextMenu}
+              draggable="false" // 이미지 드래그 방지
+            />
           </div>
           <div css={s.profile}>
             <div css={s.iconText}>
@@ -86,50 +91,82 @@ function ProfileModal({ onClose }) {
             </div>
             <div css={s.skillLayout}>
               <h3>Front</h3>
-              <div css={s.slillboxContainer}>
-                <div css={s.slillbox}>
-                  <img src={react} alt="" onContextMenu={handleContextMenu} />
+              <div css={s.skillboxContainer}>
+                <div css={s.skillbox}>
+                  <img
+                    src={react}
+                    alt="React"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                   <p>REACT</p>
                 </div>
-                <div css={s.slillbox}>
-                  <img src={css} alt="" onContextMenu={handleContextMenu} />
+                <div css={s.skillbox}>
+                  <img
+                    src={cssIcon}
+                    alt="CSS3"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                   <p>CSS3</p>
                 </div>
-                <div css={s.slillbox}>
-                  <img src={js} alt="" onContextMenu={handleContextMenu} />
+                <div css={s.skillbox}>
+                  <img
+                    src={js}
+                    alt="JavaScript"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                   <p>JAVASCRIPT</p>
                 </div>
-                <div css={s.slillbox}>
-                  <img src={html} alt="" onContextMenu={handleContextMenu} />
+                <div css={s.skillbox}>
+                  <img
+                    src={html}
+                    alt="HTML5"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                   <p>HTML5</p>
                 </div>
               </div>
               <h3>Back</h3>
-              <div css={s.slillboxContainer}>
-                <div css={s.slillbox}>
-                  <img src={java} alt="" onContextMenu={handleContextMenu} />
+              <div css={s.skillboxContainer}>
+                <div css={s.skillbox}>
+                  <img
+                    src={java}
+                    alt="Java"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                   <p>JAVA</p>
                 </div>
-                <div css={s.slillbox}>
+                <div css={s.skillbox}>
                   <img
                     src={spring}
-                    alt=""
+                    alt="SpringBoot"
                     onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
                   />
                   <p>SPRINGBOOT</p>
                 </div>
               </div>
               <h3>DataBase</h3>
-              <div css={s.slillboxContainer}>
-                <div css={s.slillbox}>
-                  <img src={mysql} alt="" onContextMenu={handleContextMenu} />
+              <div css={s.skillboxContainer}>
+                <div css={s.skillbox}>
+                  <img
+                    src={mysql}
+                    alt="MySQL"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                   <p>MYSQL</p>
                 </div>
-                <div css={s.slillbox}>
+                <div css={s.skillbox}>
                   <img
                     src={firebase}
-                    alt=""
+                    alt="Firebase"
                     onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
                   />
                   <p>FIREBASE</p>
                 </div>
@@ -138,7 +175,12 @@ function ProfileModal({ onClose }) {
             <div css={s.boxLayout}>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={deu} alt="" onContextMenu={handleContextMenu} />
+                  <img
+                    src={deu}
+                    alt="University"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2018.03 ~ 2023.02</h3>
@@ -152,8 +194,9 @@ function ProfileModal({ onClose }) {
                 <div css={s.box}>
                   <img
                     src={Highschool}
-                    alt=""
+                    alt="High School"
                     onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
                   />
                 </div>
                 <div css={s.textContainer}>
@@ -166,7 +209,12 @@ function ProfileModal({ onClose }) {
               </div>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={it} alt="" onContextMenu={handleContextMenu} />
+                  <img
+                    src={it}
+                    alt="Korea IT"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2024.12 ~ 2024.05</h3>
@@ -177,7 +225,12 @@ function ProfileModal({ onClose }) {
               </div>
               <div css={s.list}>
                 <div css={s.box}>
-                  <img src={it} alt="" onContextMenu={handleContextMenu} />
+                  <img
+                    src={it}
+                    alt="Web Frontend"
+                    onContextMenu={handleContextMenu}
+                    draggable="false" // 이미지 드래그 방지
+                  />
                 </div>
                 <div css={s.textContainer}>
                   <h3>2024.12 ~ 2024.07</h3>

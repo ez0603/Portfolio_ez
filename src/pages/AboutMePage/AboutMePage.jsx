@@ -77,13 +77,26 @@ function AboutMePage(props) {
       <div css={s.layout}>
         <div css={s.container}>
           <div css={s.aboutme}>
-            <img src={main} alt="main" onContextMenu={handleContextMenu} />
-            <h1>이지언</h1>
-            <p className="wave">시련은 있어도 실패는 없다</p>
-            <p className="wave"># 사용자가 편리한 UI</p>
-            <p className="wave"># 더 나은 서비스 구축</p>
-            <p className="wave"># 학습하고 성장할 수 있는 기회</p>
-            <img src={profile} className="profile" alt="profile" onContextMenu={handleContextMenu} />
+            <img
+              src={main}
+              alt="main"
+              onContextMenu={handleContextMenu}
+              draggable="false" /* Prevent image drag */
+            />
+            <div css={s.introduce}>
+              <h1>이지언</h1>
+              <p className="wave">시련은 있어도 실패는 없다</p>
+              <p className="wave"># 사용자가 편리한 UI</p>
+              <p className="wave"># 더 나은 서비스 구축</p>
+              <p className="wave"># 학습하고 성장할 수 있는 기회</p>
+            </div>
+            <img
+              src={profile}
+              className="profile"
+              alt="profile"
+              onContextMenu={handleContextMenu}
+              draggable="false" /* Prevent image drag */
+            />
           </div>
           <div css={s.subheading}>
             <h2>
@@ -111,6 +124,7 @@ function AboutMePage(props) {
                             subIndex + 1
                           }`}
                           onContextMenu={handleContextMenu}
+                          draggable="false" /* Prevent image drag */
                         />
                       ))
                     ) : (
@@ -118,6 +132,7 @@ function AboutMePage(props) {
                         src={img}
                         alt={`Content ${(index % images.length) + 1}`}
                         onContextMenu={handleContextMenu}
+                        draggable="false" /* Prevent image drag */
                       />
                     )}
                     <div className="hover-content">

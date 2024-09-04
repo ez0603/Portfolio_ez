@@ -26,7 +26,12 @@ function MainPage(props) {
       <div css={s.layout}>
         <div css={s.container}>
           <div css={s.aboutme}>
-            <img src={main} alt="main" onContextMenu={handleContextMenu} />
+            <img
+              src={main}
+              alt="main"
+              onContextMenu={handleContextMenu}
+              draggable="false" // 드래그 방지
+            />
             <h1>
               끈기있는
               <br />
@@ -54,7 +59,7 @@ function MainPage(props) {
           </div>
         </div>
       </div>
-      {isModalOpen && <ProfileModal onClose={handleCloseModal} />}{" "}
+      {isModalOpen && <ProfileModal onClose={handleCloseModal} />}
     </PageLayout>
   );
 }

@@ -95,6 +95,11 @@ export const header = css`
     width: clamp(120px, 15vw, 200px);
     height: clamp(150px, 20vw, 270px);
     transform: translate(-50%, 0);
+    /* Prevent image selection and drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 `;
 
@@ -173,14 +178,14 @@ export const skillLayout = css`
   }
 `;
 
-export const slillboxContainer = css`
+export const skillboxContainer = css`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   width: 100%;
 `;
 
-export const slillbox = css`
+export const skillbox = css`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -195,6 +200,11 @@ export const slillbox = css`
     height: 40px;
     object-fit: contain;
     border-radius: 5px;
+    /* Prevent image selection and drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   p {
@@ -259,6 +269,11 @@ export const box = css`
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
+    /* Prevent image selection and drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 `;
 

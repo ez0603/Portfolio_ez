@@ -28,6 +28,10 @@ export const layout = css`
 export const container = css`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #141414;
 `;
 
@@ -99,6 +103,11 @@ export const aboutme = css`
     top: 0;
     left: 0;
     z-index: 0;
+    /* Prevent image selection and drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   &::before {
@@ -129,20 +138,35 @@ export const aboutme = css`
     height: auto;
     z-index: 2;
     object-fit: cover;
+    /* Prevent image selection and drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 `;
 
+export const introduce = css`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  left: 5%;
+`;
+
 export const subheading = css`
-  width: 20%;
+  width: 90%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   h2 {
     font-weight: 300;
     color: white;
     font-size: clamp(15px, 2vw, 25px);
-    margin: 20px clamp(20px, 1vw, 0px);
+    /* margin: 20px clamp(20px, 1vw, 0px); */
   }
 `;
 

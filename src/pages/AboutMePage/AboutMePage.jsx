@@ -44,20 +44,19 @@ function AboutMePage(props) {
     clearInterval(scrollIntervalRef.current);
   };
 
-  // 모달 상태에 따라 무한 스크롤 제어
   useEffect(() => {
     if (isModalOpen) {
-      stopAutoScroll(); // 모달이 열리면 무한 스크롤 멈춤
+      stopAutoScroll();
     } else {
-      startAutoScroll(); // 모달이 닫히면 무한 스크롤 재개
+      startAutoScroll();
     }
     return () => {
-      stopAutoScroll(); // 컴포넌트가 언마운트되면 무한 스크롤 멈춤
+      stopAutoScroll();
     };
-  }, [isModalOpen]); // 모달 상태가 변할 때마다 실행
+  }, [isModalOpen]);
 
-  const handleOpenModal = (title, description, image) => {
-    setModalContent({ title, description, image });
+  const handleOpenModal = (description, image) => {
+    setModalContent({ description, image });
     setIsModalOpen(true);
   };
 

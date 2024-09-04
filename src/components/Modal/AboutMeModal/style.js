@@ -11,7 +11,7 @@ const popIn = keyframes`
   }
 `;
 
-export const modalOverlay = css`
+export const modalOverlayStyle = css`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,12 +24,12 @@ export const modalOverlay = css`
 export const modalContentStyle = css`
   position: fixed;
   width: 50%;
-  height: 90%;
+  height: 87%;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: auto;
@@ -41,7 +41,7 @@ export const modalContentStyle = css`
 
   @media (max-width: 700px) {
     width: 90%;
-    height: 90vh;
+    height: 80vh;
     max-width: none;
     max-height: none;
   }

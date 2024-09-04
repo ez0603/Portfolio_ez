@@ -18,19 +18,17 @@ function AboutMeModal({ description, image, onClose }) {
   };
 
   return (
-    <>
-      <div css={s.modalOverlay} onClick={handleOverlayClick}>
-        <div css={s.modalContentStyle}>
-          <button onClick={onClose} css={s.closeButton}>
-            <IoMdClose css={s.iconStyle} />
-          </button>
-          <div css={s.modalContent}>
-            <img src={image} alt="" css={s.modalImage} />
-            <p>{description}</p>
-          </div>
+    <div css={s.modalOverlayStyle} onClick={handleOverlayClick}>
+      <div css={s.modalContentStyle}>
+        <button onClick={onClose} css={s.closeButton}>
+          <IoMdClose css={s.iconStyle} />
+        </button>
+        <div css={s.modalContent}>
+          <img src={image} alt="" css={s.modalImage} />
+          <p>{description}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

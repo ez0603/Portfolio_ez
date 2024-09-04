@@ -23,17 +23,33 @@ export const exList = css`
   }
 `;
 
+export const layout = css`
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+`;
+
 export const listLayout = css`
-  background-color: aqua;
-  /* width: 90%; */
-  padding: 0 clamp(5px, 2vw, 20px);
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: clamp(5px, 1vw, 10px) clamp(5px, 2vw, 20px);
   display: flex;
-  align-items: center;
+  align-items: center; /* 가운데 정렬 */
+  justify-content: center;
   font-size: clamp(10px, 1vw, 20px);
+  margin: 0 auto;
+  gap: clamp(5px, 2vw, 15px);
+
+  h1 {
+    color: #ccc;
+    font-weight: 300;
+  }
 `;
 
 export const box = css`
-  width: clamp(80px, 10vw, 100px);
+  width: clamp(100px, 10vw, 200px);
   height: clamp(70px, 10vw, 100px);
   border-radius: 8px;
   background-color: white;
@@ -41,17 +57,30 @@ export const box = css`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
 `;
 
 export const contentLayout = css`
-  background-color: orange;
   width: 85%;
   padding: 0 clamp(8px, 1vw, 20px);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 세로 정렬 */
   align-items: flex-start;
+  color: white;
 
   h3 {
     margin-bottom: 0;
+  }
+
+  p {
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: clamp(9px, 1vw, 17px);
   }
 `;

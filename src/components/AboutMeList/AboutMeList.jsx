@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import * as s from "./style";
 import value from "../../assets/img/내가 추구하는 가치.jpg";
+import devil from "../../assets/img/악마는 프라다를 입는다.webp";
 
 function AboutMeList({ onImageClick }) {
   return (
@@ -10,14 +11,46 @@ function AboutMeList({ onImageClick }) {
         alt="가치 1"
         onClick={() =>
           onImageClick(
-            "가치 1",
-            <div css={s.listLayout}>
-              <div css={s.box}>1</div>
-              <div css={s.contentLayout}>
-                <h3>첫 번째 가치는 혁신입니다.</h3>
-                <p>
-                  혁신적인 사고와 접근 방식을 통해 더 나은 결과를 도출합니다.
-                </p>
+            <div css={s.layout}>
+              <div css={s.listLayout}>
+                <h1>1</h1>
+                <div css={s.box}>
+                  <img src={devil} alt="" />
+                </div>
+                <div css={s.contentLayout}>
+                  <h3>첫 번째</h3>
+                  <p>
+                    인터랙티브한 페이지를 개발하는 것을 좋아하며{" "}
+                    <b>사용자에게 편리한 UI</b>를 제공하는 웹을 만들기 위해
+                    노력합니다.
+                  </p>
+                </div>
+              </div>
+              <div css={s.listLayout}>
+                <h1>2</h1>
+                <div css={s.box}>
+                  <img src={devil} alt="" />
+                </div>
+                <div css={s.contentLayout}>
+                  <h3>두 번째</h3>
+                  <p>
+                    새롭게 배운 기술을 업무에 적용하여 <b>더 나은 서비스</b>를
+                    구축해 나아가는것에 보람을 느낍니다.
+                  </p>
+                </div>
+              </div>
+              <div css={s.listLayout}>
+                <h1>2</h1>
+                <div css={s.box}>
+                  <img src={devil} alt="" />
+                </div>
+                <div css={s.contentLayout}>
+                  <h3>두 번째</h3>
+                  <p>
+                    새롭게 배운 기술을 업무에 적용하여 <b>더 나은 서비스</b>를
+                    구축해 나아가는것에 보람을 느낍니다.
+                  </p>
+                </div>
               </div>
             </div>,
             value
@@ -29,7 +62,6 @@ function AboutMeList({ onImageClick }) {
         alt="가치 2"
         onClick={() =>
           onImageClick(
-            "가치 2",
             <div>
               <h3>두 번째 가치는 팀워크입니다.</h3>
               <p>협력과 소통을 통해 목표를 달성합니다.</p>
@@ -43,7 +75,19 @@ function AboutMeList({ onImageClick }) {
         alt="가치 3"
         onClick={() =>
           onImageClick(
-            "가치 3",
+            <div>
+              <h3>세 번째 가치는 지속 가능성입니다.</h3>
+              <p>지속 가능한 방식으로 프로젝트를 관리합니다.</p>
+            </div>,
+            value
+          )
+        }
+      />
+      <img
+        src={value}
+        alt="가치 3"
+        onClick={() =>
+          onImageClick(
             <div>
               <h3>세 번째 가치는 지속 가능성입니다.</h3>
               <p>지속 가능한 방식으로 프로젝트를 관리합니다.</p>

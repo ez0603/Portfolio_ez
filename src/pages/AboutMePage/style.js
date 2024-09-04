@@ -51,11 +51,13 @@ export const aboutme = css`
   padding-right: 5%;
   overflow: hidden;
   pointer-events: none;
-
-  @media (max-width: 768px) {
-    height: auto;
-    padding-left: 2%;
-    padding-right: 2%;
+  
+  @font-face {
+    font-family: "CWDangamAsac-Bold";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
   }
 
   h1 {
@@ -64,10 +66,6 @@ export const aboutme = css`
     z-index: 2;
     font-family: "CWDangamAsac-Bold", sans-serif;
     margin: 0;
-
-    @media (max-width: 768px) {
-      font-size: clamp(20px, 8vw, 40px);
-    }
   }
 
   p {
@@ -76,11 +74,28 @@ export const aboutme = css`
     z-index: 2;
     margin: clamp(0px, 1vw, 20px) 0;
     max-width: 60%;
+  }
 
-    @media (max-width: 768px) {
-      font-size: clamp(10px, 4vw, 18px);
-      max-width: 100%;
-    }
+  .wave {
+    display: inline-block;
+    animation: ${wave} 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+  }
+
+  .wave:nth-of-type(1) {
+    --i: 1;
+  }
+
+  .wave:nth-of-type(2) {
+    --i: 2;
+  }
+
+  .wave:nth-of-type(3) {
+    --i: 3;
+  }
+
+  .wave:nth-of-type(4) {
+    --i: 4;
   }
 
   img {
@@ -91,11 +106,6 @@ export const aboutme = css`
     top: 0;
     left: 0;
     z-index: 0;
-
-    @media (max-width: 768px) {
-      height: auto;
-    }
-
     -webkit-user-drag: none;
     user-drag: none;
     -webkit-user-select: none;
@@ -130,14 +140,6 @@ export const aboutme = css`
     height: auto;
     z-index: 2;
     object-fit: cover;
-
-    @media (max-width: 768px) {
-      width: 50%;
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
     -webkit-user-drag: none;
     user-drag: none;
     -webkit-user-select: none;
@@ -153,10 +155,6 @@ export const introduce = css`
   justify-content: center;
   position: relative;
   left: 5%;
-
-  @media (max-width: 768px) {
-    left: 2%;
-  }
 `;
 
 export const subheading = css`
@@ -169,7 +167,6 @@ export const subheading = css`
     font-weight: 300;
     color: white;
     font-size: clamp(15px, 2vw, 25px);
-    /* margin: 20px clamp(20px, 1vw, 0px); */
   }
 `;
 
@@ -335,3 +332,5 @@ export const exContainer = css`
     font-size: clamp(15px, 2vw, 25px);
   }
 `;
+
+

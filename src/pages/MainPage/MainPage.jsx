@@ -26,11 +26,10 @@ function MainPage(props) {
       <div css={s.layout}>
         <div css={s.container}>
           <div css={s.aboutme}>
-            <img
-              src={main}
-              alt="main"
+          
+            <div
+              css={s.abc(main)} 
               onContextMenu={handleContextMenu}
-              draggable="false"
             />
             <h1>
               끈기있는
@@ -56,7 +55,6 @@ function MainPage(props) {
           </div>
           <div css={s.profileLayout}>
             <div css={s.test}>
-            <div css={s.abc(main)} />
             </div>
           </div>
         </div>

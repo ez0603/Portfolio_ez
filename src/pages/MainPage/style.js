@@ -141,10 +141,18 @@ export const test = css`
 `;
 
 export const abc = (image) => css`
-  width: 300px;
-  height: 200px;
-  background-image: url(${image}); /* 동적으로 이미지 경로 주입 */
+  width: 100%;
+  height: 100%;
+  background-image: url(${image});
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
 `;

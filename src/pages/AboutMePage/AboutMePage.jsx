@@ -78,6 +78,14 @@ function AboutMePage(props) {
     event.preventDefault();
   };
 
+  const preventImageCopy = (event) => {
+    event.preventDefault();
+  };
+
+  const handleTouchStart = (event) => {
+    event.preventDefault();
+  };
+
   const images = [
     reactIcon,
     [cssIcon, html],
@@ -101,6 +109,9 @@ function AboutMePage(props) {
               alt="main"
               onContextMenu={handleContextMenu}
               draggable="false"
+              onDragStart={preventImageCopy}
+              onMouseDown={preventImageCopy}
+              onTouchStart={handleTouchStart}
             />
             <div css={s.introduce}>
               <h1>이지언</h1>
@@ -115,7 +126,9 @@ function AboutMePage(props) {
               alt="profile"
               onContextMenu={handleContextMenu}
               draggable="false"
-             
+              onDragStart={preventImageCopy}
+              onMouseDown={preventImageCopy}
+              onTouchStart={handleTouchStart}
             />
           </div>
           <div css={s.subheading}>

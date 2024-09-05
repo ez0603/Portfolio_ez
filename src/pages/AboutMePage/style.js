@@ -20,7 +20,7 @@ export const layout = css`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
   cursor: default;
@@ -52,7 +52,6 @@ export const aboutme = css`
   padding-left: 5%;
   padding-right: 5%;
   overflow: hidden;
-  pointer-events: none;
 
   @font-face {
     font-family: "CWDangamAsac-Bold";

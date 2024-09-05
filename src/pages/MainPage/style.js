@@ -122,8 +122,8 @@ export const look = css`
   }
 
   svg {
-    width: clamp(10px, 3vw, 40px); 
-    height: clamp(10px, 3vw, 40px); 
+    width: clamp(10px, 3vw, 40px);
+    height: clamp(10px, 3vw, 40px);
   }
 `;
 

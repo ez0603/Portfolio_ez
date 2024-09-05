@@ -12,14 +12,20 @@ export const exList = css`
   background-color: #141414;
 
   img {
-    width: clamp(250px, 20vw, 280px);
-    height: 100%;
+    width: clamp(260px, 20vw, 280px);
+    height: clamp(100px, 10vw, 200px);
     object-fit: cover;
+    aspect-ratio: 4 / 3;
     cursor: pointer;
     -webkit-user-drag: none;
     user-drag: none;
     -webkit-user-select: none;
     user-select: none;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
@@ -71,7 +77,7 @@ export const contentLayout = css`
   width: 90%;
   padding: 0 clamp(8px, 1vw, 20px);
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-start;
   color: white;
 

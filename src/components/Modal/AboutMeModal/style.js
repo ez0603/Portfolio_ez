@@ -85,7 +85,7 @@ export const modalImage = css`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   transition: height 0.2s ease-in-out;
-
+  
   @media (max-width: 500px) {
     height: 250px;
   }

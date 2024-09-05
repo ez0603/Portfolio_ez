@@ -101,7 +101,7 @@ function AboutMePage(props) {
 
   return (
     <PageLayout>
-      <div css={s.layout}>
+      <div css={s.layout} onContextMenu={handleContextMenu}>
         <div css={s.container}>
           <div css={s.aboutme}>
             <img

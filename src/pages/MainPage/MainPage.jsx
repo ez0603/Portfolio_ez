@@ -18,19 +18,19 @@ function MainPage(props) {
   };
 
   const handleContextMenu = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
   };
 
   return (
     <PageLayout>
-      <div css={s.layout}>
+      <div css={s.layout} onContextMenu={handleContextMenu}>
         <div css={s.container}>
           <div css={s.aboutme}>
             <img
               src={main}
               alt="main"
               onContextMenu={handleContextMenu}
-              draggable="false" 
+              draggable="false"
             />
             <h1>
               끈기있는

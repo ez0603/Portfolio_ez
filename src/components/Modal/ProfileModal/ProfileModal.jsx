@@ -46,7 +46,7 @@ function ProfileModal({ onClose }) {
       <div css={s.modalOverlayStyle} onClick={onClose} />
       <div css={s.modalContentStyle}>
         <button onClick={onClose} css={s.closeButton}>
-          <IoCloseCircleSharp size={40} />
+          <IoCloseCircleSharp />
         </button>
         <div css={s.container}>
           <div css={s.header}>

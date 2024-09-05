@@ -50,12 +50,13 @@ export const modalContentStyle = css`
 
 export const closeButton = css`
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: clamp(-15px, 2vw, 15px);
+  right: clamp(-15px, 2vw, 15px);
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
+  font-size: clamp(20px, 7vw, 40px);
 
   &:hover {
     color: #ccc;
@@ -139,9 +140,11 @@ export const copy = css`
   padding: clamp(5px, 2vw, 8px) clamp(5px, 2vw, 10px);
   border: none;
   background-color: white;
+  color: #0071e3;
   border-radius: 8px;
   cursor: pointer;
   margin-left: auto;
+  font-weight: bold;
 
   &:hover {
     background-color: #dbdbdb;
@@ -151,11 +154,11 @@ export const copy = css`
 export const copySuccess = css`
   position: absolute;
   top: 50%;
-  left: 110%; 
+  left: 110%;
   transform: translateY(-50%);
-  color: #4caf50;
+  color: #0071e3;
   font-weight: bold;
-  background-color: #e8f5e9;
+  background-color: #f3f5ff;
   border-radius: 4px;
   padding: 8px;
   white-space: nowrap;
@@ -172,7 +175,7 @@ export const copySuccess = css`
   }
 
   @media (max-width: 400px) {
-    left: 85%; 
+    left: 85%;
   }
 `;
 

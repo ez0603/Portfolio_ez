@@ -32,6 +32,7 @@ export const aboutme = css`
   align-items: flex-start;
   padding-left: 5%;
   overflow: hidden;
+  pointer-events: none; 
 
   @font-face {
     font-family: "CWDangamAsac-Bold";

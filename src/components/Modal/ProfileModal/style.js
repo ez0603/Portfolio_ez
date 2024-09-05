@@ -100,6 +100,7 @@ export const header = css`
     user-drag: none;
     -webkit-user-select: none;
     user-select: none;
+    pointer-events: none; 
   }
 `;
 

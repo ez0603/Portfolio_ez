@@ -55,7 +55,9 @@ function MainPage(props) {
             </button>
           </div>
           <div css={s.profileLayout}>
-            <div css={s.test}></div>
+            <div css={s.test}>
+            <div css={s.abc(main)} />
+            </div>
           </div>
         </div>
       </div>

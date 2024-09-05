@@ -32,7 +32,6 @@ export const aboutme = css`
   align-items: flex-start;
   padding-left: 5%;
   overflow: hidden;
-  pointer-events: none; 
 
   @font-face {
     font-family: "CWDangamAsac-Bold";
@@ -78,6 +77,7 @@ export const aboutme = css`
     user-drag: none;
     -webkit-user-select: none;
     user-select: none;
+    pointer-events: none;
   }
 
   &::before {
@@ -138,4 +138,13 @@ export const test = css`
   width: 100%;
   height: 250px;
   background-color: orange;
+`;
+
+export const abc = (image) => css`
+  width: 300px;
+  height: 200px;
+  background-image: url(${image}); /* 동적으로 이미지 경로 주입 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;

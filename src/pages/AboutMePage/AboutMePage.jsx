@@ -186,7 +186,7 @@ function AboutMePage(props) {
               <AboutMeModal
                 description={modalContent.description}
                 image={modalContent.image}
-                onClose={handleCloseModal}
+                onClose={handleCloseModal} 
               />
             )}
           </div>

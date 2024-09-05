@@ -38,9 +38,10 @@ export const modalContentStyle = css`
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: hidden;
 
   @media (max-width: 700px) {
-    width: 90%;
+    width: 93%;
     height: 90vh;
     max-width: none;
     max-height: none;
@@ -88,20 +89,24 @@ export const header = css`
     top: 5%;
     right: 5%;
     transform: translate(-100%, 100%);
-    font-size: clamp(16px, 2.5vw, 100px);
+    font-size: clamp(20px, 2.5vw, 100px);
   }
+`;
 
-  img {
-    width: clamp(120px, 15vw, 200px);
-    height: clamp(150px, 20vw, 270px);
-    transform: translate(-50%, 0);
-    /* Prevent image selection and drag */
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none; 
-  }
+export const profileBackground = (image) => css`
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(150px, 20vw, 270px);
+  background-image: url(${image});
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  left: clamp(20px, 5vw, 3px);
+  transform: translate(-40%, 0);
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
 `;
 
 export const profile = css`
@@ -111,7 +116,7 @@ export const profile = css`
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 `;
 
 export const iconText = css`
@@ -119,21 +124,22 @@ export const iconText = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
+  width: clamp(310px, 40%, 600px);
   margin: 10px 0;
   gap: 10px;
 
   span {
     flex-grow: 1;
+    font-size: clamp(8px, 3vw, 15px);
   }
 `;
 
 export const copy = css`
   box-sizing: border-box;
-  padding: 6px 10px;
-  border: 1px solid #dbdbdb;
+  padding: clamp(5px, 2vw, 8px) clamp(5px, 2vw, 10px);
+  border: none;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   margin-left: auto;
 
@@ -145,13 +151,13 @@ export const copy = css`
 export const copySuccess = css`
   position: absolute;
   top: 50%;
-  left: 110%;
+  left: 110%; 
   transform: translateY(-50%);
   color: #4caf50;
   font-weight: bold;
   background-color: #e8f5e9;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 8px;
   white-space: nowrap;
 
   &::after {
@@ -163,6 +169,10 @@ export const copySuccess = css`
     border-width: 5px;
     border-style: solid;
     border-color: transparent #e8f5e9 transparent transparent;
+  }
+
+  @media (max-width: 400px) {
+    left: 85%; 
   }
 `;
 
@@ -201,7 +211,6 @@ export const skillbox = css`
     height: 40px;
     object-fit: contain;
     border-radius: 5px;
-    /* Prevent image selection and drag */
     -webkit-user-drag: none;
     user-drag: none;
     -webkit-user-select: none;
@@ -270,7 +279,6 @@ export const box = css`
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
-    /* Prevent image selection and drag */
     -webkit-user-drag: none;
     user-drag: none;
     -webkit-user-select: none;

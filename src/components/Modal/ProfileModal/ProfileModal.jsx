@@ -38,7 +38,7 @@ function ProfileModal({ onClose }) {
   };
 
   const handleContextMenu = (event) => {
-    event.preventDefault(); // 우클릭 방지
+    event.preventDefault();
   };
 
   return (
@@ -51,12 +51,7 @@ function ProfileModal({ onClose }) {
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>
-            <img
-              src={profile}
-              alt="Profile"
-              onContextMenu={handleContextMenu}
-              draggable="false" // 이미지 드래그 방지
-            />
+            <div css={s.profileBackground(profile)} onContextMenu={handleContextMenu} />
           </div>
           <div css={s.profile}>
             <div css={s.iconText}>
@@ -97,7 +92,7 @@ function ProfileModal({ onClose }) {
                     src={react}
                     alt="React"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>REACT</p>
                 </div>
@@ -106,7 +101,7 @@ function ProfileModal({ onClose }) {
                     src={cssIcon}
                     alt="CSS3"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>CSS3</p>
                 </div>
@@ -115,7 +110,7 @@ function ProfileModal({ onClose }) {
                     src={js}
                     alt="JavaScript"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>JAVASCRIPT</p>
                 </div>
@@ -124,7 +119,7 @@ function ProfileModal({ onClose }) {
                     src={html}
                     alt="HTML5"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>HTML5</p>
                 </div>
@@ -136,7 +131,7 @@ function ProfileModal({ onClose }) {
                     src={java}
                     alt="Java"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>JAVA</p>
                 </div>
@@ -145,7 +140,7 @@ function ProfileModal({ onClose }) {
                     src={spring}
                     alt="SpringBoot"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>SPRINGBOOT</p>
                 </div>
@@ -157,7 +152,7 @@ function ProfileModal({ onClose }) {
                     src={mysql}
                     alt="MySQL"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>MYSQL</p>
                 </div>
@@ -166,7 +161,7 @@ function ProfileModal({ onClose }) {
                     src={firebase}
                     alt="Firebase"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                   <p>FIREBASE</p>
                 </div>
@@ -179,7 +174,7 @@ function ProfileModal({ onClose }) {
                     src={deu}
                     alt="University"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                 </div>
                 <div css={s.textContainer}>
@@ -196,7 +191,7 @@ function ProfileModal({ onClose }) {
                     src={Highschool}
                     alt="High School"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                 </div>
                 <div css={s.textContainer}>
@@ -213,7 +208,7 @@ function ProfileModal({ onClose }) {
                     src={it}
                     alt="Korea IT"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                 </div>
                 <div css={s.textContainer}>
@@ -229,7 +224,7 @@ function ProfileModal({ onClose }) {
                     src={it}
                     alt="Web Frontend"
                     onContextMenu={handleContextMenu}
-                    draggable="false" // 이미지 드래그 방지
+                    draggable="false"
                   />
                 </div>
                 <div css={s.textContainer}>

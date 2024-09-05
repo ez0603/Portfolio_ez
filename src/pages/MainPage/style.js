@@ -62,7 +62,7 @@ export const aboutme = css`
     color: white;
     z-index: 2;
     font-family: "Pretendard-Regular", sans-serif;
-    margin: clamp(0px, 1vw, 20px) 0;
+    margin: clamp(0px, 1vw, 10px) 0;
     line-height: 1.4;
   }
 

@@ -75,7 +75,7 @@ export const closeButton = css`
 
 export const iconStyle = css`
   color: white;
-  font-size: clamp(15px, 10vw, 28px);
+  font-size: clamp(23px, 5vw, 28px);
 `;
 
 export const modalImage = css`
@@ -87,9 +87,9 @@ export const modalImage = css`
   transition: height 0.2s ease-in-out;
   
   @media (max-width: 500px) {
-    height: 250px;
+    height: 200px;
   }
-  @media (max-width: 360px) {
+  @media (max-width: 390px) {
     height: 150px;
   }
 `;

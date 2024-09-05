@@ -65,21 +65,6 @@ export const aboutme = css`
     margin: clamp(0px, 1vw, 20px) 0;
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none;
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -98,6 +83,23 @@ export const aboutme = css`
     z-index: 1;
     pointer-events: none;
   }
+`;
+
+export const mainImg = (image) => css`
+  width: 100%;
+  height: 100%;
+  background-image: url(${image});
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
 `;
 
 export const look = css`
@@ -138,21 +140,4 @@ export const test = css`
   width: 100%;
   height: 250px;
   background-color: orange;
-`;
-
-export const abc = (image) => css`
-  width: 100%;
-  height: 100%;
-  background-image: url(${image});
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-drag: none;
-  -webkit-user-select: none;
-  user-select: none;
-  pointer-events: none;
 `;

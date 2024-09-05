@@ -52,7 +52,6 @@ export const aboutme = css`
   padding-left: 5%;
   padding-right: 5%;
   overflow: hidden;
-  pointer-events: none;
 
   @font-face {
     font-family: "CWDangamAsac-Bold";
@@ -100,20 +99,6 @@ export const aboutme = css`
     --i: 4;
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -132,21 +117,40 @@ export const aboutme = css`
     z-index: 1;
     pointer-events: none;
   }
+`;
 
-  .profile {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translate(100%, -50%);
-    width: 20%;
-    height: auto;
-    z-index: 2;
-    object-fit: cover;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
-  }
+export const mainBackground = (image) => css`
+  width: 100%;
+  height: 100%;
+  background-image: url(${image});
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+`;
+
+export const profileBackground = (image) => css`
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  width: 25%;
+  height: 60%;
+  background-image: url(${image});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 3;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
 `;
 
 export const introduce = css`

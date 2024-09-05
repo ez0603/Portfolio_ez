@@ -101,16 +101,13 @@ function AboutMePage(props) {
 
   return (
     <PageLayout>
-      <div css={s.layout} onContextMenu={handleContextMenu}>
+      <div css={s.layout}>
         <div css={s.container}>
-          <div css={s.aboutme}>
-            <img
-              src={main}
-              alt="main"
-              onContextMenu={handleContextMenu}
+          <div css={s.aboutme} onContextMenu={handleContextMenu}>
+            <div
+              css={s.mainBackground(main)} 
               draggable="false"
-              onDragStart={preventImageCopy}
-              onTouchStart={handleTouchStart}
+              onContextMenu={handleContextMenu}
             />
             <div css={s.introduce}>
               <h1>이지언</h1>
@@ -119,14 +116,10 @@ function AboutMePage(props) {
               <p className="wave"># 더 나은 서비스 구축</p>
               <p className="wave"># 학습하고 성장할 수 있는 기회</p>
             </div>
-            <img
-              src={profile}
-              className="profile"
-              alt="profile"
-              onContextMenu={handleContextMenu}
+            <div
+              css={s.profileBackground(profile)} 
               draggable="false"
-              onDragStart={preventImageCopy}
-              onTouchStart={handleTouchStart}
+              onContextMenu={handleContextMenu}
             />
           </div>
           <div css={s.subheading}>

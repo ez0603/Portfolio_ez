@@ -25,10 +25,10 @@ function MainPage(props) {
     <PageLayout>
       <div css={s.layout}>
         <div css={s.container}>
-          <div css={s.aboutme}>
-          
+          <div css={s.aboutme} onContextMenu={handleContextMenu}>
             <div
-              css={s.abc(main)} 
+              css={s.mainImg(main)}
+              draggable="false"
               onContextMenu={handleContextMenu}
             />
             <h1>
@@ -54,8 +54,7 @@ function MainPage(props) {
             </button>
           </div>
           <div css={s.profileLayout}>
-            <div css={s.test}>
-            </div>
+            <div css={s.test}></div>
           </div>
         </div>
       </div>

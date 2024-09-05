@@ -70,7 +70,8 @@ export const closeButton = css`
 
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  z-index: 2;
 `;
 
 export const iconStyle = css`
@@ -78,18 +79,44 @@ export const iconStyle = css`
   font-size: clamp(23px, 5vw, 28px);
 `;
 
-export const modalImage = css`
+export const imageWrapper = css`
+  position: relative;
   width: 100%;
   height: 350px;
-  object-fit: cover;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  transition: height 0.2s ease-in-out;
-  
+  overflow: hidden;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+
   @media (max-width: 500px) {
     height: 200px;
   }
   @media (max-width: 390px) {
     height: 150px;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+`;
+
+export const modalImage = css`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  position: relative;
 `;

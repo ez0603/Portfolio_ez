@@ -52,6 +52,7 @@ export const aboutme = css`
   padding-left: 5%;
   padding-right: 5%;
   overflow: hidden;
+  box-shadow: 0px 20px 20px 5px rgba(0, 0, 0, 0.45);
 
   @font-face {
     font-family: "CWDangamAsac-Bold";
@@ -63,7 +64,6 @@ export const aboutme = css`
 
   h1 {
     font-size: 5vw;
-    color: white;
     z-index: 2;
     font-family: "CWDangamAsac-Bold", sans-serif;
     margin: 0;
@@ -71,7 +71,6 @@ export const aboutme = css`
 
   p {
     font-size: clamp(5px, 1.5vw, 23px);
-    color: white;
     z-index: 2;
     margin: clamp(0px, 1vw, 20px) 0;
     max-width: 60%;
@@ -109,7 +108,7 @@ export const aboutme = css`
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0) 15%
+        rgba(0, 0, 0, 0) 25%
       ),
       linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%),
       linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 40%),

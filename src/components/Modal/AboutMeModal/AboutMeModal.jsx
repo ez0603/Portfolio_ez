@@ -24,7 +24,9 @@ function AboutMeModal({ description, image, onClose }) {
           <IoMdClose css={s.iconStyle} />
         </button>
         <div css={s.modalContent}>
-          <img src={image} alt="" css={s.modalImage} />
+          <div css={s.imageWrapper}>
+            <img src={image} alt="" css={s.modalImage} />
+          </div>
           <p>{description}</p>
         </div>
       </div>

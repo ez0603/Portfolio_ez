@@ -36,7 +36,7 @@ export const layout = css`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #141414;
+  background-color: #181818;
 `;
 
 export const listLayout = css`

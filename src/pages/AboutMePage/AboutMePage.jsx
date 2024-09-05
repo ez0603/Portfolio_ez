@@ -110,7 +110,6 @@ function AboutMePage(props) {
               onContextMenu={handleContextMenu}
               draggable="false"
               onDragStart={preventImageCopy}
-              onMouseDown={preventImageCopy}
               onTouchStart={handleTouchStart}
             />
             <div css={s.introduce}>
@@ -127,7 +126,6 @@ function AboutMePage(props) {
               onContextMenu={handleContextMenu}
               draggable="false"
               onDragStart={preventImageCopy}
-              onMouseDown={preventImageCopy}
               onTouchStart={handleTouchStart}
             />
           </div>
@@ -186,7 +184,7 @@ function AboutMePage(props) {
               <AboutMeModal
                 description={modalContent.description}
                 image={modalContent.image}
-                onClose={handleCloseModal} 
+                onClose={handleCloseModal}
               />
             )}
           </div>

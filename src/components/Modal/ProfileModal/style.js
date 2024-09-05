@@ -42,7 +42,7 @@ export const modalContentStyle = css`
 
   @media (max-width: 700px) {
     width: 93%;
-    height: 90vh;
+    height: 75vh;
     max-width: none;
     max-height: none;
   }
@@ -287,6 +287,7 @@ export const box = css`
 `;
 
 export const textContainer = css`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

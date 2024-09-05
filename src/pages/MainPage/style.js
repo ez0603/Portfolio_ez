@@ -108,7 +108,7 @@ export const look = css`
   color: #333;
   border: none;
   border-radius: 4px;
-  font-size: clamp(12px, 2vw, 20px);
+  font-size: clamp(8px, 2vw, 20px);
   font-weight: 600;
   text-align: center;
   cursor: pointer;

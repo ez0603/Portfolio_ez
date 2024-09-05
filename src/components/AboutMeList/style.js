@@ -32,7 +32,11 @@ export const exList = css`
 export const layout = css`
   width: 100%;
   height: 100%;
-  padding-bottom: 20px;
+  padding-bottom: clamp(10px, 10vw, 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #141414;
 `;
 
 export const listLayout = css`

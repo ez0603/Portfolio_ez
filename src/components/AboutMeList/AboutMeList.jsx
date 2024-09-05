@@ -4,6 +4,7 @@ import value from "../../assets/img/내가 추구하는 가치.jpg";
 import devil from "../../assets/img/악마는 프라다를 입는다.webp";
 import Walter from "../../assets/img/월터의 상상은 현실이 된다.webp";
 import baseball from "../../assets/img/스토브리그.webp";
+import chess from "../../assets/img/퀸즈 갬빗.webp";
 
 function AboutMeList({ onImageClick }) {
   return (
@@ -51,6 +52,20 @@ function AboutMeList({ onImageClick }) {
                   <p>
                     팀프로젝트를 통해 함께 의견을 나누고 고민하며 프로젝트의{" "}
                     <b>시작과 끝</b>을 맺은 경험이 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div css={s.listLayout}>
+                <h1>4</h1>
+                <div css={s.box}>
+                  <img src={chess} alt="" />
+                </div>
+                <div css={s.contentLayout}>
+                  <h3>마지막으로</h3>
+                  <p>
+                    저는 새로운 기술을 배우고 문제를 해결하는 과정에서 즐거움을
+                    느끼고, <br /> 그 과정에서 지속적으로 <b>학습하고 성장</b>할
+                    수 있는 기회를 제공해 주는 개발을 좋아합니다.
                   </p>
                 </div>
               </div>

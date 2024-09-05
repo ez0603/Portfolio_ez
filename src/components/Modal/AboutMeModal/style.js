@@ -65,8 +65,8 @@ export const closeButton = css`
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  width: clamp(33px, 6vw, 40px);
-  height: clamp(33px, 6vw, 40px);
+  width: clamp(35px, 6vw, 40px);
+  height: clamp(35px, 6vw, 40px);
 
   display: flex;
   align-items: center;

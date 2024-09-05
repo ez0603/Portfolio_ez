@@ -63,6 +63,7 @@ export const aboutme = css`
     z-index: 2;
     font-family: "Pretendard-Regular", sans-serif;
     margin: clamp(0px, 1vw, 20px) 0;
+    line-height: 1.4;
   }
 
   &::before {
@@ -108,7 +109,7 @@ export const look = css`
   color: #333;
   border: none;
   border-radius: 4px;
-  font-size: clamp(8px, 2vw, 20px);
+  font-size: clamp(7px, 1vw, 20px);
   font-weight: 600;
   text-align: center;
   cursor: pointer;
@@ -118,15 +119,15 @@ export const look = css`
   gap: 0.5vw;
   z-index: 2;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
+  margin-top: clamp(5px, 1vw, 10px);
 
   &:hover {
     background-color: #dbdbdb;
   }
 
   svg {
-    width: clamp(10px, 3vw, 40px);
-    height: clamp(10px, 3vw, 40px);
+    width: clamp(10px, 2vw, 35px);
+    height: clamp(10px, 3vw, 35px);
   }
 `;
 

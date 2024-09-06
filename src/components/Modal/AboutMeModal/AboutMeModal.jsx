@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import * as s from "./style";
 
 function AboutMeModal({ description, image, onClose }) {
-  const [isClosing, setIsClosing] = useState(false); 
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -15,8 +15,8 @@ function AboutMeModal({ description, image, onClose }) {
   const closeWithAnimation = () => {
     setIsClosing(true);
     setTimeout(() => {
-      onClose(); 
-    }, 300); 
+      onClose();
+    }, 300);
   };
 
   const handleOverlayClick = (e) => {
@@ -34,6 +34,7 @@ function AboutMeModal({ description, image, onClose }) {
         <div css={s.modalContent}>
           <div css={s.imageWrapper}>
             <img src={image} alt="" css={s.modalImage} />
+            <div css={s.backgroundBottom}></div>
           </div>
           <p>{description}</p>
         </div>

@@ -100,7 +100,6 @@ export const imageWrapper = css`
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 700px) {
     height: 180px;
@@ -120,15 +119,27 @@ export const imageWrapper = css`
     &::after {
       background: linear-gradient(
         to top,
-        #181818,
-        rgba(0, 0, 0, 0.43) 15%,
-        rgba(0, 0, 0, 0.18) 30%,
-        rgba(0, 0, 0, 0.03) 45%,
-        rgba(0, 0, 0, 0.01) 60%,
-        rgba(0, 0, 0, 0) 100%
+        rgba(24, 24, 24, 0.5),
+        rgba(24, 24, 24, 0) 30%
       );
     }
   }
+`;
+
+export const backgroundBottom = css`
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  top: 78%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 9%, 0) 0%,
+    hsla(0, 0%, 9%, 0.15) 25%,
+    hsla(0, 0%, 9%, 0.35) 40%,
+    hsla(0, 0%, 9%, 0.58) 60%,
+    #181818 75%,
+    #181818
+  );
 `;
 
 export const modalImage = css`

@@ -52,7 +52,6 @@ export const aboutme = css`
   padding-left: 5%;
   padding-right: 5%;
   overflow: hidden;
-  box-shadow: 0px 20px 20px 5px rgba(0, 0, 0, 0.45);
 
   @font-face {
     font-family: "CWDangamAsac-Bold";
@@ -107,12 +106,11 @@ export const aboutme = css`
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0) 25%
+        rgba(20, 20, 20, 0.5),
+        rgba(20, 20, 20, 0) 25%
       ),
-      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 40%),
-      linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 10%);
+      linear-gradient(to right, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 15%),
+      linear-gradient(to left, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 10%);
     z-index: 1;
     pointer-events: none;
   }
@@ -132,6 +130,23 @@ export const mainBackground = (image) => css`
   user-drag: none;
   -webkit-user-select: none;
   user-select: none;
+`;
+
+export const backgroundBottom = css`
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 85%;
+  
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 8%, 0) 0%,
+    hsla(0, 0%, 8%, 0.15) 15%,
+    hsla(0, 0%, 8%, 0.35) 29%,
+    hsla(0, 0%, 8%, 0.58) 44%,
+    #141414 68%,
+    #141414
+  );
 `;
 
 export const profileBackground = (image) => css`
@@ -172,6 +187,7 @@ export const subheading = css`
     font-weight: 300;
     color: white;
     font-size: clamp(15px, 2vw, 25px);
+    z-index: 1;
   }
 `;
 

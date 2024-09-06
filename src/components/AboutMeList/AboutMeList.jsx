@@ -170,32 +170,6 @@ function AboutMeList({ onImageClick }) {
           )
         }
       />
-      <img
-        src={value}
-        alt="가치 3"
-        onClick={() =>
-          onImageClick(
-            <div>
-              <h3>세 번째 가치는 지속 가능성입니다.</h3>
-              <p>지속 가능한 방식으로 프로젝트를 관리합니다.</p>
-            </div>,
-            value
-          )
-        }
-      />
-      <img
-        src={value}
-        alt="가치 3"
-        onClick={() =>
-          onImageClick(
-            <div>
-              <h3>세 번째 가치는 지속 가능성입니다.</h3>
-              <p>지속 가능한 방식으로 프로젝트를 관리합니다.</p>
-            </div>,
-            value
-          )
-        }
-      />
     </div>
   );
 }

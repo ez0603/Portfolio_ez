@@ -75,12 +75,12 @@ export const aboutme = css`
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0) 15%
+        rgba(20, 20, 20, 0.5),
+        rgba(20, 20, 20, 0) 25%
       ),
-      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 40%),
-      linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 10%);
+      linear-gradient(to right, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 25%),
+      linear-gradient(to left, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 10%);
+
     z-index: 1;
     pointer-events: none;
   }
@@ -101,6 +101,22 @@ export const mainImg = (image) => css`
   -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
+`;
+
+export const backgroundBottom = css`
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 85%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 8%, 0) 0%,
+    hsla(0, 0%, 8%, 0.15) 15%,
+    hsla(0, 0%, 8%, 0.35) 29%,
+    hsla(0, 0%, 8%, 0.58) 44%,
+    #141414 68%,
+    #141414
+  );
 `;
 
 export const look = css`
@@ -134,11 +150,11 @@ export const look = css`
 export const profileLayout = css`
   width: 100%;
   height: 500px;
-  background-color: #2d4949;
+  /* background-color: #2d4949; */
 `;
 
 export const test = css`
   width: 100%;
   height: 250px;
-  background-color: orange;
+  /* background-color: orange; */
 `;

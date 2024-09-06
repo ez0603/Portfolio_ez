@@ -30,7 +30,9 @@ function MainPage(props) {
               css={s.mainImg(main)}
               draggable="false"
               onContextMenu={handleContextMenu}
-            />
+            >
+              <div css={s.backgroundBottom}></div>
+            </div>
             <h1>
               끈기있는
               <br />

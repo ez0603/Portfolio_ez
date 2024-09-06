@@ -97,10 +97,12 @@ function AboutMePage(props) {
         <div css={s.container}>
           <div css={s.aboutme} onContextMenu={handleContextMenu}>
             <div
-              css={s.mainBackground(main)} 
+              css={s.mainBackground(main)}
               draggable="false"
               onContextMenu={handleContextMenu}
-            />
+            >
+              <div css={s.backgroundBottom}></div>
+            </div>
             <div css={s.introduce}>
               <h1>이지언</h1>
               <p className="wave">시련은 있어도 실패는 없다</p>
@@ -109,7 +111,7 @@ function AboutMePage(props) {
               <p className="wave"># 학습하고 성장할 수 있는 기회</p>
             </div>
             <div
-              css={s.profileBackground(profile)} 
+              css={s.profileBackground(profile)}
               draggable="false"
               onContextMenu={handleContextMenu}
             />

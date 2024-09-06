@@ -112,12 +112,8 @@ export const header = css`
     &::after {
       background: linear-gradient(
         to top,
-        #181818,
-        rgba(0, 0, 0, 0.43) 15%,
-        rgba(0, 0, 0, 0.18) 30%,
-        rgba(0, 0, 0, 0.03) 45%,
-        rgba(0, 0, 0, 0.01) 60%,
-        rgba(0, 0, 0, 0) 100%
+        rgba(24, 24, 24, 0.5),
+        rgba(24, 24, 24, 0) 30%
       );
     }
   }
@@ -137,6 +133,26 @@ export const profileBackground = (image) => css`
   -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
+`;
+
+export const backgroundBottom = css`
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: -4%;
+  z-index: 1;
+
+  @media (min-width: 700px) {
+    background: linear-gradient(
+      180deg,
+      hsla(0, 0%, 9%, 0) 0%,
+      hsla(0, 0%, 9%, 0.15) 25%,
+      hsla(0, 0%, 9%, 0.35) 40%,
+      hsla(0, 0%, 9%, 0.58) 60%,
+      #181818 75%,
+      #181818
+    );
+  }
 `;
 
 export const profile = css`

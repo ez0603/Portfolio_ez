@@ -53,7 +53,9 @@ function ProfileModal({ onClose }) {
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>
-            <div css={s.profileBackground(profile)} />
+              <div css={s.backgroundBottom}></div>
+            <div css={s.profileBackground(profile)}>
+            </div>
           </div>
           <div css={s.profile}>
             <div css={s.iconTextBox}>

@@ -46,7 +46,7 @@ export const modalContentStyle = (isClosing) => css`
   overflow-y: auto;
   background-color: #181818;
   animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.5s"}
-    ease-out;
+    ease-in-out;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

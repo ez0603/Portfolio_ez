@@ -63,7 +63,7 @@ export const box = css`
   width: clamp(100px, 10vw, 200px);
   height: clamp(70px, 10vw, 100px);
   border-radius: 8px;
-  background-color: #bebebe57;
+  background-color: #38383883;
   font-size: clamp(10px, 10vw, 80px);
   display: flex;
   align-items: center;

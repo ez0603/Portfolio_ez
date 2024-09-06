@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import * as s from "./style";
 import value from "../../assets/img/내가 추구하는 가치.jpg";
+import target from "../../assets/img/나의 목표.jpg";
 import devil from "../../assets/img/악마는 프라다를 입는다.webp";
 import Walter from "../../assets/img/월터의 상상은 현실이 된다.webp";
 import baseball from "../../assets/img/스토브리그.webp";
@@ -59,7 +60,7 @@ function AboutMeList({ onImageClick }) {
                   <img
                     src={devil}
                     alt=""
-                    onClick={() => handleFullScreen(devil)} // 잘못된 값 'value'에서 'devil'로 수정
+                    onClick={() => handleFullScreen(devil)}
                   />
                 </div>
                 <div css={s.contentLayout}>
@@ -79,7 +80,6 @@ function AboutMeList({ onImageClick }) {
                     alt=""
                     onClick={() => handleFullScreen(Walter)}
                   />{" "}
-                  {/* 올바른 이미지 소스를 전달 */}
                 </div>
                 <div css={s.contentLayout}>
                   <h3>두 번째</h3>
@@ -97,7 +97,6 @@ function AboutMeList({ onImageClick }) {
                     alt=""
                     onClick={() => handleFullScreen(baseball)}
                   />{" "}
-                  {/* 올바른 이미지 소스를 전달 */}
                 </div>
                 <div css={s.contentLayout}>
                   <h3>세 번째</h3>
@@ -115,7 +114,6 @@ function AboutMeList({ onImageClick }) {
                     alt=""
                     onClick={() => handleFullScreen(chess)}
                   />{" "}
-                  {/* 올바른 이미지 소스를 전달 */}
                 </div>
                 <div css={s.contentLayout}>
                   <h3>마지막으로</h3>
@@ -132,7 +130,7 @@ function AboutMeList({ onImageClick }) {
         }
       />
       <img
-        src={value}
+        src={target}
         alt="가치 2"
         onClick={() =>
           onImageClick(
@@ -140,7 +138,7 @@ function AboutMeList({ onImageClick }) {
               <h3>두 번째 가치는 팀워크입니다.</h3>
               <p>협력과 소통을 통해 목표를 달성합니다.</p>
             </div>,
-            value
+            target
           )
         }
       />

@@ -62,7 +62,7 @@ export const modalContentStyle = (isClosing) => css`
 
 export const modalContent = css`
   background: white;
-  border-radius: 10px;
+  border-radius: 8px;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   width: 100%;
@@ -97,8 +97,8 @@ export const imageWrapper = css`
   position: relative;
   width: 100%;
   height: 350px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 

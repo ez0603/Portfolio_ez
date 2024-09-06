@@ -51,7 +51,7 @@ function ProfileModal({ onClose }) {
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>
-            <div css={s.profileBackground(profile)} onContextMenu={handleContextMenu} />
+            <div css={s.profileBackground(profile)} />
           </div>
           <div css={s.profile}>
             <div css={s.iconText}>
@@ -63,11 +63,8 @@ function ProfileModal({ onClose }) {
                 }
                 css={s.copy}
               >
-                Copy
+                {copiedField === "email" ? "Copied!" : "Copy"}
               </button>
-              {copiedField === "email" && (
-                <span css={s.copySuccess}>Copied!</span>
-              )}
             </div>
             <div css={s.iconText}>
               <FaGithub fontSize={20} />
@@ -78,11 +75,8 @@ function ProfileModal({ onClose }) {
                 }
                 css={s.copy}
               >
-                Copy
+                {copiedField === "github" ? "Copied!" : "Copy"}
               </button>
-              {copiedField === "github" && (
-                <span css={s.copySuccess}>Copied!</span>
-              )}
             </div>
             <div css={s.skillLayout}>
               <h3>Front</h3>

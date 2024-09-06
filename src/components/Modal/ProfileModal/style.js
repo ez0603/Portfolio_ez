@@ -25,7 +25,7 @@ export const modalContentStyle = css`
   position: fixed;
   width: 50%;
   height: 90%;
-  background-color: white;
+  background-color: #181818;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -33,9 +33,7 @@ export const modalContentStyle = css`
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: auto;
-  background-color: #181818;
   animation: ${popIn} 0.5s ease-out;
-  overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-x: hidden;
@@ -43,15 +41,13 @@ export const modalContentStyle = css`
   @media (max-width: 700px) {
     width: 93%;
     height: 75vh;
-    max-width: none;
-    max-height: none;
   }
 `;
 
 export const closeButton = css`
   position: absolute;
-  top: clamp(-15px, 2vw, 15px);
-  right: clamp(-15px, 2vw, 15px);
+  top: clamp(15px, 2vw, 15px);
+  right: clamp(15px, 2vw, 15px);
   background-color: transparent;
   border: none;
   color: white;
@@ -83,26 +79,22 @@ export const header = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: default;
 
   h1 {
-    position: relative;
-    top: 5%;
-    right: 5%;
     transform: translate(-100%, 100%);
     font-size: clamp(20px, 2.5vw, 100px);
   }
 `;
 
 export const profileBackground = (image) => css`
+  position: relative;
   width: clamp(120px, 15vw, 200px);
   height: clamp(150px, 20vw, 270px);
+  transform: translate(-40%, 0%);
+  left: clamp(25px, 1vw, 20px);
   background-image: url(${image});
   background-size: cover;
   background-position: center;
-  position: relative;
-  left: clamp(20px, 5vw, 3px);
-  transform: translate(-40%, 0);
   -webkit-user-drag: none;
   user-drag: none;
   -webkit-user-select: none;
@@ -113,7 +105,6 @@ export const profileBackground = (image) => css`
 export const profile = css`
   background-color: #181818;
   width: 90%;
-  height: auto;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
@@ -136,46 +127,15 @@ export const iconText = css`
 `;
 
 export const copy = css`
-  box-sizing: border-box;
-  padding: clamp(5px, 2vw, 8px) clamp(5px, 2vw, 10px);
+  padding: clamp(5px, 2vw, 8px) clamp(5px, 2vw, 11px);
   border: none;
   background-color: white;
   color: #0071e3;
   border-radius: 8px;
   cursor: pointer;
-  margin-left: auto;
   font-weight: bold;
-
   &:hover {
     background-color: #dbdbdb;
-  }
-`;
-
-export const copySuccess = css`
-  position: absolute;
-  top: 50%;
-  left: 110%;
-  transform: translateY(-50%);
-  color: #0071e3;
-  font-weight: bold;
-  background-color: #f3f5ff;
-  border-radius: 4px;
-  padding: 8px;
-  white-space: nowrap;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -5px;
-    transform: translateY(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent #e8f5e9 transparent transparent;
-  }
-
-  @media (max-width: 400px) {
-    left: 85%;
   }
 `;
 
@@ -202,32 +162,20 @@ export const skillboxContainer = css`
 export const skillbox = css`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   padding: 10px 15px;
   border-radius: 10px;
   color: white;
   gap: 13px;
-  cursor: default;
 
   img {
     width: 40px;
     height: 40px;
-    object-fit: contain;
     border-radius: 5px;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
   }
 
   p {
     margin: 0;
     font-size: clamp(12px, 1.5vw, 16px);
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    justify-content: center;
   }
 
   &:hover {
@@ -237,7 +185,6 @@ export const skillbox = css`
 
 export const boxLayout = css`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,12 +211,12 @@ export const list = css`
   }
 
   :hover {
-    background-color: #333333;
+    background-color: #333;
   }
 `;
 
 export const box = css`
-  width: 20%;
+  width: clamp(130px, 10vw, 150px);
   height: 85%;
   border-radius: 10px;
   background-color: white;
@@ -280,12 +227,7 @@ export const box = css`
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     border-radius: 10px;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
   }
 `;
 

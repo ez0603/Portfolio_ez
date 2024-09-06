@@ -60,7 +60,7 @@ export const closeButton = css`
   }
 
   @media (max-width: 700px) {
-    right: 5px;
+    right: 10px; /* 모바일에서 오른쪽에 더 가까이 */
     transform: translate(0%, 25%);
   }
 `;
@@ -100,17 +100,21 @@ export const header = css`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to top,
-      #181818,
-      rgba(0, 0, 0, 0.43) 15%,
-      rgba(0, 0, 0, 0.18) 30%,
-      rgba(0, 0, 0, 0.03) 45%,
-      rgba(0, 0, 0, 0.01) 60%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    z-index: 1;
+  }
 
-    z-index: 1; /* 이미지 위에 그라데이션을 위치시킴 */
+  @media (min-width: 700px) {
+    &::after {
+      background: linear-gradient(
+        to top,
+        #181818,
+        rgba(0, 0, 0, 0.43) 15%,
+        rgba(0, 0, 0, 0.18) 30%,
+        rgba(0, 0, 0, 0.03) 45%,
+        rgba(0, 0, 0, 0.01) 60%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
   }
 `;
 

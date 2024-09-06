@@ -92,20 +92,21 @@ export const header = css`
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 100%;
     background: linear-gradient(
-      0deg,
-      #181818 0%, 
-      rgba(65, 65, 65, 0.685) 15%,
-      rgba(82, 81, 81, 0.514) 25%,
-      rgba(99, 99, 99, 0.171) 45%,
-      rgba(150, 150, 150, 0.041) 65%,
-      rgba(200, 200, 200, 0.062) 85%,
-      transparent 100%
+      to top,
+      #181818,
+      rgba(0, 0, 0, 0.6) 15%,
+      rgba(0, 0, 0, 0.3) 30%,
+      rgba(0, 0, 0, 0.2) 45%,
+      rgba(0, 0, 0, 0.1) 60%,
+      rgba(0, 0, 0, 0) 100%
     );
+
+    z-index: 1; /* 이미지 위에 그라데이션을 위치시킴 */
   }
 `;
 

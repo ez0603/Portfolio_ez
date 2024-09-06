@@ -140,6 +140,10 @@ export const backgroundBottom = css`
     #181818 75%,
     #181818
   );
+
+  @media (max-width: 700px) {
+    background: none;
+  }
 `;
 
 export const modalImage = css`

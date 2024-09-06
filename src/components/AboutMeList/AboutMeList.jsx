@@ -56,8 +56,8 @@ function AboutMeList({ onImageClick }) {
             <div css={s.layout}>
               <div css={s.intro}>
                 <span>
-                  '시련은 있어도 실패는 없다'는 마음가짐으로 개발에 임하고
-                  있습니다. <br class="keep-br" />
+                  <b>'시련은 있어도 실패는 없다'</b>는 마음가짐으로 개발에
+                  임하고 있습니다. <br class="keep-br" />
                   개발 과정에서 때때로 어려움이 있지만, 그 과정이 저를 더 나은
                   개발자로 성장시키는 발판이라고 생각합니다.
                   <br />
@@ -131,8 +131,8 @@ function AboutMeList({ onImageClick }) {
                   <h3 data-h1="4 .">마지막으로</h3>
                   <p>
                     새로운 기술을 배우고 문제를 해결하는 과정에서 즐거움을
-                    느끼고, <br /> 그 과정에서 <b>학습하고 성장</b>할
-                    수 있는 기회를 제공해 주는 개발을 좋아합니다.
+                    느끼고, <br /> 그 과정에서 <b>학습하고 성장</b>할 수 있는
+                    기회를 제공해 주는 개발을 좋아합니다.
                   </p>
                 </div>
               </div>

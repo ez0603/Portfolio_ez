@@ -12,10 +12,10 @@ export const exList = css`
   background-color: #141414;
 
   img {
-    width: clamp(260px, 20vw, 280px);
+    width: clamp(170px, 20vw, 280px);
     height: clamp(100px, 10vw, 200px);
     object-fit: cover;
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio: 4 / 3; */
     cursor: pointer;
     -webkit-user-drag: none;
     user-drag: none;

@@ -21,7 +21,6 @@ function AboutMeModal({ description, image, onClose }) {
     <div css={s.modalOverlayStyle} onClick={handleOverlayClick}>
       <div css={s.modalContentStyle}>
         <button onClick={onClose} css={s.closeButton}>
-          {/* <IoMdClose css={s.iconStyle} /> */}
           <span css={s.iconStyle}>X</span>
         </button>
         <div css={s.modalContent}>

@@ -102,11 +102,8 @@ export const imageWrapper = css`
   overflow: hidden;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 
-  @media (max-width: 500px) {
-    height: 200px;
-  }
-  @media (max-width: 390px) {
-    height: 150px;
+  @media (max-width: 700px) {
+    height: 180px;
   }
 
   &::after {

@@ -10,8 +10,8 @@ function AboutMeList({ onImageClick }) {
   const handleFullScreen = (imgSrc) => {
     const imageElement = document.createElement("img");
     imageElement.src = imgSrc;
-    imageElement.style.maxWidth = "100vw"; 
-    imageElement.style.maxHeight = "100vh"; 
+    imageElement.style.maxWidth = "100vw";
+    imageElement.style.maxHeight = "100vh";
     imageElement.style.objectFit = "contain";
     imageElement.style.margin = "auto";
 
@@ -19,12 +19,12 @@ function AboutMeList({ onImageClick }) {
     fullScreenElement.style.position = "fixed";
     fullScreenElement.style.top = "0";
     fullScreenElement.style.left = "0";
-    fullScreenElement.style.width = "100vw"; 
+    fullScreenElement.style.width = "100vw";
     fullScreenElement.style.height = "100vh";
     fullScreenElement.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-    fullScreenElement.style.display = "flex";
+    fullScreenElement.style.display = "flex"; 
     fullScreenElement.style.alignItems = "center";
-    fullScreenElement.style.justifyContent = "center"; 
+    fullScreenElement.style.justifyContent = "center";
     fullScreenElement.style.zIndex = "1000";
     fullScreenElement.appendChild(imageElement);
 

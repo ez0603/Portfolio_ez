@@ -11,6 +11,17 @@ const popIn = keyframes`
   }
 `;
 
+const popOut = keyframes`
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+`;
+
 export const modalOverlayStyle = css`
   position: fixed;
   top: 0;
@@ -21,7 +32,7 @@ export const modalOverlayStyle = css`
   z-index: 999;
 `;
 
-export const modalContentStyle = css`
+export const modalContentStyle = (isClosing) => css`
   position: fixed;
   width: 50%;
   height: 89%;
@@ -34,7 +45,8 @@ export const modalContentStyle = css`
   transform: translate(-50%, -50%);
   overflow-y: auto;
   background-color: #181818;
-  animation: ${popIn} 0.5s ease-out;
+  animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.5s"}
+    ease-out;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

@@ -46,9 +46,8 @@ export const modalContentStyle = css`
 
 export const closeButton = css`
   position: absolute;
-  /* top: clamp(15px, 2vw, 15px); */
-  right: clamp(5px, 2vw, 15px);
-  transform: translate(0%, 25%);
+  right: clamp(10px, 5vw, 20px);
+  transform: translate(20%, 25%);
   background-color: transparent;
   border: none;
   color: white;
@@ -99,10 +98,10 @@ export const header = css`
     background: linear-gradient(
       to top,
       #181818,
-      rgba(0, 0, 0, 0.6) 15%,
-      rgba(0, 0, 0, 0.3) 30%,
-      rgba(0, 0, 0, 0.2) 45%,
-      rgba(0, 0, 0, 0.1) 60%,
+      rgba(0, 0, 0, 0.43) 15%,
+      rgba(0, 0, 0, 0.18) 30%,
+      rgba(0, 0, 0, 0.03) 45%,
+      rgba(0, 0, 0, 0.01) 60%,
       rgba(0, 0, 0, 0) 100%
     );
 

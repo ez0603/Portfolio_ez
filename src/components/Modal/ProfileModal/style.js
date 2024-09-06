@@ -46,13 +46,15 @@ export const modalContentStyle = css`
 
 export const closeButton = css`
   position: absolute;
-  top: clamp(15px, 2vw, 15px);
-  right: clamp(15px, 2vw, 15px);
+  /* top: clamp(15px, 2vw, 15px); */
+  right: clamp(5px, 2vw, 15px);
+  transform: translate(0%, 25%);
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
   font-size: clamp(20px, 7vw, 40px);
+  z-index: 10;
 
   &:hover {
     color: #ccc;
@@ -79,10 +81,31 @@ export const header = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   h1 {
     transform: translate(-100%, 100%);
     font-size: clamp(20px, 2.5vw, 100px);
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      0deg,
+      #181818 0%,
+      rgba(65, 65, 65, 0.685) 15%,
+      rgba(82, 81, 81, 0.514) 25%,
+      rgba(99, 99, 99, 0.171) 45%,
+      rgba(150, 150, 150, 0.041) 65%,
+      rgba(200, 200, 200, 0.062) 85%,
+      transparent 100%
+    );
   }
 `;
 
@@ -108,6 +131,15 @@ export const profile = css`
   padding: 20px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const iconTextBox = css`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   align-items: flex-start;
 `;
 
@@ -192,7 +224,7 @@ export const boxLayout = css`
 `;
 
 export const list = css`
-  width: 95%;
+  width: 100%;
   height: 110px;
   display: flex;
   align-items: center;

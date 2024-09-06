@@ -54,29 +54,31 @@ function ProfileModal({ onClose }) {
             <div css={s.profileBackground(profile)} />
           </div>
           <div css={s.profile}>
-            <div css={s.iconText}>
-              <MdEmail fontSize={20} />
-              <span>dlwldjs3132@naver.com</span>
-              <button
-                onClick={() =>
-                  copyToClipboard("dlwldjs3132@naver.com", "email")
-                }
-                css={s.copy}
-              >
-                {copiedField === "email" ? "Copied!" : "Copy"}
-              </button>
-            </div>
-            <div css={s.iconText}>
-              <FaGithub fontSize={20} />
-              <span>https://github.com/ez0603</span>
-              <button
-                onClick={() =>
-                  copyToClipboard("https://github.com/ez0603", "github")
-                }
-                css={s.copy}
-              >
-                {copiedField === "github" ? "Copied!" : "Copy"}
-              </button>
+            <div css={s.iconTextBox}>
+              <div css={s.iconText}>
+                <MdEmail fontSize={20} />
+                <span>dlwldjs3132@naver.com</span>
+                <button
+                  onClick={() =>
+                    copyToClipboard("dlwldjs3132@naver.com", "email")
+                  }
+                  css={s.copy}
+                >
+                  {copiedField === "email" ? "Copied!" : "Copy"}
+                </button>
+              </div>
+              <div css={s.iconText}>
+                <FaGithub fontSize={20} />
+                <span>https://github.com/ez0603</span>
+                <button
+                  onClick={() =>
+                    copyToClipboard("https://github.com/ez0603", "github")
+                  }
+                  css={s.copy}
+                >
+                  {copiedField === "github" ? "Copied!" : "Copy"}
+                </button>
+              </div>
             </div>
             <div css={s.skillLayout}>
               <h3>Front</h3>

@@ -246,7 +246,7 @@ export const contentCard = css`
   width: 170px;
   z-index: 2;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 7px;
   overflow: hidden;
   padding: 10px;
   text-align: center;

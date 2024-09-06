@@ -95,21 +95,28 @@ export const imageWrapper = css`
     height: 150px;
   }
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 50%;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.3) 60%,
-      rgba(0, 0, 0, 0.55) 100%
-    );
+    height: 100%;
     z-index: 1;
-    pointer-events: none;
+  }
+
+  @media (min-width: 700px) {
+    &::after {
+      background: linear-gradient(
+        to top,
+        #181818,
+        rgba(0, 0, 0, 0.43) 15%,
+        rgba(0, 0, 0, 0.18) 30%,
+        rgba(0, 0, 0, 0.03) 45%,
+        rgba(0, 0, 0, 0.01) 60%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
   }
 `;
 

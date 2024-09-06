@@ -45,6 +45,7 @@ export const modalContentStyle = (isClosing) => css`
   transform: translate(-50%, -50%);
   overflow-y: auto;
   background-color: #181818;
+  will-change: transform, opacity;
   animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.5s"}
     ease-in-out;
   overflow: scroll;

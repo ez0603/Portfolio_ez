@@ -10,20 +10,21 @@ function AboutMeList({ onImageClick }) {
   const handleFullScreen = (imgSrc) => {
     const imageElement = document.createElement("img");
     imageElement.src = imgSrc;
-    imageElement.style.width = "100%";
-    imageElement.style.height = "100%";
+    imageElement.style.maxWidth = "100vw"; 
+    imageElement.style.maxHeight = "100vh"; 
     imageElement.style.objectFit = "contain";
+    imageElement.style.margin = "auto";
 
     const fullScreenElement = document.createElement("div");
     fullScreenElement.style.position = "fixed";
     fullScreenElement.style.top = "0";
     fullScreenElement.style.left = "0";
-    fullScreenElement.style.width = "100vw";
+    fullScreenElement.style.width = "100vw"; 
     fullScreenElement.style.height = "100vh";
     fullScreenElement.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
     fullScreenElement.style.display = "flex";
     fullScreenElement.style.alignItems = "center";
-    fullScreenElement.style.justifyContent = "center";
+    fullScreenElement.style.justifyContent = "center"; 
     fullScreenElement.style.zIndex = "1000";
     fullScreenElement.appendChild(imageElement);
 
@@ -33,7 +34,7 @@ function AboutMeList({ onImageClick }) {
       document.body.removeChild(fullScreenElement);
     });
   };
-  
+
   return (
     <div css={s.exList}>
       <img
@@ -63,7 +64,12 @@ function AboutMeList({ onImageClick }) {
               <div css={s.listLayout}>
                 <h1>2</h1>
                 <div css={s.box}>
-                  <img src={Walter} alt="" onClick={() => handleFullScreen(Walter)} /> {/* 올바른 이미지 소스를 전달 */}
+                  <img
+                    src={Walter}
+                    alt=""
+                    onClick={() => handleFullScreen(Walter)}
+                  />{" "}
+                  {/* 올바른 이미지 소스를 전달 */}
                 </div>
                 <div css={s.contentLayout}>
                   <h3>두 번째</h3>
@@ -76,7 +82,12 @@ function AboutMeList({ onImageClick }) {
               <div css={s.listLayout}>
                 <h1>3</h1>
                 <div css={s.box}>
-                  <img src={baseball} alt="" onClick={() => handleFullScreen(baseball)} /> {/* 올바른 이미지 소스를 전달 */}
+                  <img
+                    src={baseball}
+                    alt=""
+                    onClick={() => handleFullScreen(baseball)}
+                  />{" "}
+                  {/* 올바른 이미지 소스를 전달 */}
                 </div>
                 <div css={s.contentLayout}>
                   <h3>세 번째</h3>
@@ -89,7 +100,12 @@ function AboutMeList({ onImageClick }) {
               <div css={s.listLayout}>
                 <h1>4</h1>
                 <div css={s.box}>
-                  <img src={chess} alt="" onClick={() => handleFullScreen(chess)} /> {/* 올바른 이미지 소스를 전달 */}
+                  <img
+                    src={chess}
+                    alt=""
+                    onClick={() => handleFullScreen(chess)}
+                  />{" "}
+                  {/* 올바른 이미지 소스를 전달 */}
                 </div>
                 <div css={s.contentLayout}>
                   <h3>마지막으로</h3>

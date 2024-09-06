@@ -56,8 +56,8 @@ function AboutMeList({ onImageClick }) {
             <div css={s.layout}>
               <div css={s.intro}>
                 <span>
-                  '시련은 있어도 실패는 없다'는 마음가짐으로 프론트엔드 개발에
-                  임하고 있습니다. <br />
+                  '시련은 있어도 실패는 없다'는 마음가짐으로 개발에 임하고
+                  있습니다. <br class="keep-br" />
                   개발 과정에서 때때로 어려움이 있지만, 그 과정이 저를 더 나은
                   개발자로 성장시키는 발판이라고 생각합니다.
                   <br />

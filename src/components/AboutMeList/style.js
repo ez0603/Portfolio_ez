@@ -50,6 +50,10 @@ export const intro = css`
     br {
       display: none;
     }
+
+    .keep-br {
+      display: inline;
+    }
   }
 `;
 

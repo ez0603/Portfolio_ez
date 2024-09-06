@@ -65,8 +65,8 @@ export const closeButton = css`
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  width: clamp(35px, 6vw, 40px);
-  height: clamp(35px, 6vw, 40px);
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
 
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@ export const closeButton = css`
 
 export const iconStyle = css`
   color: white;
-  font-size: clamp(35px, 6vw, 40px);
+  font-size: 40px;
 `;
 
 export const imageWrapper = css`

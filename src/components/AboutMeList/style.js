@@ -38,7 +38,6 @@ export const layout = css`
   align-items: center;
   gap: 20px;
   background-color: #181818;
-
   color: white;
 `;
 
@@ -128,7 +127,7 @@ export const contentLayout = css`
       font-size: clamp(9px, 1vw, 17px);
       &::before {
         content: attr(data-h1);
-        margin-right: 8px;
+        margin-right: 5px;
         font-weight: bold;
       }
     }

@@ -8,6 +8,8 @@ import chess from "../../assets/img/퀸즈 갬빗.webp";
 
 function AboutMeList({ onImageClick }) {
   const handleFullScreen = (imgSrc) => {
+    const fullHeight = window.innerHeight + "px";
+
     const imageElement = document.createElement("img");
     imageElement.src = imgSrc;
     imageElement.style.maxWidth = "100vw";
@@ -20,12 +22,20 @@ function AboutMeList({ onImageClick }) {
     fullScreenElement.style.top = "0";
     fullScreenElement.style.left = "0";
     fullScreenElement.style.width = "100vw";
-    fullScreenElement.style.height = "100vh";
+    fullScreenElement.style.height = fullHeight;
     fullScreenElement.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-    fullScreenElement.style.display = "flex"; 
+    fullScreenElement.style.display = "flex";
     fullScreenElement.style.alignItems = "center";
     fullScreenElement.style.justifyContent = "center";
     fullScreenElement.style.zIndex = "1000";
+    fullScreenElement.style.overflow = "hidden";
+    fullScreenElement.style.padding = "0";
+
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.documentElement.style.margin = "0";
+    document.documentElement.style.padding = "0";
+
     fullScreenElement.appendChild(imageElement);
 
     document.body.appendChild(fullScreenElement);

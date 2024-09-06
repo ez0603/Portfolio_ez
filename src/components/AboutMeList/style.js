@@ -29,25 +29,6 @@ export const exList = css`
   }
 `;
 
-export const fullScreenImageContainer = css`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-`;
-
-export const fullScreenImage = css`
-  max-width: 100vw;
-  max-height: 100vh;
-  object-fit: contain;
-`;
-
 export const layout = css`
   width: 100%;
   height: 100%;

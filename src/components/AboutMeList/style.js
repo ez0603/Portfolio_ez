@@ -38,13 +38,11 @@ export const layout = css`
   align-items: center;
   gap: 20px;
   background-color: #181818;
-  background-color: aqua;
 
   color: white;
 `;
 
 export const intro = css`
-  background-color: orange;
   width: 90%;
   font-size: clamp(10px, 1vw, 16px);
 

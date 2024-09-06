@@ -44,7 +44,8 @@ export const layout = css`
 
 export const intro = css`
   width: 90%;
-  font-size: clamp(10px, 1vw, 16px);
+  font-size: clamp(10px, 1vw, 15px);
+  line-height: 1.6;
 
   @media (max-width: 700px) {
     br {
@@ -74,11 +75,12 @@ export const listLayout = css`
   h1 {
     color: #ccc;
     font-weight: 300;
-    font-size: clamp(8px, 10vw, 25px);
+    font-size: clamp(8px, 10vw, 23px);
   }
 
   @media (max-width: 700px) {
     border-bottom: none;
+    align-items: flex-start;
     h1 {
       display: none;
     }
@@ -129,6 +131,10 @@ export const contentLayout = css`
         margin-right: 8px;
         font-weight: bold;
       }
+    }
+
+    br {
+      display: none;
     }
   }
 `;

@@ -292,6 +292,10 @@ export const contentCard = css`
     justify-content: space-evenly;
     align-items: center;
     padding: 10px;
+
+    p {
+      margin-top: 10px;
+    }
   }
 
   h3 {

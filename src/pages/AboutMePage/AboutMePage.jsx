@@ -78,14 +78,6 @@ function AboutMePage(props) {
     event.preventDefault();
   };
 
-  const preventImageCopy = (event) => {
-    event.preventDefault();
-  };
-
-  const handleTouchStart = (event) => {
-    event.preventDefault();
-  };
-
   const images = [
     reactIcon,
     [cssIcon, html],

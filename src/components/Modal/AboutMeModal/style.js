@@ -76,7 +76,8 @@ export const closeButton = css`
 
 export const iconStyle = css`
   color: white;
-  font-size: 40px;
+  font-size: clamp(8px, 4vw, 25px);
+  font-weight: 300;
 `;
 
 export const imageWrapper = css`

@@ -46,7 +46,7 @@ export const modalContentStyle = css`
 
 export const closeButton = css`
   position: absolute;
-  right: clamp(10px, 5vw, 20px);
+  right: clamp(5px, 2vw, 15px);
   transform: translate(20%, 25%);
   background-color: transparent;
   border: none;
@@ -57,6 +57,11 @@ export const closeButton = css`
 
   &:hover {
     color: #ccc;
+  }
+
+  @media (max-width: 700px) {
+    right: 5px;
+    transform: translate(0%, 25%);
   }
 `;
 

@@ -98,7 +98,7 @@ export const header = css`
     height: 50%;
     background: linear-gradient(
       0deg,
-      #181818 0%,
+      #181818 0%, 
       rgba(65, 65, 65, 0.685) 15%,
       rgba(82, 81, 81, 0.514) 25%,
       rgba(99, 99, 99, 0.171) 45%,

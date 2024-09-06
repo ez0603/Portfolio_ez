@@ -48,7 +48,7 @@ export const intro = css`
 
   @media (max-width: 700px) {
     br {
-      display: none; 
+      display: none;
     }
   }
 `;
@@ -113,7 +113,7 @@ export const contentLayout = css`
   }
 
   p {
-    margin: 10px 0;
+    margin: clamp(0px, 1vw, 10px) 0;
     font-weight: 300;
     font-size: clamp(9px, 1vw, 17px);
   }

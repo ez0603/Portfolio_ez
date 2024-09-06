@@ -76,7 +76,7 @@ function AboutMeList({ onImageClick }) {
                   />
                 </div>
                 <div css={s.contentLayout}>
-                  <h3 data-h1="1">첫 번째</h3>
+                  <h3 data-h1="1 .">첫 번째</h3>
                   <p>
                     인터랙티브한 페이지를 개발하는 것을 좋아하며{" "}
                     <b>사용자에게 편리한 UI</b>를 제공하는 웹을 만들기 위해
@@ -85,7 +85,7 @@ function AboutMeList({ onImageClick }) {
                 </div>
               </div>
               <div css={s.listLayout}>
-                <h1 data-h1="2">2</h1>
+                <h1 data-h1="2 .">2</h1>
                 <div css={s.box}>
                   <img
                     src={Walter}
@@ -94,7 +94,7 @@ function AboutMeList({ onImageClick }) {
                   />{" "}
                 </div>
                 <div css={s.contentLayout}>
-                  <h3 data-h1="2">두 번째</h3>
+                  <h3 data-h1="2 .">두 번째</h3>
                   <p>
                     새롭게 배운 기술을 업무에 적용하여 <b>더 나은 서비스</b>를
                     구축해 나아가는것에 보람을 느낍니다.
@@ -111,7 +111,7 @@ function AboutMeList({ onImageClick }) {
                   />{" "}
                 </div>
                 <div css={s.contentLayout}>
-                  <h3 data-h1="3">세 번째</h3>
+                  <h3 data-h1="3 .">세 번째</h3>
                   <p>
                     팀프로젝트를 통해 함께 의견을 나누고 고민하며 프로젝트의{" "}
                     <b>시작과 끝</b>을 맺은 경험이 있습니다.
@@ -128,7 +128,7 @@ function AboutMeList({ onImageClick }) {
                   />{" "}
                 </div>
                 <div css={s.contentLayout}>
-                  <h3 data-h1="4">마지막으로</h3>
+                  <h3 data-h1="4 .">마지막으로</h3>
                   <p>
                     저는 새로운 기술을 배우고 문제를 해결하는 과정에서 즐거움을
                     느끼고, <br /> 그 과정에서 지속적으로 <b>학습하고 성장</b>할

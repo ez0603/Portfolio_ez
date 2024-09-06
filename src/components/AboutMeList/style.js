@@ -35,8 +35,24 @@ export const layout = css`
   padding-bottom: clamp(10px, 10vw, 30px);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   background-color: #181818;
+  background-color: aqua;
+
+  color: white;
+`;
+
+export const intro = css`
+  background-color: orange;
+  width: 90%;
+  font-size: clamp(10px, 1vw, 16px);
+
+  @media (max-width: 700px) {
+    br {
+      display: none; 
+    }
+  }
 `;
 
 export const listLayout = css`
@@ -47,21 +63,29 @@ export const listLayout = css`
   padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 20px);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: clamp(10px, 1vw, 20px);
   margin: 0 auto;
   gap: clamp(5px, 2vw, 15px);
+  flex-wrap: nowrap;
 
   h1 {
     color: #ccc;
     font-weight: 300;
     font-size: clamp(8px, 10vw, 25px);
   }
+
+  @media (max-width: 700px) {
+    border-bottom: none;
+    h1 {
+      display: none;
+    }
+  }
 `;
 
 export const box = css`
-  width: clamp(100px, 10vw, 200px);
-  height: clamp(70px, 10vw, 100px);
+  width: clamp(130px, 10vw, 200px);
+  height: clamp(50px, 10vw, 100px);
   border-radius: 8px;
   background-color: #38383883;
   font-size: clamp(10px, 10vw, 80px);
@@ -94,5 +118,15 @@ export const contentLayout = css`
     margin: 10px 0;
     font-weight: 300;
     font-size: clamp(9px, 1vw, 17px);
+  }
+  @media (max-width: 700px) {
+    h3 {
+      font-size: clamp(9px, 1vw, 17px);
+      &::before {
+        content: attr(data-h1);
+        margin-right: 8px;
+        font-weight: bold;
+      }
+    }
   }
 `;

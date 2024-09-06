@@ -44,24 +44,29 @@ export const modalContentStyle = css`
   }
 `;
 
-export const closeButton = css`
+export const closeButtonContainer = css`
+  display: flex;
+  justify-content: flex-end;
   position: absolute;
-  right: clamp(5px, 2vw, 15px);
-  transform: translate(20%, 25%);
+  width: 100%;
+  top: clamp(5px, 2vw, 10px);
+`;
+
+export const closeButton = css`
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
   font-size: clamp(20px, 7vw, 40px);
   z-index: 10;
+  padding-right: 15px;
 
   &:hover {
     color: #ccc;
   }
 
   @media (max-width: 700px) {
-    right: 10px; /* 모바일에서 오른쪽에 더 가까이 */
-    transform: translate(0%, 25%);
+    padding-right: 10px;
   }
 `;
 
@@ -195,6 +200,7 @@ export const skillLayout = css`
 
 export const skillboxContainer = css`
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 10px;
   width: 100%;

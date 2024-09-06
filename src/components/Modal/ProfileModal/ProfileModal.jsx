@@ -45,9 +45,11 @@ function ProfileModal({ onClose }) {
     <>
       <div css={s.modalOverlayStyle} onClick={onClose} />
       <div css={s.modalContentStyle}>
-        <button onClick={onClose} css={s.closeButton}>
-          <IoCloseCircleSharp />
-        </button>
+        <div css={s.closeButtonContainer}>
+          <button onClick={onClose} css={s.closeButton}>
+            <IoCloseCircleSharp />
+          </button>
+        </div>
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>

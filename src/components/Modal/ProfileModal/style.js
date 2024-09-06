@@ -153,8 +153,13 @@ export const iconTextBox = css`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   align-items: flex-start;
+
+  @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const iconText = css`
@@ -201,9 +206,14 @@ export const skillLayout = css`
 export const skillboxContainer = css`
   display: flex;
   align-items: center;
+
   flex-wrap: wrap;
   gap: 10px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const skillbox = css`
@@ -284,6 +294,10 @@ export const textContainer = css`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+
+  h3 {
+    font-size: clamp(13px, 2vw, 20px);
+  }
 `;
 
 export const inlineText = css`
@@ -293,11 +307,13 @@ export const inlineText = css`
 
   p {
     margin: 0;
-    font-size: 17px;
+    font-size: clamp(12px, 2vw, 17px);
   }
 
   .small {
-    font-size: 0.85em;
+    position: relative;
+    top: 1px;
+    font-size: clamp(10px, 2vw, 14px);
     color: #ccc;
   }
 `;

@@ -54,7 +54,7 @@ export const modalContentStyle = (isClosing) => css`
 
   @media (max-width: 700px) {
     width: 90%;
-    height: 85vh;
+    height: 82vh;
     max-width: none;
     max-height: none;
   }
@@ -72,7 +72,7 @@ export const modalContent = css`
 
 export const closeButton = css`
   position: absolute;
-  top: clamp(13px, 2vw, 28px);
+  top: clamp(13px, 2vw, 15px);
   right: clamp(13px, 1vw, 20px);
   background-color: #181818;
   border-radius: 50%;

@@ -59,7 +59,7 @@ export const modalContent = css`
 
 export const closeButton = css`
   position: absolute;
-  top: clamp(13px, 2vw, 25px);
+  top: clamp(13px, 2vw, 28px);
   right: clamp(13px, 1vw, 20px);
   background-color: #181818;
   border-radius: 50%;
@@ -76,7 +76,7 @@ export const closeButton = css`
 
 export const iconStyle = css`
   color: white;
-  font-size: clamp(8px, 4vw, 25px);
+  font-size: clamp(8px, 4vw, 23px);
   font-weight: 300;
 `;
 

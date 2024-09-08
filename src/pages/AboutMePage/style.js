@@ -137,7 +137,7 @@ export const backgroundBottom = css`
   width: 100%;
   height: 20%;
   top: 85%;
-  
+
   background: linear-gradient(
     180deg,
     hsla(0, 0%, 8%, 0) 0%,
@@ -277,9 +277,14 @@ export const contentCard = css`
   &:hover {
     transform: scale(1.8);
     width: clamp(150px, 20vw, 250px);
+    padding: 10px 20px;
     z-index: 10;
     position: absolute;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.562);
+
+    @media (max-width: 700px) {
+      height: 100px;
+  }
   }
 
   img {

@@ -58,12 +58,13 @@ export const aboutme = css`
   }
 
   p {
-    font-size: clamp(5px, 1.5vw, 23px);
+    font-size: clamp(5px, 1.5vw, 25px);
     color: white;
     z-index: 2;
     font-family: "Pretendard-Regular", sans-serif;
     margin: clamp(0px, 1vw, 10px) 0;
     line-height: 1.4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   &::before {

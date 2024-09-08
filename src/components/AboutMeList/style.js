@@ -43,6 +43,16 @@ export const intro = css`
   font-size: clamp(10px, 1vw, 16px);
   line-height: 1.6;
   font-weight: 300;
+
+  @media (max-width: 700px) {
+    br {
+      display: none;
+    }
+
+    .keep-br {
+      display: inline;
+    }
+  }
 `;
 
 export const listLayout = css`
@@ -148,7 +158,7 @@ export const contentLayout = css`
       left: 33%;
       top: -50%;
       margin: 0;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .mobileTitle {

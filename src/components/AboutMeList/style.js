@@ -15,7 +15,6 @@ export const exList = css`
     width: clamp(170px, 20vw, 280px);
     height: clamp(100px, 10vw, 200px);
     object-fit: cover;
-    /* aspect-ratio: 4 / 3; */
     cursor: pointer;
     -webkit-user-drag: none;
     user-drag: none;
@@ -39,22 +38,14 @@ export const layout = css`
   gap: 20px;
   background-color: #181818;
   color: white;
+  overflow-x: hidden;
 `;
 
 export const intro = css`
   width: 90%;
-  font-size: clamp(10px, 1vw, 15px);
+  font-size: clamp(10px, 1vw, 16px);
   line-height: 1.6;
-
-  @media (max-width: 700px) {
-    br {
-      display: none;
-    }
-
-    .keep-br {
-      display: inline;
-    }
-  }
+  font-weight: 300;
 `;
 
 export const listLayout = css`
@@ -64,34 +55,59 @@ export const listLayout = css`
   border-bottom: 1px solid #ccc;
   padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 20px);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
   font-size: clamp(10px, 1vw, 20px);
   margin: 0 auto;
-  gap: clamp(5px, 2vw, 15px);
-  flex-wrap: nowrap;
 
-  h1 {
-    color: #ccc;
-    font-weight: 300;
-    font-size: clamp(8px, 10vw, 23px);
+  @media (min-width: 701px) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   @media (max-width: 700px) {
-    border-bottom: none;
-    align-items: flex-start;
+    position: relative;
+  }
+`;
+
+export const imageAndTitle = css`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h1 {
+    color: #ccc;
+    font-weight: 500;
+    font-size: clamp(8px, 5vw, 23px);
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
     h1 {
       display: none;
     }
+    h3::before {
+      content: attr(data-h1);
+      margin-right: 5px;
+    }
+  }
+
+  @media (min-width: 701px) {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
   }
 `;
 
 export const box = css`
-  width: clamp(130px, 10vw, 200px);
+  width: clamp(90px, 10vw, 200px);
   height: clamp(50px, 10vw, 100px);
   border-radius: 8px;
   background-color: #38383883;
-  font-size: clamp(10px, 10vw, 80px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,34 +122,40 @@ export const box = css`
 `;
 
 export const contentLayout = css`
-  width: 90%;
-  padding: 0 clamp(8px, 1vw, 20px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  color: white;
+  gap: 5px;
 
   h3 {
+    font-weight: 500;
+    font-size: clamp(10px, 5vw, 18px);
     margin: 0;
   }
 
   p {
-    margin: clamp(0px, 1vw, 10px) 0;
+    margin-top: 5px;
     font-weight: 300;
-    font-size: clamp(9px, 1vw, 17px);
+    font-size: clamp(9px, 1vw, 16px);
   }
+
+  @media (min-width: 701px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   @media (max-width: 700px) {
+    position: relative;
+
     h3 {
-      font-size: clamp(9px, 1vw, 17px);
-      &::before {
-        content: attr(data-h1);
-        margin-right: 5px;
-        font-weight: bold;
-      }
+      position: absolute; 
+      transform: translateY(-100%);
+      left: 35%;
+      top: -60%;
+      margin: 0; 
+      font-size: 15px;
     }
 
-    br {
-      display: none;
-    }
+    gap: 0;
+    padding: 0;
   }
 `;

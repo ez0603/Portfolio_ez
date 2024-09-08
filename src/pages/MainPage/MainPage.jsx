@@ -42,13 +42,12 @@ function MainPage(props) {
             <p>
               일을 맡으면 끝까지 하는 끈기와 책임감을 가지고 있습니다.
               <br />
-              웹 개발을 위한 프론트엔드와 백엔드 기술을 배운적이 있어 협업을 할
+              웹 개발을 위한 프론트엔드와 백엔드 기술을 배운 적이 있어 협업을 할
               때
               <br />
               팀원들과의 소통에 더 능하다는 장점이 있습니다.
               <br />
-              소통을 기반으로 협업을 통해 고객 요구에 맞는 효과적인 솔루션을
-              제공할 수 있습니다.
+
             </p>
             <button css={s.look} onClick={handleOpenModal}>
               <IoMdInformationCircleOutline />

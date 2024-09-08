@@ -16,9 +16,14 @@ import java from "../../../assets/icon/Java.png";
 import js from "../../../assets/icon/JavaScript.png";
 import mysql from "../../../assets/icon/MySQL.png";
 import react from "../../../assets/icon/React.png";
+import { useMediaQuery } from "react-responsive";
+import useContent from "../../../hooks/useContent";
 
 function ProfileModal({ onClose }) {
   const [copiedField, setCopiedField] = useState(null);
+  const [selectedSkill, setSelectedSkill] = useState(null); 
+  const content = useContent();
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -37,14 +42,44 @@ function ProfileModal({ onClose }) {
       .catch((err) => console.error("Error copying text: ", err));
   };
 
-  const handleContextMenu = (event) => {
-    event.preventDefault();
+  const skillDescriptions = {
+    React: content[0]?.text,
+    "HTML5 / CSS3": content[1]?.text,
+    JavaScript: content[2]?.text,
+    Java: content[3]?.text,
+    "Spring Boot": content[4]?.text,
+    MySQL: content[5]?.text,
+    Firebase: content[6]?.text,
+    GitHub: content[7]?.text,
+  };
+
+  const skillIcons = {
+    React: react,
+    "HTML5 / CSS3": [html, cssIcon],
+    JavaScript: js,
+    Java: java,
+    "Spring Boot": spring,
+    MySQL: mysql,
+    Firebase: firebase,
+  };
+
+  const handleSkillClick = (skill, e) => {
+    e.stopPropagation(); 
+    if (selectedSkill === skill) {
+      setSelectedSkill(null);
+    } else {
+      setSelectedSkill(skill);
+    }
+  };
+
+  const handleModalContentClick = () => {
+    setSelectedSkill(null);
   };
 
   return (
     <>
       <div css={s.modalOverlayStyle} onClick={onClose} />
-      <div css={s.modalContentStyle}>
+      <div css={s.modalContentStyle} onClick={handleModalContentClick}>
         <div css={s.closeButtonContainer}>
           <button onClick={onClose} css={s.closeButton}>
             <IoCloseCircleSharp />
@@ -53,10 +88,10 @@ function ProfileModal({ onClose }) {
         <div css={s.container}>
           <div css={s.header}>
             <h1>이지언</h1>
-              <div css={s.backgroundBottom}></div>
-            <div css={s.profileBackground(profile)}>
-            </div>
+            <div css={s.backgroundBottom}></div>
+            <div css={s.profileBackground(profile)}></div>
           </div>
+
           <div css={s.profile}>
             <div css={s.iconTextBox}>
               <div css={s.iconText}>
@@ -84,96 +119,111 @@ function ProfileModal({ onClose }) {
                 </button>
               </div>
             </div>
-            <div css={s.skillLayout}>
+
+            <div css={s.skillContainer}>
               <h3>Front</h3>
-              <div css={s.skillboxContainer}>
-                <div css={s.skillbox}>
-                  <img
-                    src={react}
-                    alt="React"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>REACT</p>
-                </div>
-                <div css={s.skillbox}>
-                  <img
-                    src={cssIcon}
-                    alt="CSS3"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>CSS3</p>
-                </div>
-                <div css={s.skillbox}>
-                  <img
-                    src={js}
-                    alt="JavaScript"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>JAVASCRIPT</p>
-                </div>
-                <div css={s.skillbox}>
-                  <img
-                    src={html}
-                    alt="HTML5"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>HTML5</p>
-                </div>
+              <div css={s.skillBar}>
+                {["React", "HTML5 / CSS3", "JavaScript"].map((skill) => (
+                  <div
+                    key={skill}
+                    css={[
+                      s.skillbox,
+                      selectedSkill === skill && s.selectedSkill,
+                    ]}
+                    onClick={(e) => handleSkillClick(skill, e)}
+                  >
+                    <div css={s.skillContentRow}>
+                      {Array.isArray(skillIcons[skill]) ? (
+                        skillIcons[skill].map((icon, index) => (
+                          <img key={index} src={icon} alt={skill} />
+                        ))
+                      ) : (
+                        <img src={skillIcons[skill]} alt={skill} />
+                      )}
+                      <p>{skill}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+              {selectedSkill &&
+                ["React", "HTML5 / CSS3", "JavaScript"].includes(
+                  selectedSkill
+                ) && (
+                  <div css={s.skillDescription}>
+                    <div css={s.skillDescriptionBox}>
+                      <p css={s.skillLine}>
+                        {skillDescriptions[selectedSkill]}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
               <h3>Back</h3>
-              <div css={s.skillboxContainer}>
-                <div css={s.skillbox}>
-                  <img
-                    src={java}
-                    alt="Java"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>JAVA</p>
-                </div>
-                <div css={s.skillbox}>
-                  <img
-                    src={spring}
-                    alt="SpringBoot"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>SPRINGBOOT</p>
-                </div>
+              <div css={s.skillBar}>
+                {["Java", "Spring Boot"].map((skill) => (
+                  <div
+                    key={skill}
+                    css={[
+                      s.skillbox,
+                      selectedSkill === skill && s.selectedSkill,
+                    ]}
+                    onClick={(e) => handleSkillClick(skill, e)}
+                  >
+                    <div css={s.skillContentRow}>
+                      <img src={skillIcons[skill]} alt={skill} />
+                      <p>{skill}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3>DataBase</h3>
-              <div css={s.skillboxContainer}>
-                <div css={s.skillbox}>
-                  <img
-                    src={mysql}
-                    alt="MySQL"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>MYSQL</p>
-                </div>
-                <div css={s.skillbox}>
-                  <img
-                    src={firebase}
-                    alt="Firebase"
-                    onContextMenu={handleContextMenu}
-                    draggable="false"
-                  />
-                  <p>FIREBASE</p>
-                </div>
+              {selectedSkill &&
+                ["Java", "Spring Boot"].includes(selectedSkill) && (
+                  <div css={s.skillDescription}>
+                    <div css={s.skillDescriptionBox}>
+                      <p css={s.skillLine}>
+                        {skillDescriptions[selectedSkill]}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+              <h3>Database</h3>
+              <div css={s.skillBar}>
+                {["MySQL", "Firebase"].map((skill) => (
+                  <div
+                    key={skill}
+                    css={[
+                      s.skillbox,
+                      selectedSkill === skill && s.selectedSkill,
+                    ]}
+                    onClick={(e) => handleSkillClick(skill, e)}
+                  >
+                    <div css={s.skillContentRow}>
+                      <img src={skillIcons[skill]} alt={skill} />
+                      <p>{skill}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+              {selectedSkill &&
+                ["MySQL", "Firebase"].includes(selectedSkill) && (
+                  <div css={s.skillDescription}>
+                    <div css={s.skillDescriptionBox}>
+                      <p css={s.skillLine}>
+                        {skillDescriptions[selectedSkill]}
+                      </p>
+                    </div>
+                  </div>
+                )}
             </div>
+
             <div css={s.boxLayout}>
               <div css={s.list}>
                 <div css={s.box}>
                   <img
                     src={deu}
                     alt="University"
-                    onContextMenu={handleContextMenu}
+                    onContextMenu={(e) => e.preventDefault()}
                     draggable="false"
                   />
                 </div>
@@ -190,7 +240,7 @@ function ProfileModal({ onClose }) {
                   <img
                     src={Highschool}
                     alt="High School"
-                    onContextMenu={handleContextMenu}
+                    onContextMenu={(e) => e.preventDefault()}
                     draggable="false"
                   />
                 </div>
@@ -207,7 +257,7 @@ function ProfileModal({ onClose }) {
                   <img
                     src={it}
                     alt="Korea IT"
-                    onContextMenu={handleContextMenu}
+                    onContextMenu={(e) => e.preventDefault()}
                     draggable="false"
                   />
                 </div>
@@ -223,7 +273,7 @@ function ProfileModal({ onClose }) {
                   <img
                     src={it}
                     alt="Web Frontend"
-                    onContextMenu={handleContextMenu}
+                    onContextMenu={(e) => e.preventDefault()}
                     draggable="false"
                   />
                 </div>

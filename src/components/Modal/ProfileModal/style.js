@@ -206,43 +206,102 @@ export const copy = css`
   }
 `;
 
-export const skillLayout = css`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 10px;
-  gap: 10px;
-
-  @media (max-width: 768px) {
-    align-items: center;
-  }
-`;
-
-export const skillboxContainer = css`
-  display: flex;
-  align-items: center;
-
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-  }
-`;
-
 export const skillbox = css`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  background-color: #282828;
   border-radius: 10px;
-  color: white;
-  gap: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #333;
+  }
+
+  &.active {
+    background-color: #0071e3;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 15px;
+
+    img {
+      width: clamp(25px, 2vw, 40px);
+      height: clamp(25px, 2vw, 40px);
+      border-radius: 5px;
+    }
+
+    p {
+      font-size: clamp(12px, 1.5vw, 16px);
+    }
+  }
+`;
+
+export const skillContainer = css`
+  width: 100%;
+`;
+
+export const skillBar = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+export const skillContentRow = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: clamp(25px, 2vw, 40px);
+    height: clamp(25px, 2vw, 40px);
+    border-radius: 5px;
+  }
+
+  p {
+    margin: 0;
+    font-size: clamp(12px, 1.5vw, 16px);
+  }
+`;
+
+export const skillDescription = css`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const skillDescriptionBox = css`
+  width: 100%;
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+
+  @media (max-width: 768px) {
+    padding: 10px 15px;
+
+    p {
+      font-size: clamp(11px, 2vw, 20px);
+    }
+  }
+`;
+
+export const skillLine = css`
+  white-space: pre-line;
+`;
+
+export const selectedSkill = css`
+  background-color: #0076df;
+
+  img {
+    width: clamp(25px, 2vw, 40px);
+    height: clamp(25px, 2vw, 40px);
     border-radius: 5px;
   }
 
@@ -251,8 +310,8 @@ export const skillbox = css`
     font-size: clamp(12px, 1.5vw, 16px);
   }
 
-  &:hover {
-    background-color: #333;
+  :hover {
+    background-color: #0076df;
   }
 `;
 
@@ -286,10 +345,14 @@ export const list = css`
   :hover {
     background-color: #333;
   }
+
+  @media (max-width: 768px) {
+    border-bottom: none;
+  }
 `;
 
 export const box = css`
-  width: clamp(130px, 10vw, 150px);
+  width: clamp(130px, 10vw, 170px);
   height: 85%;
   border-radius: 10px;
   background-color: white;
@@ -331,5 +394,42 @@ export const inlineText = css`
     top: 1px;
     font-size: clamp(10px, 2vw, 14px);
     color: #ccc;
+  }
+`;
+
+export const fullScreenModal = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+
+  button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: clamp(10px, 4vw, 15px);
+    text-align: center;
+    padding: 0 20px;
   }
 `;

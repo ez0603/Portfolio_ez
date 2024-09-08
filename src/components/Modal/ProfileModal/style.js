@@ -306,13 +306,14 @@ export const skillDescriptionBox = css`
   color: white;
   animation: ${fadeIn} 0.5s ease-out;
 
+  p {
+    font-size: clamp(11px, 2vw, 18px);
+    line-height: 1.2; 
+  }
+
   @media (max-width: 768px) {
     padding: 10px 15px;
     background-color: #3d3d3d;
-
-    p {
-      font-size: clamp(11px, 2vw, 20px);
-    }
   }
 `;
 

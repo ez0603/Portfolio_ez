@@ -308,6 +308,7 @@ export const skillDescriptionBox = css`
 
   @media (max-width: 768px) {
     padding: 10px 15px;
+    background-color: #3d3d3d;
 
     p {
       font-size: clamp(11px, 2vw, 20px);
@@ -417,42 +418,5 @@ export const inlineText = css`
     top: 1px;
     font-size: clamp(10px, 2vw, 14px);
     color: #ccc;
-  }
-`;
-
-export const fullScreenModal = css`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #181818;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-
-  button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: clamp(10px, 4vw, 15px);
-    text-align: center;
-    padding: 0 20px;
   }
 `;

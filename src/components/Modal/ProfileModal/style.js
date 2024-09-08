@@ -204,27 +204,47 @@ export const iconText = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: clamp(310px, 40%, 600px);
+  width: clamp(310px, 47%, 660px);
   margin: 10px 0;
-  gap: 10px;
+  gap: clamp(10px, 1vw, 13px);
 
   span {
-    flex-grow: 1;
-    font-size: clamp(8px, 3vw, 15px);
+    font-size: clamp(8px, 3vw, 17px);
+  }
+
+  svg {
+    font-size: clamp(21px, 3vw, 26px);
+  }
+
+  button {
+    margin-left: auto;
   }
 `;
 
 export const copy = css`
-  padding: clamp(5px, 2vw, 8px) clamp(5px, 2vw, 11px);
+  padding: clamp(5px, 2vw, 9px) clamp(5px, 2vw, 12px);
   border: none;
   background-color: white;
   color: #0071e3;
-  border-radius: 8px;
+  border-radius: 7px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: clamp(13px, 2vw, 15px);
+
   &:hover {
     background-color: #dbdbdb;
   }
+`;
+
+export const copied = css`
+  padding: clamp(5px, 2vw, 9px) clamp(5px, 2vw, 12px);
+  border: none;
+  background-color: #0071e3;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: clamp(13px, 2vw, 15px);
 `;
 
 export const skillbox = css`
@@ -233,7 +253,7 @@ export const skillbox = css`
   align-items: center;
   padding: 10px 20px;
   background-color: #282828;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -308,7 +328,7 @@ export const skillDescriptionBox = css`
 
   p {
     font-size: clamp(11px, 2vw, 18px);
-    line-height: 1.2; 
+    line-height: 1.2;
   }
 
   @media (max-width: 768px) {

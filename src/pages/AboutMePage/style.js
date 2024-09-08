@@ -275,7 +275,7 @@ export const contentCard = css`
   transform-origin: center;
 
   &:hover {
-    transform: scale(1.8);
+    transform: scale(1.6);
     width: clamp(150px, 20vw, 250px);
     padding: 10px 20px;
     z-index: 10;
@@ -283,8 +283,8 @@ export const contentCard = css`
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.562);
 
     @media (max-width: 700px) {
-      height: 100px;
-  }
+      height: 90px;
+    }
   }
 
   img {
@@ -315,9 +315,9 @@ export const contentCard = css`
     padding: 10px;
 
     p {
-      margin-top: 10px;  
-    line-height: 1.0;
-    font-size: clamp(6px, 0.9vw, 9px);
+      margin-top: 10px;
+      line-height: 1;
+      font-size: clamp(6px, 0.9vw, 9px);
     }
   }
 

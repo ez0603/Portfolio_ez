@@ -20,7 +20,7 @@ import useContent from "../../../hooks/useContent";
 
 function ProfileModal({ onClose }) {
   const [copiedField, setCopiedField] = useState(null);
-  const [selectedSkill, setSelectedSkill] = useState(null); 
+  const [selectedSkill, setSelectedSkill] = useState(null);
   const content = useContent();
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function ProfileModal({ onClose }) {
   };
 
   const handleSkillClick = (skill, e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     if (selectedSkill === skill) {
       setSelectedSkill(null);
     } else {
@@ -93,25 +93,25 @@ function ProfileModal({ onClose }) {
           <div css={s.profile}>
             <div css={s.iconTextBox}>
               <div css={s.iconText}>
-                <MdEmail fontSize={20} />
+                <MdEmail />
                 <span>dlwldjs3132@naver.com</span>
                 <button
                   onClick={() =>
                     copyToClipboard("dlwldjs3132@naver.com", "email")
                   }
-                  css={s.copy}
+                  css={copiedField === "email" ? s.copied : s.copy}
                 >
                   {copiedField === "email" ? "Copied!" : "Copy"}
                 </button>
               </div>
               <div css={s.iconText}>
-                <FaGithub fontSize={20} />
+                <FaGithub />
                 <span>https://github.com/ez0603</span>
                 <button
                   onClick={() =>
                     copyToClipboard("https://github.com/ez0603", "github")
                   }
-                  css={s.copy}
+                  css={copiedField === "github" ? s.copied : s.copy}
                 >
                   {copiedField === "github" ? "Copied!" : "Copy"}
                 </button>

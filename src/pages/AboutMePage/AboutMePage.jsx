@@ -20,7 +20,7 @@ import AboutMeList from "../../components/AboutMeList/AboutMeList";
 function AboutMePage(props) {
   const listRef = useRef(null);
   const scrollIntervalRef = useRef(null);
-  const [ setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const content = useContent();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({

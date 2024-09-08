@@ -184,7 +184,7 @@ export const subheading = css`
   justify-content: flex-start;
 
   h2 {
-    font-weight: 300;
+    font-weight: 500;
     color: white;
     font-size: clamp(15px, 2vw, 25px);
     z-index: 1;
@@ -357,7 +357,7 @@ export const exContainer = css`
   height: 100%;
 
   h2 {
-    font-weight: 300;
+    font-weight: 500;
     color: white;
     font-size: clamp(15px, 2vw, 25px);
   }

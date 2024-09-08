@@ -48,6 +48,7 @@ export const modalContentStyle = css`
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-x: hidden;
+  cursor: default;
 
   @media (max-width: 700px) {
     width: 93%;

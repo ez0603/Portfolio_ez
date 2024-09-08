@@ -16,15 +16,12 @@ import java from "../../../assets/icon/Java.png";
 import js from "../../../assets/icon/JavaScript.png";
 import mysql from "../../../assets/icon/MySQL.png";
 import react from "../../../assets/icon/React.png";
-import { useMediaQuery } from "react-responsive";
 import useContent from "../../../hooks/useContent";
-import { css, keyframes } from "@emotion/react";
 
 function ProfileModal({ onClose }) {
   const [copiedField, setCopiedField] = useState(null);
   const [selectedSkill, setSelectedSkill] = useState(null); 
   const content = useContent();
-  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   useEffect(() => {
     document.body.style.overflow = "hidden";

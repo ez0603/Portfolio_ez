@@ -315,7 +315,9 @@ export const contentCard = css`
     padding: 10px;
 
     p {
-      margin-top: 10px;
+      margin-top: 10px;  
+    line-height: 1.0;
+    font-size: clamp(6px, 0.9vw, 9px);
     }
   }
 

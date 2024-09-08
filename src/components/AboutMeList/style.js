@@ -36,6 +36,10 @@ export const layout = css`
   background-color: #181818;
   color: white;
   overflow-x: hidden;
+  
+  @media (max-width: 700px) {
+    background-color: #252525;
+  }
 `;
 
 export const intro = css`
@@ -156,15 +160,15 @@ export const contentLayout = css`
       position: absolute;
       transform: translateY(-100%);
       left: 33%;
-      top: -50%;
+      top: -55%;
       margin: 0;
-      font-size: 14px;
+      font-size: 11px;
     }
 
     .mobileTitle {
       display: inline;
       font-weight: 500;
-      font-size: 13px;
+      font-size: 11px;
     }
   }
 `;

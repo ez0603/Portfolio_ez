@@ -53,6 +53,7 @@ export const modalContentStyle = css`
   @media (max-width: 700px) {
     width: 93%;
     height: 75vh;
+    background-color: #252525;
   }
 `;
 
@@ -93,6 +94,10 @@ export const container = css`
 
   p {
     text-align: center;
+  }
+
+  @media (max-width: 700px) {
+    background-color: #252525;
   }
 `;
 
@@ -175,6 +180,10 @@ export const profile = css`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 700px) {
+    background-color: #252525;
+  }
 `;
 
 export const iconTextBox = css`
@@ -238,6 +247,7 @@ export const skillbox = css`
 
   @media (max-width: 768px) {
     padding: 8px 15px;
+    background-color: #3d3d3d;
 
     img {
       width: clamp(25px, 2vw, 40px);

@@ -68,6 +68,10 @@ export const modalContent = css`
   width: 100%;
   height: 100%;
   background-color: #181818;
+  
+  @media (max-width: 700px) {
+    background-color: #252525;
+  }
 `;
 
 export const closeButton = css`

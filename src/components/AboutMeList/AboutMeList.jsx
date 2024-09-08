@@ -65,7 +65,7 @@ function AboutMeList({ onImageClick }) {
               </div>
               <div css={s.listLayout}>
                 <div css={s.imageAndTitle}>
-                  <h1>1</h1>
+                  <h1 data-h1="1 .">1</h1>
                   <div css={s.box}>
                     <img
                       src={devil}
@@ -75,7 +75,9 @@ function AboutMeList({ onImageClick }) {
                   </div>
                 </div>
                 <div css={s.contentLayout}>
-                  <h3>첫 번째</h3>
+                  <h3>
+                    <span className="mobileTitle">1. </span> 첫 번째
+                  </h3>
                   <p>
                     인터랙티브한 페이지를 개발하는 것을 좋아하며{" "}
                     <b>사용자에게 편리한 UI</b>를 제공하는 웹을 만들기 위해
@@ -85,7 +87,7 @@ function AboutMeList({ onImageClick }) {
               </div>
               <div css={s.listLayout}>
                 <div css={s.imageAndTitle}>
-                  <h1>2</h1>
+                  <h1 data-h1="2 .">2</h1>
                   <div css={s.box}>
                     <img
                       src={Walter}
@@ -95,7 +97,9 @@ function AboutMeList({ onImageClick }) {
                   </div>
                 </div>
                 <div css={s.contentLayout}>
-                  <h3>두 번째</h3>
+                  <h3>
+                    <span className="mobileTitle">2. </span> 두 번째
+                  </h3>
                   <p>
                     새롭게 배운 기술을 업무에 적용하여 <b>더 나은 서비스</b>를
                     구축해 나아가는 것에 보람을 느낍니다.
@@ -104,7 +108,7 @@ function AboutMeList({ onImageClick }) {
               </div>
               <div css={s.listLayout}>
                 <div css={s.imageAndTitle}>
-                  <h1>3</h1>
+                  <h1 data-h1="3 .">3</h1>
                   <div css={s.box}>
                     <img
                       src={baseball}
@@ -114,7 +118,9 @@ function AboutMeList({ onImageClick }) {
                   </div>
                 </div>
                 <div css={s.contentLayout}>
-                  <h3>세 번째</h3>
+                  <h3>
+                    <span className="mobileTitle">3. </span> 세 번째
+                  </h3>
                   <p>
                     팀 프로젝트를 통해 함께 의견을 나누고 고민하며 프로젝트의{" "}
                     <b>시작과 끝</b>을 맺은 경험이 있습니다.
@@ -123,7 +129,7 @@ function AboutMeList({ onImageClick }) {
               </div>
               <div css={s.listLayout}>
                 <div css={s.imageAndTitle}>
-                  <h1>4</h1>
+                  <h1 data-h1="4 .">4</h1>
                   <div css={s.box}>
                     <img
                       src={chess}
@@ -133,7 +139,9 @@ function AboutMeList({ onImageClick }) {
                   </div>
                 </div>
                 <div css={s.contentLayout}>
-                  <h3>마지막으로</h3>
+                  <h3>
+                    <span className="mobileTitle">4. </span> 마지막으로
+                  </h3>
                   <p>
                     새로운 기술을 배우고 문제를 해결하는 과정에서 즐거움을
                     느끼고, 그 과정에서 <b>학습하고 성장</b>할 수 있는 기회를

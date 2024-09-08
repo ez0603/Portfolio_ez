@@ -16,9 +16,6 @@ export const exList = css`
     height: clamp(100px, 10vw, 200px);
     object-fit: cover;
     cursor: pointer;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
     user-select: none;
     border-radius: 8px;
   }
@@ -35,7 +32,7 @@ export const layout = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: clamp(0px, 1.5vw, 20px);
   background-color: #181818;
   color: white;
   overflow-x: hidden;
@@ -56,18 +53,18 @@ export const listLayout = css`
   padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 20px);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(5px, 2vw, 20px);
   font-size: clamp(10px, 1vw, 20px);
   margin: 0 auto;
 
   @media (min-width: 701px) {
     flex-direction: row;
     align-items: flex-start;
-    gap: 20px;
   }
 
   @media (max-width: 700px) {
     position: relative;
+    border-bottom: none;
   }
 `;
 
@@ -80,19 +77,12 @@ export const imageAndTitle = css`
     color: #ccc;
     font-weight: 500;
     font-size: clamp(8px, 5vw, 23px);
+    display: none;
   }
 
-  @media (max-width: 700px) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-
+  @media (min-width: 701px) {
     h1 {
-      display: none;
-    }
-    h3::before {
-      content: attr(data-h1);
-      margin-right: 5px;
+      display: block;
     }
   }
 
@@ -124,18 +114,24 @@ export const box = css`
 export const contentLayout = css`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
 
   h3 {
     font-weight: 500;
     font-size: clamp(10px, 5vw, 18px);
     margin: 0;
+    margin-top: 10px;
   }
 
   p {
     margin-top: 5px;
     font-weight: 300;
-    font-size: clamp(9px, 1vw, 16px);
+    font-size: clamp(10px, 1vw, 16px);
+  }
+
+  .mobileTitle {
+    display: none;
+    margin-right: 5px;
   }
 
   @media (min-width: 701px) {
@@ -147,15 +143,18 @@ export const contentLayout = css`
     position: relative;
 
     h3 {
-      position: absolute; 
+      position: absolute;
       transform: translateY(-100%);
-      left: 35%;
-      top: -60%;
-      margin: 0; 
-      font-size: 15px;
+      left: 33%;
+      top: -50%;
+      margin: 0;
+      font-size: 13px;
     }
 
-    gap: 0;
-    padding: 0;
+    .mobileTitle {
+      display: inline;
+      font-weight: 500;
+      font-size: 13px;
+    }
   }
 `;

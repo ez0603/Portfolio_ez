@@ -11,6 +11,17 @@ const popIn = keyframes`
   }
 `;
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const modalOverlayStyle = css`
   position: fixed;
   top: 0;
@@ -86,7 +97,7 @@ export const container = css`
 
 export const header = css`
   width: 100%;
-  background: linear-gradient(to right, #c2d2d9 50%, #a6b9c0 50%);
+  background: linear-gradient(to right, #c2d2d9 48%, #a6b9c0 52%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,6 +293,7 @@ export const skillDescriptionBox = css`
   padding: 20px;
   border-radius: 8px;
   color: white;
+  animation: ${fadeIn} 0.5s ease-out;
 
   @media (max-width: 768px) {
     padding: 10px 15px;

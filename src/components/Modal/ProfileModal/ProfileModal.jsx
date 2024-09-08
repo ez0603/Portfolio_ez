@@ -18,6 +18,7 @@ import mysql from "../../../assets/icon/MySQL.png";
 import react from "../../../assets/icon/React.png";
 import { useMediaQuery } from "react-responsive";
 import useContent from "../../../hooks/useContent";
+import { css, keyframes } from "@emotion/react";
 
 function ProfileModal({ onClose }) {
   const [copiedField, setCopiedField] = useState(null);
@@ -149,7 +150,7 @@ function ProfileModal({ onClose }) {
                 ["React", "HTML5 / CSS3", "JavaScript"].includes(
                   selectedSkill
                 ) && (
-                  <div css={s.skillDescription}>
+                  <div css={s.skillDescription} key={selectedSkill}>
                     <div css={s.skillDescriptionBox}>
                       <p css={s.skillLine}>
                         {skillDescriptions[selectedSkill]}
@@ -178,7 +179,7 @@ function ProfileModal({ onClose }) {
               </div>
               {selectedSkill &&
                 ["Java", "Spring Boot"].includes(selectedSkill) && (
-                  <div css={s.skillDescription}>
+                  <div css={s.skillDescription} key={selectedSkill}>
                     <div css={s.skillDescriptionBox}>
                       <p css={s.skillLine}>
                         {skillDescriptions[selectedSkill]}
@@ -207,7 +208,7 @@ function ProfileModal({ onClose }) {
               </div>
               {selectedSkill &&
                 ["MySQL", "Firebase"].includes(selectedSkill) && (
-                  <div css={s.skillDescription}>
+                  <div css={s.skillDescription} key={selectedSkill}>
                     <div css={s.skillDescriptionBox}>
                       <p css={s.skillLine}>
                         {skillDescriptions[selectedSkill]}

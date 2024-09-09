@@ -1,9 +1,11 @@
 {
   "files": {
     "main.css": "/Portfolio_ez/static/css/main.dd82d891.css",
-    "main.js": "/Portfolio_ez/static/js/main.90357068.js",
+    "main.js": "/Portfolio_ez/static/js/main.b8567677.js",
     "static/js/453.d0ded385.chunk.js": "/Portfolio_ez/static/js/453.d0ded385.chunk.js",
     "static/media/이지언2.jpg": "/Portfolio_ez/static/media/이지언2.080e66a9d04618054453.jpg",
+    "static/media/backPhone2.png": "/Portfolio_ez/static/media/backPhone2.6e47130c9ca5339410dc.png",
+    "static/media/backPad3.png": "/Portfolio_ez/static/media/backPad3.f439a6d032c6e730ec94.png",
     "static/media/이지언.jpg": "/Portfolio_ez/static/media/이지언.ee26304654e23e80103d.jpg",
     "static/media/월터의 상상은 현실이 된다.webp": "/Portfolio_ez/static/media/월터의 상상은 현실이 된다.cd42d3a5f0d834b3bd7d.webp",
     "static/media/main.jpg": "/Portfolio_ez/static/media/main.bfbfdf9b5e3bab7a1509.jpg",
@@ -22,11 +24,11 @@
     "static/media/React.png": "/Portfolio_ez/static/media/React.98ff38735baa4c1b0381.png",
     "index.html": "/Portfolio_ez/index.html",
     "main.dd82d891.css.map": "/Portfolio_ez/static/css/main.dd82d891.css.map",
-    "main.90357068.js.map": "/Portfolio_ez/static/js/main.90357068.js.map",
+    "main.b8567677.js.map": "/Portfolio_ez/static/js/main.b8567677.js.map",
     "453.d0ded385.chunk.js.map": "/Portfolio_ez/static/js/453.d0ded385.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd82d891.css",
-    "static/js/main.90357068.js"
+    "static/js/main.b8567677.js"
   ]
 }

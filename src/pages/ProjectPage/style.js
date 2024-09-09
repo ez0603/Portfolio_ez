@@ -65,7 +65,7 @@ export const background = css`
     left: 3%;
 
     @media (max-width: 700px) {
-      bottom: -4%;
+      bottom: -7%;
     }
   }
 
@@ -265,7 +265,7 @@ export const arrow = css`
     animation: arrowAnimation 3.5s ease-in-out forwards,
       bounce 1.5s infinite 3.5s;
     transform: translateY(-50%);
-    top: 55%;
+    top: 65%;
   }
 `;
 

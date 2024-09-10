@@ -8,20 +8,14 @@ import it from "../../../assets/img/코리아it.png";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
-import spring from "../../../assets/icon/Spring.png";
-import cssIcon from "../../../assets/icon/CSS3.png";
-import firebase from "../../../assets/icon/Firebase.png";
-import html from "../../../assets/icon/HTML5.png";
-import java from "../../../assets/icon/Java.png";
-import js from "../../../assets/icon/JavaScript.png";
-import mysql from "../../../assets/icon/MySQL.png";
-import react from "../../../assets/icon/React.png";
 import useContent from "../../../hooks/useContent";
+import useSkillIcons from "../../../hooks/useSkillIcons"; 
 
 function ProfileModal({ onClose }) {
   const [copiedField, setCopiedField] = useState(null);
   const [selectedSkill, setSelectedSkill] = useState(null);
   const content = useContent();
+  const skillIcons = useSkillIcons(); 
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -49,16 +43,6 @@ function ProfileModal({ onClose }) {
     MySQL: content[5]?.text,
     Firebase: content[6]?.text,
     GitHub: content[7]?.text,
-  };
-
-  const skillIcons = {
-    React: react,
-    "HTML5 / CSS3": [html, cssIcon],
-    JavaScript: js,
-    Java: java,
-    "Spring Boot": spring,
-    MySQL: mysql,
-    Firebase: firebase,
   };
 
   const handleSkillClick = (skill, e) => {
@@ -121,7 +105,7 @@ function ProfileModal({ onClose }) {
             <div css={s.skillContainer}>
               <h3>Front</h3>
               <div css={s.skillBar}>
-                {["React", "HTML5 / CSS3", "JavaScript"].map((skill) => (
+                {Object.keys(skillIcons.frontend).map((skill) => (
                   <div
                     key={skill}
                     css={[
@@ -131,12 +115,12 @@ function ProfileModal({ onClose }) {
                     onClick={(e) => handleSkillClick(skill, e)}
                   >
                     <div css={s.skillContentRow}>
-                      {Array.isArray(skillIcons[skill]) ? (
-                        skillIcons[skill].map((icon, index) => (
+                      {Array.isArray(skillIcons.frontend[skill]) ? (
+                        skillIcons.frontend[skill].map((icon, index) => (
                           <img key={index} src={icon} alt={skill} />
                         ))
                       ) : (
-                        <img src={skillIcons[skill]} alt={skill} />
+                        <img src={skillIcons.frontend[skill]} alt={skill} />
                       )}
                       <p>{skill}</p>
                     </div>
@@ -144,9 +128,7 @@ function ProfileModal({ onClose }) {
                 ))}
               </div>
               {selectedSkill &&
-                ["React", "HTML5 / CSS3", "JavaScript"].includes(
-                  selectedSkill
-                ) && (
+                Object.keys(skillIcons.frontend).includes(selectedSkill) && (
                   <div css={s.skillDescription} key={selectedSkill}>
                     <div css={s.skillDescriptionBox}>
                       <p css={s.skillLine}>
@@ -158,7 +140,7 @@ function ProfileModal({ onClose }) {
 
               <h3>Back</h3>
               <div css={s.skillBar}>
-                {["Java", "Spring Boot"].map((skill) => (
+                {Object.keys(skillIcons.backend).map((skill) => (
                   <div
                     key={skill}
                     css={[
@@ -168,14 +150,14 @@ function ProfileModal({ onClose }) {
                     onClick={(e) => handleSkillClick(skill, e)}
                   >
                     <div css={s.skillContentRow}>
-                      <img src={skillIcons[skill]} alt={skill} />
+                      <img src={skillIcons.backend[skill]} alt={skill} />
                       <p>{skill}</p>
                     </div>
                   </div>
                 ))}
               </div>
               {selectedSkill &&
-                ["Java", "Spring Boot"].includes(selectedSkill) && (
+                Object.keys(skillIcons.backend).includes(selectedSkill) && (
                   <div css={s.skillDescription} key={selectedSkill}>
                     <div css={s.skillDescriptionBox}>
                       <p css={s.skillLine}>
@@ -187,7 +169,7 @@ function ProfileModal({ onClose }) {
 
               <h3>Database</h3>
               <div css={s.skillBar}>
-                {["MySQL", "Firebase"].map((skill) => (
+                {Object.keys(skillIcons.database).map((skill) => (
                   <div
                     key={skill}
                     css={[
@@ -197,14 +179,14 @@ function ProfileModal({ onClose }) {
                     onClick={(e) => handleSkillClick(skill, e)}
                   >
                     <div css={s.skillContentRow}>
-                      <img src={skillIcons[skill]} alt={skill} />
+                      <img src={skillIcons.database[skill]} alt={skill} />
                       <p>{skill}</p>
                     </div>
                   </div>
                 ))}
               </div>
               {selectedSkill &&
-                ["MySQL", "Firebase"].includes(selectedSkill) && (
+                Object.keys(skillIcons.database).includes(selectedSkill) && (
                   <div css={s.skillDescription} key={selectedSkill}>
                     <div css={s.skillDescriptionBox}>
                       <p css={s.skillLine}>

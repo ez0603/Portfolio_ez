@@ -307,10 +307,9 @@ export const projectContainer = css`
 `;
 
 export const project = css`
-  flex: 1 1 300px;
+  height: 95%;
   width: 100%;
   max-width: 350px;
-  aspect-ratio: 0.75;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -319,6 +318,7 @@ export const project = css`
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
   &:nth-child(1) {
     transition-delay: 0.2s;
@@ -386,12 +386,37 @@ export const textBox = css`
   }
 
   h3 {
-    font-size: clamp(12px, 2vw, 15px);
+    font-size: clamp(12px, 2vw, 16px);
     font-weight: 500;
   }
 
   @media (max-width: 700px) {
     width: 90%;
     height: 50%;
+  }
+`;
+
+export const skillIconsContainer = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  height: auto;
+`;
+
+export const skillIconWrapper = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+export const skillIcon = css`
+  width: 23px;
+  height: 23px;
+
+  @media (max-width: 700px) {
+    width: 15px;
+    height: 15px;
   }
 `;

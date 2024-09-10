@@ -8,6 +8,7 @@ import tableMaidMobile from "../../assets/img/tableMaidMobile.jpg";
 import { useEffect, useRef, useState } from "react";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { useLocation } from "react-router-dom";
+import useSkillIcons from "../../hooks/useSkillIcons";
 
 const imageMappings = {
   web: {
@@ -22,7 +23,8 @@ function ProjectPage() {
   const location = useLocation();
   const headingRef = useRef(null);
   const [images, setImages] = useState(imageMappings.web);
-
+  const skillIcons = useSkillIcons();
+  
   const handleContextMenu = (event) => {
     event.preventDefault();
   };
@@ -85,7 +87,7 @@ function ProjectPage() {
           if (entry.isIntersecting) {
             entry.target.classList.add("fadeInTextVisible");
           } else {
-            entry.target.classList.remove("fadeInTextVisible"); // 화면에서 벗어나면 제거
+            entry.target.classList.remove("fadeInTextVisible"); 
           }
         });
       },
@@ -136,6 +138,13 @@ function ProjectPage() {
                     관리자와 사용자 모드가 나누어 관리할 수 있는 비대면 주문
                     결제 서비스
                   </h3>
+                  <div css={s.skillIconsContainer}>
+                    {Object.entries(skillIcons.list).map(([skill, icon]) => (
+                      <div key={skill} css={s.skillIconWrapper}>
+                        <img src={icon} alt={skill} css={s.skillIcon} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </li>
               <li className="project-item" css={s.project}>

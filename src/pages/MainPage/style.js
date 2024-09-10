@@ -17,6 +17,8 @@ export const container = css`
   width: 100%;
   height: 100%;
   background-color: #141414;
+  padding-bottom: 30px;
+  cursor: default;
 `;
 
 export const aboutme = css`
@@ -231,13 +233,226 @@ export const look = css`
 
 export const profileLayout = css`
   width: 100%;
-  height: 500px;
-  /* background-color: #2d4949; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0 0 0;
+  gap: clamp(10px, 2vw, 20px);
+
+  @media (max-width: 700px) {
+    height: auto;
+    padding: 0;
+  }
+`;
+
+export const projectLayout = css`
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (max-width: 700px) {
+    height: auto;
+  }
+`;
+
+export const projectHeader = css`
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  h1 {
+    font-weight: 500;
+    color: white;
+    font-size: clamp(15px, 2vw, 25px);
+    z-index: 1;
+  }
+
+  @media (max-width: 700px) {
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 1350px) {
+    width: 80%;
+  }
+`;
+
+export const projectContainer = css`
+  width: 90%;
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(15px, 5vw, 35px);
+  margin: clamp(5px, 1vw, 10px) auto;
+  padding: 0 0 30px 0;
+  list-style-type: none;
+
+  @media (max-width: 1350px) {
+    width: 80%;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 700px) {
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const project = css`
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  &:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  &:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    height: auto;
+    transform: scale(1.05);
+  }
+
+  &:hover .textBox {
+    max-height: none;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+  }
+  /* &:not(:hover) {
+    transition: transform 0.1s ease-in-out, height 0.2s ease-in-out;
+  } */
+
+  @media (max-width: 1350px) {
+    flex: 1 1 250px;
+  }
+
+  @media (max-width: 700px) {
+    width: 75%;
+    height: auto;
+    min-height: 300px;
+    transition-delay: 0s;
+  }
+`;
+
+export const projectImg = (image) => css`
+  width: 100%;
+  height: 100%;
+  background-image: url(${image});
+  background-size: cover;
+  background-position: center;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  min-height: 200px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 60%;
+    min-height: 100px;
+  }
+`;
+
+export const textBox = css`
+  width: 90%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease, opacity 0.1s ease;
+
+  h1 {
+    font-size: clamp(15px, 2vw, 19px);
+    font-weight: 700;
+    margin: 7px 0 0 0;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 300;
+    font-size: clamp(10px, 2vw, 13px);
+  }
+
+  h3 {
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+  }
+
+  &:hover {
+    max-height: 500px;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  @media (max-width: 700px) {
+    max-height: none;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+  }
+`;
+
+export const skillIconsContainer = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+`;
+
+export const skillIconWrapper = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+export const skillIcon = css`
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+
+  @media (max-width: 700px) {
+    width: 15px;
+    height: 15px;
+  }
 `;
 
 export const test = css`
-  width: 100%;
-  height: 250px;
-  color: white;
-  /* background-color: orange; */
+  width: 90%;
+  height: 500px;
+  /* background-color: aliceblue; */
+
+  @media (max-width: 700px) {
+    width: 90%;
+    height: 50%;
+  }
 `;

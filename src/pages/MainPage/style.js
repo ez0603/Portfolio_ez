@@ -132,25 +132,25 @@ export const bounceText = css`
   }
 
   span:nth-child(1) {
-    animation-delay: 1s;
+    animation-delay: 0.1s;
   }
   span:nth-child(2) {
-    animation-delay: 2s;
+    animation-delay: 0.5s;
   }
   span:nth-child(3) {
-    animation-delay: 3s;
+    animation-delay: 1s;
   }
   span:nth-child(4) {
-    animation-delay: 4s;
+    animation-delay: 1.5s;
   }
   span:nth-child(6) {
-    animation-delay: 5s;
+    animation-delay: 2s;
   }
   span:nth-child(7) {
-    animation-delay: 6s;
+    animation-delay: 2.5s;
   }
   span:nth-child(8) {
-    animation-delay: 7s;
+    animation-delay: 3s;
   }
 
   &.visible span {

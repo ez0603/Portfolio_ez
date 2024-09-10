@@ -103,7 +103,7 @@ export const container = css`
 
 export const header = css`
   width: 100%;
-  background: linear-gradient(to right, #c2d2d9 48%, #a6b9c0 52%);
+  background: linear-gradient(to right, #c2d2d9 40%, #a6b9c0 60%);
   display: flex;
   align-items: center;
   justify-content: center;

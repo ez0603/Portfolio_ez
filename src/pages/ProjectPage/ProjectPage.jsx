@@ -47,18 +47,20 @@ function ProjectPage() {
     const projects = document.querySelectorAll(".project-item");
     const images = document.querySelectorAll(".fade-in-image");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px 500px 0px" }
-    );
+    const observerOptions =
+      window.innerWidth <= 700
+        ? { threshold: 0.1, rootMargin: "0px 0px 500px 0px" }
+        : { threshold: 0.1 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, observerOptions);
 
     projects.forEach((project) => {
       observer.observe(project);

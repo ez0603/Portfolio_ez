@@ -277,6 +277,7 @@ export const projectHeader = css`
     width: 70%;
     height: 100%;
     justify-content: center;
+    padding: 5px;
   }
 
   @media (max-width: 1350px) {

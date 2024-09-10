@@ -11,6 +11,7 @@ function MainPage(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const textRef = useRef(null);
   const location = useLocation();
+  const [key, setKey] = useState(0);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -23,6 +24,11 @@ function MainPage(props) {
   const handleContextMenu = (event) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    // 페이지 이동 시마다 key 업데이트
+    setKey((prevKey) => prevKey + 1);
+  }, [location]);
 
   useEffect(() => {
     const textElement = textRef.current;
@@ -51,7 +57,7 @@ function MainPage(props) {
         observer.unobserve(textElement);
       }
     };
-  }, [location]);
+  }, [key]);
 
   return (
     <PageLayout>
@@ -65,7 +71,7 @@ function MainPage(props) {
             >
               <div css={s.backgroundBottom}></div>
             </div>
-            <h1 ref={textRef} css={s.bounceText}>
+            <h1 key={key} ref={textRef} css={s.bounceText}>
               <span>끈</span>
               <span>기</span>
               <span>있</span>
@@ -78,8 +84,7 @@ function MainPage(props) {
             <p>
               일을 맡으면 끝까지 하는 끈기와 책임감을 가지고 있습니다.
               <br />
-              웹 개발을 위한 프론트엔드와 백엔드 기술을 배운 적이 있어 협업을 할
-              때
+              웹 개발을 위한 프론트엔드와 백엔드 기술을 배운 적이 있어 협업을 할 때
               <br />
               팀원들과의 소통에 더 능하다는 장점이 있습니다.
               <br />

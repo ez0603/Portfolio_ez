@@ -348,6 +348,7 @@ export const project = css`
     width: 75%;
     height: auto;
     min-height: 300px;
+    transition-delay: 0s;
   }
 `;
 

@@ -365,7 +365,7 @@ export const projectImg = (image) => css`
   @media (max-width: 700px) {
     width: 100%;
     height: 60%;
-    min-height: 100px;
+    min-height: 160px;
   }
 `;
 

@@ -271,5 +271,115 @@ export const arrow = css`
 
 export const projectLayout = css`
   width: 100%;
-  height: 500px;
+  height: clamp(500px, 20vw, 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 700px) {
+    height: auto;
+  }
+`;
+
+export const projectContainer = css`
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(15px, 5vw, 35px);
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+
+  @media (max-width: 1350px) {
+    width: 80%;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+export const project = css`
+  flex: 1 1 300px;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 0.75;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: all 0.5s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+
+  &:hover {
+    transform: scale(1.05); 
+  }
+
+  @media (max-width: 1350px) {
+    flex: 1 1 250px;
+  }
+
+  @media (max-width: 700px) {
+    width: 75%;
+    height: auto;
+    min-height: 300px;
+  }
+`;
+
+export const projectImg = (image) => css`
+  width: 100%;
+  height: 60%;
+  background-image: url(${image});
+  background-size: cover;
+  background-position: center;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  min-height: 220px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 60%;
+    min-height: 100px;
+  }
+`;
+
+export const textBox = css`
+  width: 90%;
+  height: 40%;
+
+  h1 {
+    font-size: clamp(15px, 2vw, 19px);
+    font-weight: 700;
+    margin: 7px 0 0 0;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 300;
+    font-size: clamp(10px, 2vw, 13px);
+  }
+
+  h3 {
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+  }
+
+  @media (max-width: 700px) {
+    width: 90%;
+    height: 50%;
+  }
 `;

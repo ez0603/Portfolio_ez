@@ -57,7 +57,7 @@ function ProjectPage() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "0px 0px 500px 0px" }
     );
 
     projects.forEach((project) => {

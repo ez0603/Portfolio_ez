@@ -3,11 +3,12 @@ import PageLayout from "../../components/PageComponents/PageLayout/PageLayout";
 import * as s from "./style";
 import main from "../../assets/img/main.jpg";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProfileModal from "../../components/Modal/ProfileModal/ProfileModal";
 
 function MainPage(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const textRef = useRef(null);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -21,6 +22,32 @@ function MainPage(props) {
     event.preventDefault();
   };
 
+  useEffect(() => {
+    const textElement = textRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (textElement) {
+      observer.observe(textElement);
+    }
+
+    return () => {
+      if (textElement) {
+        observer.unobserve(textElement);
+      }
+    };
+  }, []);
+
   return (
     <PageLayout>
       <div css={s.layout}>
@@ -33,11 +60,15 @@ function MainPage(props) {
             >
               <div css={s.backgroundBottom}></div>
             </div>
-            <h1>
-              끈기있는
+            <h1 ref={textRef} css={s.bounceText}>
+              <span>끈</span>
+              <span>기</span>
+              <span>있</span>
+              <span>는</span>
               <br />
-              개발자
-              <br />
+              <span>개</span>
+              <span>발</span>
+              <span>자</span>
             </h1>
             <p>
               일을 맡으면 끝까지 하는 끈기와 책임감을 가지고 있습니다.
@@ -47,7 +78,6 @@ function MainPage(props) {
               <br />
               팀원들과의 소통에 더 능하다는 장점이 있습니다.
               <br />
-
             </p>
             <button css={s.look} onClick={handleOpenModal}>
               <IoMdInformationCircleOutline />

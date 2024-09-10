@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 export const layout = css`
   width: 100%;
-  height: clamp(20px, 10vw, 100px);
+  height: clamp(20px, 10vw, 80px);
   position: fixed;
   top: 0;
   left: 0;

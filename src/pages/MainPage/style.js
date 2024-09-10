@@ -49,12 +49,24 @@ export const aboutme = css`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: "Tenada";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   h1 {
     font-size: 5vw;
     color: white;
     z-index: 2;
     font-family: "CWDangamAsac-Bold", sans-serif;
     margin: 0;
+
+    @media (max-width: 700px) {
+      font-family: "Tenada", sans-serif;
+    }
   }
 
   p {

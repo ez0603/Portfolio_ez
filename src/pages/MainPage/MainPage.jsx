@@ -5,10 +5,12 @@ import main from "../../assets/img/main.jpg";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
 import ProfileModal from "../../components/Modal/ProfileModal/ProfileModal";
+import { useLocation } from "react-router-dom";
 
 function MainPage(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const textRef = useRef(null);
+  const location = useLocation();
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -28,9 +30,12 @@ function MainPage(props) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            textElement.classList.remove("visible");
+            setTimeout(() => {
+              textElement.classList.add("visible");
+            }, 50);
           } else {
-            entry.target.classList.remove("visible");
+            textElement.classList.remove("visible");
           }
         });
       },
@@ -46,7 +51,7 @@ function MainPage(props) {
         observer.unobserve(textElement);
       }
     };
-  }, []);
+  }, [location]);
 
   return (
     <PageLayout>

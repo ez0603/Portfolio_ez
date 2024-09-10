@@ -317,16 +317,27 @@ export const project = css`
   flex-direction: column;
   align-items: center;
   opacity: 0;
-  transform: translateY(50px); 
-  transition: all 0.5s ease-in-out;
+  transform: translateY(50px);
+  transition: all 0.3s ease-in-out;
+
+  &:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  &:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  &:nth-child(3) {
+    transition-delay: 0.6s;
+  }
 
   &.visible {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 
   &:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
+    transition-delay: 0s;
   }
 
   @media (max-width: 1350px) {

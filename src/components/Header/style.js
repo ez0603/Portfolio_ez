@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 export const layout = css`
   width: 100%;
-  height: clamp(20px, 10vw, 80px);
+  height: clamp(20px, 10vw, 100px);
   position: fixed;
   top: 0;
   left: 0;
@@ -28,13 +28,6 @@ export const logoLayout = css`
     height: clamp(7px, 4vw, 40px);
     cursor: pointer;
     position: relative;
-    top: 3px;
-  }
-
-  @media (max-width: 700px) {
-    img {
-      top: 2px;
-    }
   }
 `;
 
@@ -42,9 +35,9 @@ export const categoryLayout = css`
   width: 25%;
   height: 100%;
   display: flex;
-  margin-left: 20px;
+  margin-left: 30px;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 
   @media (max-width: 700px) {
     margin-left: 5px;
@@ -54,6 +47,7 @@ export const categoryLayout = css`
 
 export const link = css`
   width: auto;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,4 +55,5 @@ export const link = css`
   cursor: pointer;
   color: #ccc;
   font-size: clamp(5px, 2vw, 20px);
+  line-height: 1;
 `;

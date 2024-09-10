@@ -30,6 +30,12 @@ export const logoLayout = css`
     position: relative;
     top: 3px;
   }
+
+  @media (max-width: 700px) {
+    img {
+      top: 2px;
+    }
+  }
 `;
 
 export const categoryLayout = css`
@@ -38,10 +44,16 @@ export const categoryLayout = css`
   display: flex;
   margin-left: 20px;
   align-items: center;
+  gap: 20px;
+
+  @media (max-width: 700px) {
+    margin-left: 5px;
+    gap: 8px;
+  }
 `;
 
 export const link = css`
-  width: 150px;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;

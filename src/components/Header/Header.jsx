@@ -10,7 +10,6 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("window.scrollY:", window.scrollY); // 스크롤 위치 출력
       setIsScrolled(window.scrollY > 0);
     };
 

@@ -221,5 +221,6 @@ export const profileLayout = css`
 export const test = css`
   width: 100%;
   height: 250px;
+  color: white;
   /* background-color: orange; */
 `;

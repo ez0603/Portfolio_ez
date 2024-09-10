@@ -322,7 +322,6 @@ export const project = css`
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  background-color: aqua;
 
   &:nth-child(1) {
     transition-delay: 0.2s;
@@ -379,7 +378,7 @@ export const projectImg = (image) => css`
   @media (max-width: 700px) {
     width: 100%;
     height: 100%;
-    min-height: 100px;
+    min-height: 150px;
   }
 `;
 

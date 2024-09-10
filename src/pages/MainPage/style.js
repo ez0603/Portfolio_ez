@@ -167,6 +167,7 @@ export const bounceText = css`
 
   &.visible span {
     animation-play-state: running;
+    opacity: 1;
   }
 
   @keyframes bounce {
@@ -180,6 +181,22 @@ export const bounceText = css`
     100% {
       top: 0;
       opacity: 1;
+    }
+  }
+
+  @media (max-width: 700px) {
+    @keyframes bounce {
+      0% {
+        top: 0;
+        opacity: 1;
+      }
+      50% {
+        top: -3px;
+      }
+      100% {
+        top: 0;
+        opacity: 1;
+      }
     }
   }
 `;

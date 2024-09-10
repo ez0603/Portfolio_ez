@@ -26,20 +26,17 @@ function MainPage(props) {
   };
 
   useEffect(() => {
-    // 페이지 이동 시마다 key 업데이트
-    setKey((prevKey) => prevKey + 1);
+    setKey((prevKey) => prevKey + 1); // 페이지 경로가 변경될 때마다 key 값이 변경됨
   }, [location]);
 
   useEffect(() => {
     const textElement = textRef.current;
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            textElement.classList.remove("visible");
-            setTimeout(() => {
-              textElement.classList.add("visible");
-            }, 50);
+            textElement.classList.add("visible");
           } else {
             textElement.classList.remove("visible");
           }
@@ -71,7 +68,7 @@ function MainPage(props) {
             >
               <div css={s.backgroundBottom}></div>
             </div>
-            <h1 key={key} ref={textRef} css={s.bounceText}>
+            <h1 ref={textRef} key={key} css={s.bounceText}>
               <span>끈</span>
               <span>기</span>
               <span>있</span>
@@ -95,7 +92,7 @@ function MainPage(props) {
             </button>
           </div>
           <div css={s.profileLayout}>
-            <div css={s.test}>fds</div>
+            <div css={s.test}>fsdfdffdsf</div>
           </div>
         </div>
       </div>

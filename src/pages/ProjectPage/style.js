@@ -69,9 +69,9 @@ export const background = css`
     left: 3%;
 
     @media (max-width: 700px) {
-      bottom: -22%;
+      bottom: -30%;
       left: 8%;
-      font-size: 40px;
+      font-size: 50px;
     }
   }
 
@@ -94,7 +94,7 @@ export const background = css`
   }
 
   @media (max-width: 700px) {
-    height: 85vh;
+    height: 90vh;
     &::before {
       background: linear-gradient(
           to bottom,
@@ -261,12 +261,12 @@ export const arrow = css`
   @media (max-width: 700px) {
     animation: arrowAnimation 3.5s ease-in-out forwards,
       bounce 1.5s infinite 3.5s;
-    top: 200%;
-    left: 185%; 
+    top: 200px;
+    left: 110px; 
     transform: translateX(
       -50%
     ); 
-    font-size: 50px;
+    font-size: 70px;
   }
 `;
 

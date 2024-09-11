@@ -35,7 +35,7 @@ export const container = css`
   align-items: center;
   justify-content: center;
   background-color: #141414;
-  padding-bottom: clamp(30px, 15vw, 80px);
+  padding-bottom: clamp(50px, 15vw, 80px);
 
   @media (max-width: 700px) {
     padding-bottom: 80px;

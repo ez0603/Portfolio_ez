@@ -17,8 +17,12 @@ export const container = css`
   width: 100%;
   height: 100%;
   background-color: #141414;
-  padding-bottom: 30px;
+  padding-bottom: clamp(30px, 10vw, 50px);
   cursor: default;
+
+  @media (max-width: 700px) {
+    padding-bottom: 50px;
+  }
 `;
 
 export const aboutme = css`
@@ -118,11 +122,7 @@ export const aboutme = css`
           rgba(20, 20, 20, 0.5),
           rgba(20, 20, 20, 0) 25%
         ),
-        linear-gradient(
-          to top,
-          rgba(20, 20, 20, 0.5),
-          rgba(20, 20, 20, 0) 25%
-        );
+        linear-gradient(to top, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 25%);
     }
   }
 `;
@@ -333,7 +333,7 @@ export const projectHeader = css`
 
     h1 {
       font-size: 25px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   }
 

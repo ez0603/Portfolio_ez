@@ -23,6 +23,10 @@ export const container = css`
   justify-content: center;
   flex-direction: column;
   padding-bottom: clamp(30px, 10vw, 50px);
+
+  @media (max-width: 700px) {
+    padding-bottom: 50px;
+  }
 `;
 
 export const background = css`
@@ -65,18 +69,10 @@ export const background = css`
     left: 3%;
 
     @media (max-width: 700px) {
-      bottom: -7%;
+      bottom: -22%;
+      left: 8%;
+      font-size: 40px;
     }
-  }
-
-  p {
-    font-size: clamp(5px, 1.5vw, 25px);
-    color: white;
-    z-index: 2;
-    font-family: "Pretendard-Regular", sans-serif;
-    margin: clamp(0px, 1vw, 10px) 0;
-    line-height: 1.4;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   &::before {
@@ -96,6 +92,18 @@ export const background = css`
     z-index: 1;
     pointer-events: none;
   }
+
+  @media (max-width: 700px) {
+    height: 85vh;
+    &::before {
+      background: linear-gradient(
+          to bottom,
+          rgba(20, 20, 20, 0.5),
+          rgba(20, 20, 20, 0) 25%
+        ),
+        linear-gradient(to top, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 25%);
+    }
+  }
 `;
 
 export const imageContainer = css`
@@ -106,6 +114,11 @@ export const imageContainer = css`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 700px) {
+    position: absolute;
+    top: -15%;
+  }
 `;
 
 export const backPhoneImg = (image) => css`
@@ -142,10 +155,10 @@ export const backPhoneImg = (image) => css`
   }
 
   @media (max-width: 700px) {
-    width: 20%;
-    height: 70%;
-    top: 6%;
-    left: 17%;
+    width: 80%;
+    height: 50%;
+    top: 4%;
+    left: 22%;
   }
 `;
 
@@ -182,32 +195,16 @@ export const backPadImg = (image) => css`
   }
 
   @media (max-width: 700px) {
-    width: 50%;
-    height: 70%;
+    width: 100%;
+    height: 45%;
     top: 2%;
-    left: 5%;
   }
-`;
-
-export const backgroundBottom = css`
-  position: absolute;
-  width: 100%;
-  height: 20%;
-  top: 85%;
-  background: linear-gradient(
-    180deg,
-    hsla(0, 0%, 8%, 0) 0%,
-    hsla(0, 0%, 8%, 0.15) 15%,
-    hsla(0, 0%, 8%, 0.35) 29%,
-    hsla(0, 0%, 8%, 0.58) 44%,
-    #141414 68%,
-    #141414
-  );
 `;
 
 export const fadeInText = css`
   opacity: 0;
   transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out;
+  font-size: 5vw;
 
   &.fadeInTextVisible {
     opacity: 1;
@@ -264,8 +261,12 @@ export const arrow = css`
   @media (max-width: 700px) {
     animation: arrowAnimation 3.5s ease-in-out forwards,
       bounce 1.5s infinite 3.5s;
-    transform: translateY(-50%);
-    top: 65%;
+    top: 200%;
+    left: 185%; 
+    transform: translateX(
+      -50%
+    ); 
+    font-size: 50px;
   }
 `;
 

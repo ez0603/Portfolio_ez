@@ -117,7 +117,6 @@ function ProjectPage() {
               />
               <div className="fade-in-image" css={s.backPadImg(projectPad)} />
             </div>
-            <div css={s.backgroundBottom} />
             <h1 ref={headingRef} css={s.fadeInText}>
               Project
             </h1>

@@ -36,6 +36,10 @@ export const container = css`
   justify-content: center;
   background-color: #141414;
   padding-bottom: clamp(30px, 10vw, 50px);
+
+  @media (max-width: 700px) {
+    padding-bottom: 50px;
+  }
 `;
 
 export const aboutme = css`

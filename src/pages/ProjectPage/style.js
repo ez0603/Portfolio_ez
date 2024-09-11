@@ -261,7 +261,7 @@ export const arrow = css`
   @media (max-width: 700px) {
     animation: arrowAnimation 3.5s ease-in-out forwards,
       bounce 1.5s infinite 3.5s;
-    top: 200px;
+    top: 220px;
     left: 110px; 
     transform: translateX(
       -50%

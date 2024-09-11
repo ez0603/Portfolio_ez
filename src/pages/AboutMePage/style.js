@@ -114,6 +114,18 @@ export const aboutme = css`
     z-index: 1;
     pointer-events: none;
   }
+
+  @media (max-width: 700px) {
+    height: 85vh;
+    &::before {
+      background: linear-gradient(
+          to bottom,
+          rgba(20, 20, 20, 0.5),
+          rgba(20, 20, 20, 0) 25%
+        ),
+        linear-gradient(to top, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 25%);
+    }
+  }
 `;
 
 export const mainBackground = (image) => css`
@@ -147,6 +159,20 @@ export const backgroundBottom = css`
     #141414 68%,
     #141414
   );
+
+  @media (max-width: 700px) {
+    height: 100%;
+    top: 23%;
+    background: linear-gradient(
+      180deg,
+      hsla(0, 0%, 8%, 0) 0%,
+      hsla(0, 0%, 8%, 0.15) 15%,
+      hsla(0, 0%, 8%, 0.35) 29%,
+      hsla(0, 0%, 8%, 0.58) 44%,
+      #141414 68%,
+      #141414
+    );
+  }
 `;
 
 export const profileBackground = (image) => css`
@@ -165,6 +191,12 @@ export const profileBackground = (image) => css`
   user-drag: none;
   -webkit-user-select: none;
   user-select: none;
+
+  @media (max-width: 700px) {
+    height: 100%;
+    width: 40%;
+    right: 10%;
+  }
 `;
 
 export const introduce = css`
@@ -175,6 +207,18 @@ export const introduce = css`
   justify-content: center;
   position: relative;
   left: 5%;
+
+  @media (max-width: 700px) {
+    h1 {
+      position: relative;
+      font-size: 45px;
+      bottom: 10%;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const subheading = css`
@@ -188,6 +232,13 @@ export const subheading = css`
     color: white;
     font-size: clamp(15px, 2vw, 25px);
     z-index: 1;
+  }
+
+  @media (max-width: 700px) {
+    h2 {
+      font-size: 25px;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -254,6 +305,15 @@ export const contentBackground = css`
   text-shadow: 3px 3px 0 #595959, -3px -3px 0 #595959, -3px 3px 0 #595959,
     3px -3px 0 #595959, 3px 0 0 #595959, -3px 0 0 #595959, 0 3px 0 #595959,
     0 -3px 0 #595959;
+
+  @media (max-width: 700px) {
+    font-size: 180px;
+    bottom: -22%;
+    right: 88%;
+
+    text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, -2px 2px 0 #fff,
+      2px -2px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff;
+  }
 `;
 
 export const contentCard = css`
@@ -362,5 +422,12 @@ export const exContainer = css`
     font-weight: 500;
     color: white;
     font-size: clamp(15px, 2vw, 25px);
+  }
+
+  @media (max-width: 700px) {
+    h2 {
+      font-size: 25px;
+      margin-bottom: 35px;
+    }
   }
 `;

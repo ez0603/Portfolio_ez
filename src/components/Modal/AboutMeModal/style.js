@@ -54,7 +54,7 @@ export const modalContentStyle = (isClosing) => css`
 
   @media (max-width: 700px) {
     width: 90%;
-    height: 81vh;
+    height: 82.5vh;
     max-width: none;
     max-height: none;
   }

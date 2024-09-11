@@ -82,27 +82,12 @@ export const background = css`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(20, 20, 20, 0.5),
-        rgba(20, 20, 20, 0) 25%
-      ),
-      linear-gradient(to right, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 25%),
-      linear-gradient(to left, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 10%);
     z-index: 1;
     pointer-events: none;
   }
 
   @media (max-width: 700px) {
     height: 90vh;
-    &::before {
-      background: linear-gradient(
-          to bottom,
-          rgba(20, 20, 20, 0.5),
-          rgba(20, 20, 20, 0) 25%
-        ),
-        linear-gradient(to top, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0) 25%);
-    }
   }
 `;
 
@@ -262,10 +247,8 @@ export const arrow = css`
     animation: arrowAnimation 3.5s ease-in-out forwards,
       bounce 1.5s infinite 3.5s;
     top: 220px;
-    left: 110px; 
-    transform: translateX(
-      -50%
-    ); 
+    left: 110px;
+    transform: translateX(-50%);
     font-size: 70px;
   }
 `;

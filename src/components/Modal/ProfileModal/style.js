@@ -51,8 +51,8 @@ export const modalContentStyle = css`
   cursor: default;
 
   @media (max-width: 700px) {
-    width: 93%;
-    height: 75vh;
+    width: 90%;
+    height: 90vh;
     background-color: #252525;
   }
 `;

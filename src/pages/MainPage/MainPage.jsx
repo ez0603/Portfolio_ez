@@ -7,15 +7,16 @@ import { useEffect, useRef, useState } from "react";
 import ProfileModal from "../../components/Modal/ProfileModal/ProfileModal";
 import { useLocation } from "react-router-dom";
 import tableMaid from "../../assets/img/tableMaid.jpg";
-import useSkillIcons from "../../hooks/useSkillIcons"; 
+import useSkillIcons from "../../hooks/useSkillIcons";
 
 function MainPage(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const textRef = useRef(null);
   const location = useLocation();
   const [key, setKey] = useState(0);
-  const skillIcons = useSkillIcons(); 
-  
+  const skillIcons = useSkillIcons();
+  const [isMobile, setIsMobile] = useState(false);
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -86,6 +87,19 @@ function MainPage(props) {
     };
   }, [location]);
 
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth <= 700);
+  };
+
+  useEffect(() => {
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
   return (
     <PageLayout>
       <div css={s.layout}>
@@ -109,13 +123,26 @@ function MainPage(props) {
               <span>자</span>
             </h1>
             <p>
-              일을 맡으면 끝까지 하는 끈기와 책임감을 가지고 있습니다.
-              <br />
-              웹 개발을 위한 프론트엔드와 백엔드 기술을 배운 적이 있어 협업을 할
-              때
-              <br />
-              팀원들과의 소통에 더 능하다는 장점이 있습니다.
-              <br />
+              {isMobile ? (
+                <>
+                  일을 맡으면 끝까지 하는 끈기와 책임감을 가지고 있습니다.
+                  <br />
+                  웹 개발을 위한 프론트엔드와 백엔드 기술을 배운 적이 있어
+                  <br />
+                  협업을 할 때 팀원들과의 소통에 더 능하다는 장점이 있습니다.
+                  <br />
+                </>
+              ) : (
+                <>
+                  일을 맡으면 끝까지 하는 끈기와 책임감을 가지고 있습니다.
+                  <br />
+                  웹 개발을 위한 프론트엔드와 백엔드 기술을 배운 적이 있어
+                  협업을 할 때
+                  <br />
+                  팀원들과의 소통에 더 능하다는 장점이 있습니다.
+                  <br />
+                </>
+              )}
             </p>
             <button css={s.look} onClick={handleOpenModal}>
               <IoMdInformationCircleOutline />

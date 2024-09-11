@@ -16,7 +16,7 @@ export const layout = css`
   @media (max-width: 700px) {
     width: 100%;
     height: 40px;
-    padding: 5px 10px;
+    padding: 7px 10px;
   }
 `;
 
@@ -38,8 +38,8 @@ export const logoLayout = css`
 
   @media (max-width: 700px) {
     img {
-      width: 70px;
-      height: 30px;
+      width: 100px;
+      height: 35px;
     }
   }
 `;
@@ -72,6 +72,6 @@ export const link = css`
   line-height: 1;
 
   @media (max-width: 700px) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;

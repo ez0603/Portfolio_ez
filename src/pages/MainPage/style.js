@@ -68,6 +68,9 @@ export const aboutme = css`
 
     @media (max-width: 700px) {
       font-family: "Tenada", sans-serif;
+      font-size: 45px;
+      position: relative;
+      bottom: 11%;
     }
   }
 
@@ -79,6 +82,13 @@ export const aboutme = css`
     margin: clamp(0px, 1vw, 10px) 0;
     line-height: 1.4;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 700px) {
+      font-size: 14px;
+
+      position: relative;
+      bottom: 10%;
+    }
   }
 
   &::before {
@@ -101,7 +111,7 @@ export const aboutme = css`
   }
 
   @media (max-width: 700px) {
-    height: 70vh;
+    height: 100vh;
   }
 `;
 
@@ -136,6 +146,20 @@ export const backgroundBottom = css`
     #141414 68%,
     #141414
   );
+
+  @media (max-width: 700px) {
+    height: 70%;
+    top: 40%;
+    background: linear-gradient(
+      180deg,
+      hsla(0, 0%, 8%, 0) 0%,
+      hsla(0, 0%, 8%, 0.15) 15%,
+      hsla(0, 0%, 8%, 0.35) 29%,
+      hsla(0, 0%, 8%, 0.58) 44%,
+      #141414 68%,
+      #141414
+    );
+  }
 `;
 
 export const bounceText = css`
@@ -233,6 +257,19 @@ export const look = css`
     width: clamp(10px, 2vw, 35px);
     height: clamp(10px, 3vw, 35px);
   }
+
+  @media (max-width: 700px) {
+    position: relative;
+    padding: 9px 12px;
+    font-size: 13px;
+    gap: 5px;
+    bottom: 9%;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 export const profileLayout = css`
@@ -282,6 +319,10 @@ export const projectHeader = css`
     height: 100%;
     justify-content: center;
     padding: 5px;
+
+    h1 {
+      font-size: 20px;
+    }
   }
 
   @media (max-width: 1350px) {
@@ -310,6 +351,7 @@ export const projectContainer = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 40px;
   }
 `;
 

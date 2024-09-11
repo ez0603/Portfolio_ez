@@ -16,7 +16,7 @@ export const layout = css`
   @media (max-width: 700px) {
     width: 100%;
     height: 40px;
-    padding: 7px 10px;
+    padding: 10px 10px 8px 10px;
   }
 `;
 
@@ -38,8 +38,8 @@ export const logoLayout = css`
 
   @media (max-width: 700px) {
     img {
-      width: 100px;
-      height: 35px;
+      width: 110px;
+      height: 40px;
     }
   }
 `;
@@ -54,7 +54,7 @@ export const categoryLayout = css`
 
   @media (max-width: 700px) {
     margin-left: 5px;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
   }
 `;

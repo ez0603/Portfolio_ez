@@ -84,7 +84,7 @@ export const aboutme = css`
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
     @media (max-width: 700px) {
-      font-size: 14px;
+      font-size: 15px;
 
       position: relative;
       bottom: 10%;
@@ -111,7 +111,19 @@ export const aboutme = css`
   }
 
   @media (max-width: 700px) {
-    height: 85vh;
+    height: 80vh;
+    &::before {
+      background: linear-gradient(
+          to bottom,
+          rgba(20, 20, 20, 0.5),
+          rgba(20, 20, 20, 0) 25%
+        ),
+        linear-gradient(
+          to top,
+          rgba(20, 20, 20, 0.5),
+          rgba(20, 20, 20, 0) 25%
+        );
+    }
   }
 `;
 
@@ -148,8 +160,8 @@ export const backgroundBottom = css`
   );
 
   @media (max-width: 700px) {
-    height: 70%;
-    top: 40%;
+    height: 100%;
+    top: 25%;
     background: linear-gradient(
       180deg,
       hsla(0, 0%, 8%, 0) 0%,
@@ -321,7 +333,7 @@ export const projectHeader = css`
     padding: 5px;
 
     h1 {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 
@@ -351,7 +363,7 @@ export const projectContainer = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 45px;
   }
 `;
 

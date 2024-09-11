@@ -147,8 +147,8 @@ export const mainImg = (image) => css`
 export const backgroundBottom = css`
   position: absolute;
   width: 100%;
-  height: 20%;
-  top: 85%;
+  height: 60%;
+  top: 57%;
   background: linear-gradient(
     180deg,
     hsla(0, 0%, 8%, 0) 0%,

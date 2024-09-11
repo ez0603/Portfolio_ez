@@ -111,7 +111,7 @@ export const aboutme = css`
   }
 
   @media (max-width: 700px) {
-    height: 90vh;
+    height: 85vh;
   }
 `;
 

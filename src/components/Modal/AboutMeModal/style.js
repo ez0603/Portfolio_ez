@@ -22,7 +22,6 @@ const popOut = keyframes`
   }
 `;
 
-
 export const modalOverlayStyle = css`
   position: fixed;
   top: 0;
@@ -50,12 +49,14 @@ export const modalContentStyle = (isClosing) => css`
   animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.5s"}
     ease-in-out;
   overflow: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
   @media (max-width: 700px) {
     width: 90%;
     height: 90vh;
+    background-color: #252525;
   }
 `;
 

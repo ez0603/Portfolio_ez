@@ -35,7 +35,7 @@ export const modalOverlayStyle = css`
 export const modalContentStyle = css`
   position: fixed;
   width: 50%;
-  height: 90%;
+  height: 92%;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);

@@ -17,7 +17,7 @@ export const container = css`
   width: 100%;
   height: 100%;
   background-color: #141414;
-  padding-bottom: clamp(30px, 10vw, 50px);
+  padding-bottom: clamp(30px, 15vw, 80px);
   cursor: default;
 
   @media (max-width: 700px) {

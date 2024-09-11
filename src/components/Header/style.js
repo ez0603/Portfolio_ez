@@ -12,6 +12,12 @@ export const layout = css`
   padding: 0 clamp(10px, 3vw, 60px);
   background-color: transparent;
   transition: background-color 0.3s ease;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+  }
 `;
 
 export const scrolledLayout = css`
@@ -29,6 +35,13 @@ export const logoLayout = css`
     cursor: pointer;
     position: relative;
   }
+
+  @media (max-width: 700px) {
+    img {
+      width: 70px;
+      height: 30px;
+    }
+  }
 `;
 
 export const categoryLayout = css`
@@ -42,6 +55,7 @@ export const categoryLayout = css`
   @media (max-width: 700px) {
     margin-left: 5px;
     gap: 8px;
+    width: 100%;
   }
 `;
 
@@ -56,4 +70,8 @@ export const link = css`
   color: #ccc;
   font-size: clamp(5px, 2vw, 20px);
   line-height: 1;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
 `;

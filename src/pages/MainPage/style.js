@@ -99,6 +99,10 @@ export const aboutme = css`
     z-index: 1;
     pointer-events: none;
   }
+
+  @media (max-width: 700px) {
+    height: 70vh;
+  }
 `;
 
 export const mainImg = (image) => css`

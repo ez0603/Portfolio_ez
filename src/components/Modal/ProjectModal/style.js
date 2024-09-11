@@ -1,4 +1,26 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
+
+const popIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+const popOut = keyframes`
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+`;
 
 export const overlayStyle = css`
   position: fixed;
@@ -13,13 +35,26 @@ export const overlayStyle = css`
   z-index: 1000;
 `;
 
-export const modalStyle = css`
+export const modalStyle = (isClosing) => css`
+  position: fixed;
+  width: 50%;
+  height: 92%;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  will-change: transform, opacity;
+  animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.3s"}
+    ease-in-out;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
-  position: relative;
+
+  @media (max-width: 700px) {
+    width: 90%;
+    height: 90vh;
+  }
 `;
 
 export const closeButtonStyle = css`

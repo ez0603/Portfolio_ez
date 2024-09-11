@@ -61,7 +61,7 @@ function ProjectPage() {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
+  const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
@@ -185,7 +185,7 @@ function ProjectPage() {
       {modalContent && (
         <ProjectModal
           isOpen={isModalOpen}
-          onClose={closeModal}
+          onClose={handleCloseModal}
           content={modalContent}
         />
       )}

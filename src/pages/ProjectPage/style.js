@@ -25,7 +25,7 @@ export const container = css`
   padding-bottom: clamp(30px, 10vw, 50px);
 
   @media (max-width: 700px) {
-    padding-bottom: 50px;
+    padding-bottom: 80px;
   }
 `;
 
@@ -304,6 +304,7 @@ export const projectContainer = css`
     height: 100%;
     flex-direction: column;
     justify-content: center;
+    gap: 45px;
   }
 `;
 

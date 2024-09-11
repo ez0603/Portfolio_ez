@@ -161,7 +161,7 @@ export const backgroundBottom = css`
 
   @media (max-width: 700px) {
     height: 100%;
-    top: 25%;
+    top: 23%;
     background: linear-gradient(
       180deg,
       hsla(0, 0%, 8%, 0) 0%,

@@ -3,24 +3,25 @@ import { css, keyframes } from "@emotion/react";
 const popIn = keyframes`
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: scale(0.8);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
 `;
 
 const popOut = keyframes`
   0% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: scale(0.8);
   }
 `;
+
 
 export const modalOverlayStyle = css`
   position: fixed;
@@ -29,20 +30,20 @@ export const modalOverlayStyle = css`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 999;
 `;
 
 export const modalContentStyle = (isClosing) => css`
   position: fixed;
   width: 50%;
-  max-height: 92%;
+  height: 92%;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  top: 54%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   overflow-y: auto;
   background-color: #181818;
   will-change: transform, opacity;
@@ -54,7 +55,7 @@ export const modalContentStyle = (isClosing) => css`
 
   @media (max-width: 700px) {
     width: 90%;
-    max-height: 83.5vh;
+    height: 90vh;
   }
 `;
 

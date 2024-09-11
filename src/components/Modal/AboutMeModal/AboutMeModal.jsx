@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useState } from "react";
 import * as s from "./style";
+import { createPortal } from "react-dom";
 
 function AboutMeModal({ description, image, onClose }) {
   const [isClosing, setIsClosing] = useState(false);
@@ -25,7 +26,7 @@ function AboutMeModal({ description, image, onClose }) {
     }
   };
 
-  return (
+  return createPortal(
     <div css={s.modalOverlayStyle} onClick={handleOverlayClick}>
       <div css={s.modalContentStyle(isClosing)}>
         <button onClick={closeWithAnimation} css={s.closeButton}>
@@ -39,7 +40,8 @@ function AboutMeModal({ description, image, onClose }) {
           <p>{description}</p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

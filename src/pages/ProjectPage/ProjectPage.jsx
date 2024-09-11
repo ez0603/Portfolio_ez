@@ -5,17 +5,25 @@ import projectPad from "../../assets/img/backPad3.png";
 import projectPhone from "../../assets/img/backPhone2.png";
 import tableMaid from "../../assets/img/tableMaid.jpg";
 import tableMaidMobile from "../../assets/img/tableMaidMobile.jpg";
+import project2 from "../../assets/img/main.jpg";
+import project3 from "../../assets/img/rotated_바다사진.jpg";
 import { useEffect, useRef, useState } from "react";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { useLocation } from "react-router-dom";
 import useSkillIcons from "../../hooks/useSkillIcons";
+import ProjectModal from "../../components/Modal/ProjectModal/ProjectModal";
+import useProjectDetails from "../../hooks/useProjectDetails";
 
 const imageMappings = {
   web: {
     tableMaid: tableMaid,
+    project2: project2,
+    project3: project3,
   },
   mobile: {
     tableMaid: tableMaidMobile,
+    project2: project2,
+    project3: project3,
   },
 };
 
@@ -24,7 +32,10 @@ function ProjectPage() {
   const headingRef = useRef(null);
   const [images, setImages] = useState(imageMappings.web);
   const skillIcons = useSkillIcons();
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+  const projectDetails = useProjectDetails();
+
   const handleContextMenu = (event) => {
     event.preventDefault();
   };
@@ -44,6 +55,15 @@ function ProjectPage() {
       window.removeEventListener("resize", updateImages);
     };
   }, []);
+
+  const openModal = (content) => {
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const projects = document.querySelectorAll(".project-item");
@@ -87,7 +107,7 @@ function ProjectPage() {
           if (entry.isIntersecting) {
             entry.target.classList.add("fadeInTextVisible");
           } else {
-            entry.target.classList.remove("fadeInTextVisible"); 
+            entry.target.classList.remove("fadeInTextVisible");
           }
         });
       },
@@ -128,34 +148,47 @@ function ProjectPage() {
           </div>
           <div css={s.projectLayout}>
             <ul css={s.projectContainer}>
-              <li className="project-item" css={s.project}>
-                <div css={s.projectImg(images.tableMaid)} />
-                <div css={s.textBox}>
-                  <h1>Table Maid</h1>
-                  <p>2024.05.24 ~ 2024.08.12</p>
-                  <h3>
-                    관리자와 사용자 모드가 나누어 관리할 수 있는 비대면 주문
-                    결제 서비스
-                  </h3>
-                  <div css={s.skillIconsContainer}>
-                    {Object.entries(skillIcons.list).map(([skill, icon]) => (
-                      <div key={skill} css={s.skillIconWrapper}>
-                        <img src={icon} alt={skill} css={s.skillIcon} />
-                      </div>
-                    ))}
+              {projectDetails.map((project, index) => (
+                <li
+                  key={index}
+                  className="project-item"
+                  css={s.project}
+                  onClick={() => openModal(project)}
+                >
+                  <div css={s.projectImg(images[project.imageKey])} />
+                  <div css={s.textBox}>
+                    <h1>{project.title}</h1>
+                    <p>{project.period}</p>
+                    <h3>{project.description}</h3>
+                    <div css={s.skillIconsContainer}>
+                      {project.techStack.map((tech) => (
+                        <div key={tech} css={s.skillIconWrapper}>
+                          {skillIcons.list[tech] ? (
+                            <img
+                              src={skillIcons.list[tech]}
+                              alt={tech}
+                              css={s.skillIcon}
+                            />
+                          ) : (
+                            <span>{tech}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="project-item" css={s.project}>
-                <div css={s.projectImg(images.tableMaid)} />
-              </li>
-              <li className="project-item" css={s.project}>
-                <div css={s.projectImg(images.tableMaid)} />
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
+      {modalContent && (
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          content={modalContent}
+        />
+      )}
     </PageLayout>
   );
 }

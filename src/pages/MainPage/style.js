@@ -32,7 +32,7 @@ export const aboutme = css`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 5%;
+  padding: 0 5%;
   overflow: hidden;
 
   @font-face {
@@ -111,7 +111,7 @@ export const aboutme = css`
   }
 
   @media (max-width: 700px) {
-    height: 80vh;
+    height: 85vh;
     &::before {
       background: linear-gradient(
           to bottom,
@@ -330,10 +330,10 @@ export const projectHeader = css`
     width: 70%;
     height: 100%;
     justify-content: center;
-    padding: 5px;
 
     h1 {
       font-size: 25px;
+      margin-bottom: 20px;
     }
   }
 

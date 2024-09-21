@@ -47,7 +47,7 @@ function ProjectModal({ isOpen, onClose, content }) {
               href={content.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              css={s.githubLinkStyle}
+              css={s.githubLinkStyle} 
             >
               <img src={Github} alt="Github" css={s.githubIconStyle} />
               깃허브에서 보기

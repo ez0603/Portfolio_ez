@@ -11,17 +11,6 @@ const popIn = keyframes`
   }
 `;
 
-const popOut = keyframes`
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-`;
-
 export const overlayStyle = css`
   position: fixed;
   top: 0;
@@ -33,27 +22,29 @@ export const overlayStyle = css`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  cursor: default;
 `;
 
-export const modalStyle = (isClosing) => css`
+export const modalStyle = css`
   position: fixed;
-  width: 50%;
-  height: 92%;
+  width: 70%;
+  height: 88%;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   overflow-y: auto;
   will-change: transform, opacity;
-  animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.3s"}
-    ease-in-out;
+  animation: ${popIn} 0.3s ease-in-out;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: #fff;
+  padding: 20px;
 
   @media (max-width: 700px) {
-    width: 90%;
+    width: 86%;
     height: 90vh;
+    padding: 17px;
   }
 `;
 
@@ -72,5 +63,102 @@ export const iconStyle = css`
 `;
 
 export const contentStyle = css`
-  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+    margin-top: 40px;
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  li {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+
+  li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  p {
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: 700px) {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      gap: 12px;
+      margin: 15px 0 20px 0;
+    }
+
+    li {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: 26px;
+    }
+
+    h3 {
+      margin: 15px 0;
+      font-size: 12px;
+    }
+
+    p {
+      margin: 10px 0 20px 0;
+      font-size: 14px;
+    }
+  }
+`;
+
+export const githubLinkStyle = css`
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #838383;
+  cursor: pointer;
+
+  &:hover {
+    color: #333;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 13px;
+  }
+`;
+
+export const githubIconStyle = css`
+  width: 23px;
+  height: 23px;
+  margin-right: 7px;
+  vertical-align: middle;
+
+  @media (max-width: 700px) {
+  }
 `;

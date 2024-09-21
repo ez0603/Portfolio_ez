@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import * as s from "./style";
 import { MdClose } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Github from "../../../assets/icon/GitHub.png";
 
 function ProjectModal({ isOpen, onClose, content }) {
-  const [isClosing, setIsClosing] = useState(false);
-
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -18,13 +17,6 @@ function ProjectModal({ isOpen, onClose, content }) {
     };
   }, [isOpen]);
 
-  const closeWithAnimation = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      onClose();
-    }, 300);
-  };
-
   if (!isOpen) return null;
 
   const handleOverlayClick = (e) => {
@@ -35,20 +27,32 @@ function ProjectModal({ isOpen, onClose, content }) {
 
   return (
     <div css={s.overlayStyle} onClick={handleOverlayClick}>
-      <div css={s.modalStyle(isClosing)}>
-        <button css={s.closeButtonStyle} onClick={closeWithAnimation}>
+      <div css={s.modalStyle}>
+        <button css={s.closeButtonStyle} onClick={onClose}>
           <MdClose css={s.iconStyle} />
         </button>
         <div css={s.contentStyle}>
           <h1>{content.title}</h1>
-          <p>{content.period}</p>
-          <p>{content.description}</p>
-          <h3>사용된 기술:</h3>
-          <div>
+          <h3>{content.period}</h3>
+          <ul>
             {content.techStack.map((tech, index) => (
-              <li key={index}>{tech}</li>
+              <li key={index}>
+                <img src={tech} alt={`tech-${index}`} />
+              </li>
             ))}
-          </div>
+          </ul>
+          <p>{content.description}</p>
+          {content.githubUrl && (
+            <a
+              href={content.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              css={s.githubLinkStyle}
+            >
+              <img src={Github} alt="Github" css={s.githubIconStyle} />
+              깃허브에서 보기
+            </a>
+          )}
         </div>
       </div>
     </div>

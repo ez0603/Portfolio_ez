@@ -161,17 +161,13 @@ function ProjectPage() {
                     <p>{project.period}</p>
                     <h3>{project.description}</h3>
                     <div css={s.skillIconsContainer}>
-                      {project.techStack.map((tech) => (
-                        <div key={tech} css={s.skillIconWrapper}>
-                          {skillIcons.list[tech] ? (
-                            <img
-                              src={skillIcons.list[tech]}
-                              alt={tech}
-                              css={s.skillIcon}
-                            />
-                          ) : (
-                            <span>{tech}</span>
-                          )}
+                      {project.techStack.map((tech, techIndex) => (
+                        <div key={techIndex} css={s.skillIconWrapper}>
+                          <img
+                            src={tech}
+                            alt={`tech-${techIndex}`}
+                            css={s.skillIcon}
+                          />
                         </div>
                       ))}
                     </div>

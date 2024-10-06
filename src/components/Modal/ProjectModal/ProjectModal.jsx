@@ -1,19 +1,39 @@
 /** @jsxImportSource @emotion/react */
 import * as s from "./style";
 import { MdClose } from "react-icons/md";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Github from "../../../assets/icon/GitHub.png";
 
 function ProjectModal({ isOpen, onClose, content }) {
+  const [topMargin, setTopMargin] = useState(0);
+
   useEffect(() => {
+    const handleResize = () => {
+      if (window.visualViewport) {
+        const viewportHeight = window.visualViewport.height;
+        const documentHeight = window.innerHeight;
+        if (viewportHeight < documentHeight) {
+          const margin = documentHeight - viewportHeight;
+          setTopMargin(margin);
+        } else {
+          setTopMargin(0);
+        }
+      }
+    };
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      window.visualViewport.addEventListener("resize", handleResize);
+      handleResize();
     } else {
       document.body.style.overflow = "auto";
     }
 
     return () => {
       document.body.style.overflow = "auto";
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", handleResize);
+      }
     };
   }, [isOpen]);
 
@@ -27,7 +47,7 @@ function ProjectModal({ isOpen, onClose, content }) {
 
   return (
     <div css={s.overlayStyle} onClick={handleOverlayClick}>
-      <div css={s.modalStyle}>
+      <div css={[s.modalStyle, { marginTop: `${topMargin}px` }]}>
         <button css={s.closeButtonStyle} onClick={onClose}>
           <MdClose css={s.iconStyle} />
         </button>
@@ -47,7 +67,7 @@ function ProjectModal({ isOpen, onClose, content }) {
               href={content.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              css={s.githubLinkStyle} 
+              css={s.githubLinkStyle}
             >
               <img src={Github} alt="Github" css={s.githubIconStyle} />
               깃허브에서 보기

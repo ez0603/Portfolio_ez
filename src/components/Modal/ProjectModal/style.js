@@ -51,16 +51,31 @@ export const modalStyle = css`
 
 export const closeButtonStyle = css`
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  top: clamp(13px, 2vw, 15px);
+  right: clamp(13px, 1vw, 20px);
+  background-color: #181818;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+
+  @media (max-width: 700px) {
+    background-color: #3a3a3a;
+  }
 `;
 
 export const iconStyle = css`
-  font-size: 24px;
-  color: #333;
+  color: white;
+  font-size: clamp(8px, 4vw, 22px);
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
 `;
 
 export const contentStyle = css`

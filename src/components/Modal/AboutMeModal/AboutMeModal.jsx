@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import * as s from "./style";
 import { createPortal } from "react-dom";
+import { GrClose } from "react-icons/gr";
 
 function AboutMeModal({ description, image, onClose }) {
   const [isClosing, setIsClosing] = useState(false);
@@ -30,7 +31,9 @@ function AboutMeModal({ description, image, onClose }) {
     <div css={s.modalOverlayStyle} onClick={handleOverlayClick}>
       <div css={s.modalContentStyle(isClosing)}>
         <button onClick={closeWithAnimation} css={s.closeButton}>
-          <span css={s.iconStyle}>X</span>
+          <span css={s.iconStyle}>
+            <GrClose />
+          </span>
         </button>
         <div css={s.modalContent}>
           <div css={s.imageWrapper}>

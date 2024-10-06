@@ -49,13 +49,16 @@ export const modalOverlayStyle = css`
 export const modalContentStyle = (isClosing) => css`
   position: fixed;
   width: 50%;
-  height: 92%;
+  height: 100%;
+  top: 35px;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   overflow-y: auto;
-  animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.5s"};
+  animation: ${isClosing ? popOut : popIn} ${isClosing ? "0.3s" : "0.5s"}
+    ease-in-out;
+  will-change: transform, opacity;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-x: hidden;
@@ -74,24 +77,40 @@ export const closeButtonContainer = css`
   justify-content: flex-end;
   position: absolute;
   width: 100%;
-  top: clamp(5px, 2vw, 10px);
 `;
 
 export const closeButton = css`
-  background-color: transparent;
+  position: absolute;
+  top: clamp(13px, 2vw, 15px);
+  right: clamp(13px, 1vw, 20px);
+  background-color: #181818;
+  border-radius: 50%;
   border: none;
-  color: white;
   cursor: pointer;
-  font-size: clamp(20px, 7vw, 40px);
-  z-index: 10;
-  padding-right: 15px;
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
 
-  &:hover {
-    color: #ccc;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 0;
 
   @media (max-width: 700px) {
-    padding-right: 10px;
+    background-color: #3a3a3a;
+  }
+`;
+
+export const iconStyle = css`
+  color: white;
+  font-size: clamp(8px, 4vw, 22px);
+  top: 3px;
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
+
+  @media (max-width: 700px) {
+    top: 1px;
   }
 `;
 

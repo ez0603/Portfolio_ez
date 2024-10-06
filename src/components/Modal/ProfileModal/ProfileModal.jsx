@@ -5,7 +5,7 @@ import profile from "../../../assets/img/이지언.jpg";
 import deu from "../../../assets/img/동의대.png";
 import Highschool from "../../../assets/img/삼정고.png";
 import it from "../../../assets/img/코리아it.png";
-import { IoCloseCircleSharp } from "react-icons/io5";
+import { GrClose } from "react-icons/gr";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import useContent from "../../../hooks/useContent";
@@ -27,6 +27,9 @@ function ProfileModal({ onClose }) {
 
   const closeWithAnimation = () => {
     setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 300);
   };
 
   const handleOverlayClick = (e) => {
@@ -85,7 +88,9 @@ function ProfileModal({ onClose }) {
         >
           <div css={s.closeButtonContainer}>
             <button onClick={closeWithAnimation} css={s.closeButton}>
-              <IoCloseCircleSharp />
+              <span css={s.iconStyle}>
+                <GrClose />
+              </span>
             </button>
           </div>
           <div css={s.container}>

@@ -64,6 +64,7 @@ export const closeButtonStyle = css`
   align-items: center;
   justify-content: center;
   z-index: 2;
+  padding: 0;
 
   @media (max-width: 700px) {
     background-color: #3a3a3a;

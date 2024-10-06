@@ -13,8 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
     <RecoilRoot>
-      {/* <BrowserRouter basename="/Portfolio_ez"> */}
-        <BrowserRouter>
+      <BrowserRouter basename="/Portfolio_ez">
+        {/* <BrowserRouter> */}
         <App />
       </BrowserRouter>
     </RecoilRoot>

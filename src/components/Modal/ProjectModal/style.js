@@ -178,3 +178,105 @@ export const githubIconStyle = css`
   @media (max-width: 700px) {
   }
 `;
+
+export const mainfunctionsLayout = css`
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  li {
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+`;
+
+export const contributionsStyle = css`
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  li {
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+`;
+
+export const screenshotsStyle = css`
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  li {
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+`;
+
+export const screenshotsContainerStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+`;
+
+export const screenshotImageStyle = css`
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+`;

@@ -36,6 +36,7 @@ export const layout = css`
   background-color: #181818;
   color: white;
   overflow-x: hidden;
+  cursor: default;
 
   @media (max-width: 700px) {
     background-color: #252525;

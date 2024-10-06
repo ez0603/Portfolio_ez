@@ -42,7 +42,7 @@ export const modalStyle = css`
   padding: 20px;
 
   @media (max-width: 700px) {
-    top: 35px;
+    top: 10px;
     width: 86%;
     height: 90vh;
     padding: 17px;

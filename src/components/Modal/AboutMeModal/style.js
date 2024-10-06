@@ -38,7 +38,8 @@ export const modalOverlayStyle = css`
 export const modalContentStyle = (isClosing) => css`
   position: fixed;
   width: 50%;
-  height: 95%;
+  height: 97%;
+  top: 35px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -101,6 +102,12 @@ export const iconStyle = css`
   font-size: clamp(8px, 4vw, 22px);
   line-height: 1;
   vertical-align: middle;
+  top: 3px;
+  position: relative;
+
+  @media (max-width: 700px) {
+    top: 1px;
+  }
 `;
 
 export const imageWrapper = css`

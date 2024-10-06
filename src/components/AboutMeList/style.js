@@ -36,7 +36,7 @@ export const layout = css`
   background-color: #181818;
   color: white;
   overflow-x: hidden;
-  
+
   @media (max-width: 700px) {
     background-color: #252525;
     padding-bottom: 10px;
@@ -64,7 +64,7 @@ export const listLayout = css`
   width: 90%;
   height: 100%;
   border-radius: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc3a;
   padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 20px);
   display: flex;
   flex-direction: column;
@@ -79,6 +79,10 @@ export const listLayout = css`
 
   @media (max-width: 700px) {
     position: relative;
+    border-bottom: none;
+  }
+
+  &:last-of-type {
     border-bottom: none;
   }
 `;

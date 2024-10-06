@@ -49,7 +49,7 @@ export const modalOverlayStyle = css`
 export const modalContentStyle = (isClosing) => css`
   position: fixed;
   width: 50%;
-  height: 100%;
+  height: 97%;
   top: 35px;
   background-color: #181818;
   border-radius: 8px;
@@ -407,7 +407,7 @@ export const list = css`
   padding: 15px 10px;
   border-radius: 10px;
   gap: 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc3a;
 
   p {
     margin: 0;
@@ -423,6 +423,10 @@ export const list = css`
   }
 
   @media (max-width: 768px) {
+    border-bottom: none;
+  }
+
+  &:last-of-type {
     border-bottom: none;
   }
 `;

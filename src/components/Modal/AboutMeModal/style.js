@@ -53,6 +53,7 @@ export const modalContentStyle = (isClosing) => css`
   scrollbar-width: none;
 
   @media (max-width: 700px) {
+    top: 10px;
     width: 90%;
     height: 90vh;
     background-color: #252525;

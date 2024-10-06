@@ -62,6 +62,7 @@ export const modalContentStyle = (isClosing) => css`
   cursor: default;
 
   @media (max-width: 700px) {
+    top: 51%;
     width: 90%;
     height: 90vh;
     background-color: #252525;

@@ -73,7 +73,6 @@ export const closeButtonStyle = css`
 export const iconStyle = css`
   color: white;
   font-size: clamp(8px, 4vw, 22px);
-  position: relative;
   line-height: 1;
   vertical-align: middle;
 `;

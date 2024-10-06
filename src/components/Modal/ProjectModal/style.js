@@ -44,7 +44,7 @@ export const modalStyle = css`
   @media (max-width: 700px) {
     top: 10px;
     width: 86%;
-    height: 92vh;
+    height: 92%;
     padding: 17px;
   }
 `;

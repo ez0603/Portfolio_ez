@@ -39,6 +39,7 @@ export const layout = css`
   
   @media (max-width: 700px) {
     background-color: #252525;
+    padding-bottom: 10px;
   }
 `;
 

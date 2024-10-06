@@ -29,7 +29,9 @@ function ProjectModal({ isOpen, onClose, content }) {
     <div css={s.overlayStyle} onClick={handleOverlayClick}>
       <div css={s.modalStyle}>
         <button css={s.closeButtonStyle} onClick={onClose}>
-          <GrClose css={s.iconStyle} />
+          <span css={s.iconStyle}>
+            <GrClose />
+          </span>
         </button>
         <div css={s.contentStyle}>
           <h1>{content.title}</h1>

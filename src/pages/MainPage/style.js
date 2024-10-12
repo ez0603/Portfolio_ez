@@ -307,7 +307,9 @@ export const projectLayout = css`
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  transition: all 0.4s ease-in-out;
+    padding: 20px 0;
+    
   @media (max-width: 700px) {
     height: auto;
   }
@@ -466,7 +468,7 @@ export const textBox = css`
   }
 
   &:hover {
-    max-height: 500px;
+    height: 200px;
     height: auto;
     opacity: 1;
     overflow: visible;
@@ -505,13 +507,30 @@ export const skillIcon = css`
   }
 `;
 
-export const test = css`
+export const aboutmeExLayout = css`
   width: 90%;
-  height: 500px;
-  /* background-color: aliceblue; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+`;
+
+export const exContainer = css`
+  width: 100%;
+  height: 100%;
+
+  h2 {
+    font-weight: 500;
+    color: white;
+    font-size: clamp(15px, 2vw, 25px);
+  }
 
   @media (max-width: 700px) {
-    width: 90%;
-    height: 50%;
+    h2 {
+      font-size: 25px;
+      margin-bottom: 35px;
+    }
   }
 `;

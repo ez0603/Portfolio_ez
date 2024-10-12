@@ -5,28 +5,50 @@ import main from "../../assets/img/main.jpg";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
 import ProfileModal from "../../components/Modal/ProfileModal/ProfileModal";
+import ProjectModal from "../../components/Modal/ProjectModal/ProjectModal";
 import { useLocation } from "react-router-dom";
 import tableMaid from "../../assets/img/tableMaid.jpg";
 import useSkillIcons from "../../hooks/useSkillIcons";
+import useProjectDetails from "../../hooks/useProjectDetails";
+import AboutMeModal from "../../components/Modal/AboutMeModal/AboutMeModal";
+import AboutMeList from "../../components/AboutMeList/AboutMeList";
 
 function MainPage(props) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [isAboutMeModalOpen, setIsAboutMeModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [modalContent, setModalContent] = useState({ description: "", image: "" });
+
   const textRef = useRef(null);
   const location = useLocation();
   const [key, setKey] = useState(0);
   const skillIcons = useSkillIcons();
   const [isMobile, setIsMobile] = useState(false);
+  const projects = useProjectDetails();
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  const handleOpenProfileModal = () => {
+    setIsProfileModalOpen(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleCloseProfileModal = () => {
+    setIsProfileModalOpen(false);
+  };
+
+  const handleOpenAboutMeModal = (description, image) => {
+    setModalContent({ description, image });
+    setIsAboutMeModalOpen(true);
+  };
+
+  const handleCloseAboutMeModal = () => {
+    setIsAboutMeModalOpen(false);
   };
 
   const handleContextMenu = (event) => {
     event.preventDefault();
+  };
+
+  const handleOpenProjectModal = (project) => {
+    setSelectedProject(project);
   };
 
   useEffect(() => {
@@ -144,7 +166,7 @@ function MainPage(props) {
                 </>
               )}
             </p>
-            <button css={s.look} onClick={handleOpenModal}>
+            <button css={s.look} onClick={handleOpenProfileModal}>
               <IoMdInformationCircleOutline />
               상세 정보
             </button>
@@ -155,55 +177,60 @@ function MainPage(props) {
                 <h1>My Project</h1>
               </div>
               <ul css={s.projectContainer}>
-                <li className="project-item" css={s.project}>
-                  <div css={s.projectImg(tableMaid)} />
-                  <div className="textBox" css={s.textBox}>
-                    <h1>Table Maid</h1>
-                    <p>2024.05.24 ~ 2024.08.12</p>
-                    <h3>
-                      관리자와 사용자 모드가 나누어 관리할 수 있는 비대면 주문
-                      결제 서비스
-                    </h3>
-                    <div css={s.skillIconsContainer}>
-                      {Object.entries(skillIcons.list).map(([skill, icon]) => (
-                        <div key={skill} css={s.skillIconWrapper}>
-                          <img src={icon} alt={skill} css={s.skillIcon} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </li>
-                <li className="project-item" css={s.project}>
-                  <div css={s.projectImg(tableMaid)} />
-                  <div className="textBox" css={s.textBox}>
+                {projects.map((project, index) => (
+                  <li
+                    key={index}
+                    className="project-item"
+                    css={s.project}
+                    onClick={() => handleOpenProjectModal(project)}
+                  >
+                    <div css={s.projectImg(tableMaid)} />
                     <div className="textBox" css={s.textBox}>
-                      <h1>Table Maid</h1>
-                      <p>2024.05.24 ~ 2024.08.12</p>
-                      <h3>
-                        관리자와 사용자 모드가 나누어 관리할 수 있는 비대면 주문
-                        결제 서비스
-                      </h3>
+                      <h1>{project.title}</h1>
+                      <p>{project.period}</p>
+                      <h3>{project.description}</h3>
+                      <div css={s.skillIconsContainer}>
+                        {Object.entries(skillIcons.list).map(([skill, icon]) => (
+                          <div key={skill} css={s.skillIconWrapper}>
+                            <img src={icon} alt={skill} css={s.skillIcon} />
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div css={s.skillIconsContainer}>
-                      {Object.entries(skillIcons.list).map(([skill, icon]) => (
-                        <div key={skill} css={s.skillIconWrapper}>
-                          <img src={icon} alt={skill} css={s.skillIcon} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </li>
-                <li className="project-item" css={s.project}>
-                  <div css={s.projectImg(tableMaid)} />
-                  <div className="textBox" css={s.textBox} />
-                </li>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div css={s.test}>fsdf</div>
+
+            <div css={s.aboutmeExLayout}>
+              <div css={s.exContainer}>
+                <h2># 나에 관하여</h2>
+                <AboutMeList onImageClick={handleOpenAboutMeModal} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      {isModalOpen && <ProfileModal onClose={handleCloseModal} />}
+
+      {selectedProject && (
+        <ProjectModal
+          isOpen={Boolean(selectedProject)}
+          onClose={() => setSelectedProject(null)}
+          content={selectedProject}
+        />
+      )}
+
+      {isProfileModalOpen && (
+        <ProfileModal onClose={handleCloseProfileModal} />
+      )}
+
+      {isAboutMeModalOpen && (
+        <AboutMeModal
+          description={modalContent.description}
+          image={modalContent.image}
+          onClose={handleCloseAboutMeModal}
+        />
+      )}
     </PageLayout>
   );
 }

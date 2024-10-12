@@ -1,9 +1,14 @@
 {
   "files": {
     "main.css": "/Portfolio_ez/static/css/main.43002d09.css",
-    "main.js": "/Portfolio_ez/static/js/main.8ef57be4.js",
+    "main.js": "/Portfolio_ez/static/js/main.ea7e778e.js",
     "static/js/453.d0ded385.chunk.js": "/Portfolio_ez/static/js/453.d0ded385.chunk.js",
+    "static/media/관광지추천.gif": "/Portfolio_ez/static/media/관광지추천.e376f77974111c26ec6b.gif",
+    "static/media/매출조회.gif": "/Portfolio_ez/static/media/매출조회.bca004356f82969d8521.gif",
+    "static/media/로고 변경.gif": "/Portfolio_ez/static/media/로고 변경.145f7cafad710be29b4c.gif",
     "static/media/이지언2.jpg": "/Portfolio_ez/static/media/이지언2.080e66a9d04618054453.jpg",
+    "static/media/피드백.gif": "/Portfolio_ez/static/media/피드백.3a6d6b55fee29ab99ae9.gif",
+    "static/media/메뉴선택.gif": "/Portfolio_ez/static/media/메뉴선택.6390fd17e55d15450d92.gif",
     "static/media/backPhone2.png": "/Portfolio_ez/static/media/backPhone2.6e47130c9ca5339410dc.png",
     "static/media/backPad3.png": "/Portfolio_ez/static/media/backPad3.f439a6d032c6e730ec94.png",
     "static/media/이지언.jpg": "/Portfolio_ez/static/media/이지언.ee26304654e23e80103d.jpg",
@@ -26,11 +31,11 @@
     "static/media/React.png": "/Portfolio_ez/static/media/React.98ff38735baa4c1b0381.png",
     "index.html": "/Portfolio_ez/index.html",
     "main.43002d09.css.map": "/Portfolio_ez/static/css/main.43002d09.css.map",
-    "main.8ef57be4.js.map": "/Portfolio_ez/static/js/main.8ef57be4.js.map",
+    "main.ea7e778e.js.map": "/Portfolio_ez/static/js/main.ea7e778e.js.map",
     "453.d0ded385.chunk.js.map": "/Portfolio_ez/static/js/453.d0ded385.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43002d09.css",
-    "static/js/main.8ef57be4.js"
+    "static/js/main.ea7e778e.js"
   ]
 }

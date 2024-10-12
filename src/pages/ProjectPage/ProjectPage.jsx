@@ -155,7 +155,7 @@ function ProjectPage() {
                   css={s.project}
                   onClick={() => openModal(project)}
                 >
-                  <div css={s.projectImg(images[project.imageKey])} />
+                  <div css={s.projectImg(project.image)} />
                   <div css={s.textBox}>
                     <h1>{project.title}</h1>
                     <p>{project.period}</p>

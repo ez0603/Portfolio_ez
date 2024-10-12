@@ -12,6 +12,8 @@ import sale from "../assets/img/매출조회.gif";
 import feedback from "../assets/img/피드백.gif";
 import tour from "../assets/img/관광지추천.gif";
 import logo from "../assets/img/로고 변경.gif";
+import tableMaid from "../assets/img/tableMaid.jpg";
+import gumeong from "../assets/img/rotated_바다사진.jpg";
 
 const useProjectDetails = () => {
   return [
@@ -30,7 +32,7 @@ const useProjectDetails = () => {
         react,
         Github,
       ],
-      imageKey: "tableMaid",
+      image: gumeong,
       githubUrl: "https://github.com/Novel-Ideas",
 
       contributions: [
@@ -57,7 +59,7 @@ const useProjectDetails = () => {
         react,
         Github,
       ],
-      imageKey: "tableMaid",
+      image: tableMaid,
       githubUrl: "https://github.com/table-maid/table_maid_front",
 
       contributions: [
@@ -85,7 +87,7 @@ const useProjectDetails = () => {
         react,
         Github,
       ],
-      imageKey: "project3",
+      image: tableMaid,
       githubUrl: "https://github.com/your-repo/table-maid",
 
       contributions: [

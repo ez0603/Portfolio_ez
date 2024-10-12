@@ -17,7 +17,10 @@ function MainPage(props) {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [isAboutMeModalOpen, setIsAboutMeModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [modalContent, setModalContent] = useState({ description: "", image: "" });
+  const [modalContent, setModalContent] = useState({
+    description: "",
+    image: "",
+  });
 
   const textRef = useRef(null);
   const location = useLocation();
@@ -184,17 +187,19 @@ function MainPage(props) {
                     css={s.project}
                     onClick={() => handleOpenProjectModal(project)}
                   >
-                    <div css={s.projectImg(tableMaid)} />
+                    <div css={s.projectImg(project.image)} />
                     <div className="textBox" css={s.textBox}>
                       <h1>{project.title}</h1>
                       <p>{project.period}</p>
                       <h3>{project.description}</h3>
                       <div css={s.skillIconsContainer}>
-                        {Object.entries(skillIcons.list).map(([skill, icon]) => (
-                          <div key={skill} css={s.skillIconWrapper}>
-                            <img src={icon} alt={skill} css={s.skillIcon} />
-                          </div>
-                        ))}
+                        {Object.entries(skillIcons.list).map(
+                          ([skill, icon]) => (
+                            <div key={skill} css={s.skillIconWrapper}>
+                              <img src={icon} alt={skill} css={s.skillIcon} />
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                   </li>
@@ -220,9 +225,7 @@ function MainPage(props) {
         />
       )}
 
-      {isProfileModalOpen && (
-        <ProfileModal onClose={handleCloseProfileModal} />
-      )}
+      {isProfileModalOpen && <ProfileModal onClose={handleCloseProfileModal} />}
 
       {isAboutMeModalOpen && (
         <AboutMeModal

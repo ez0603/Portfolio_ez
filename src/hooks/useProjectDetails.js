@@ -7,6 +7,11 @@ import js from "../assets/icon/JavaScript.png";
 import mysql from "../assets/icon/MySQL.png";
 import react from "../assets/icon/React.png";
 import Github from "../assets/icon/GitHub.png";
+import main from "../assets/img/메뉴선택.gif";
+import sale from "../assets/img/매출조회.gif";
+import feedback from "../assets/img/피드백.gif";
+import tour from "../assets/img/관광지추천.gif";
+import logo from "../assets/img/로고 변경.gif";
 
 const useProjectDetails = () => {
   return [
@@ -27,20 +32,14 @@ const useProjectDetails = () => {
       ],
       imageKey: "tableMaid",
       githubUrl: "https://github.com/Novel-Ideas",
-      features: [
-        "비대면 결제 시스템",
-        "매장 내 주문 관리 기능",
-        "반응형 디자인 적용",
-      ],
+
       contributions: [
-        "프론트엔드 설계 및 구현",
-        "React 기반의 UI 개발",
-        "Firebase를 통한 실시간 데이터베이스 관리",
+        "React 기반의 전체 화면 UI 개발",
+        "메뉴 CRUD",
+        "피드백 추가 및 조회, 그래프 API를 사용하여 보기 쉽게 구현",
+        "점포 이미지 변경 및 관리자 비밀번호 변경",
       ],
-      screenshots: [
-        "../assets/img/screenshot1.png",
-        "../assets/img/screenshot2.png",
-      ],
+      screenshots: [main, sale, feedback, tour, logo],
     },
     {
       title: "Table Maid",
@@ -60,11 +59,7 @@ const useProjectDetails = () => {
       ],
       imageKey: "tableMaid",
       githubUrl: "https://github.com/table-maid/table_maid_front",
-      features: [
-        "사용자 및 관리자 모드 분리",
-        "실시간 주문 관리 및 결제 기능",
-        "반응형 웹 디자인 적용",
-      ],
+
       contributions: [
         "UI/UX 디자인 기획 및 개발",
         "Spring Boot와 React 연동 작업",
@@ -92,11 +87,7 @@ const useProjectDetails = () => {
       ],
       imageKey: "project3",
       githubUrl: "https://github.com/your-repo/table-maid",
-      features: [
-        "강의 자료 업로드 및 관리 기능",
-        "실시간 학생-강사 커뮤니케이션",
-        "사용자 프로필 관리 및 평가 기능",
-      ],
+
       contributions: [
         "백엔드 API 설계 및 구현",
         "React로 강의 리스트 및 상세 페이지 개발",

@@ -179,79 +179,66 @@ export const githubIconStyle = css`
   }
 `;
 
-export const mainfunctionsLayout = css`
-  margin-top: 20px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-
-  ul {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  li {
-    width: 100%;
-    white-space: normal;
-    word-break: break-word;
-  }
-`;
-
 export const contributionsStyle = css`
   margin-top: 20px;
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
 
   h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    font-weight: 400;
   }
 
   ul {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    line-height: 1.6;
+    line-height: 1.3;
     margin: 0;
   }
 
   li {
     width: 100%;
+    height: 100%;
     white-space: normal;
     word-break: break-word;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+    ul {
+      height: 100%;
+      padding-left: 5px;
+      line-height: 1.8;
+    }
+    li {
+      word-break: break-word;
+      white-space: normal;
+      flex-wrap: wrap;
+    }
   }
 `;
 
 export const screenshotsStyle = css`
   margin-top: 20px;
-  width: 100%;
+  width: 95%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: 40px;
 
   h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    font-weight: 400;
   }
 
   ul {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -261,22 +248,86 @@ export const screenshotsStyle = css`
 
   li {
     width: 100%;
+    height: 100%;
     white-space: normal;
     word-break: break-word;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+
+    ul {
+      padding-left: 5px;
+    }
   }
 `;
 
 export const screenshotsContainerStyle = css`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  gap: 35px;
+  justify-content: flex-start;
   margin-top: 10px;
+  padding: 0 20px;
+  padding-bottom: 30px;
+
+  @media (max-width: 700px) {
+    padding: 0 0 30px 0;
+  }
 `;
 
 export const screenshotImageStyle = css`
-  width: 100%;
-  max-width: 200px;
+  box-sizing: border-box;
+  width: 30%;
+  min-width: 300px;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  border: 1px solid #dbdbdb;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+`;
+
+export const contributionsHeadingStyle = css`
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+  gap: 10px;
+`;
+
+export const fullscreenOverlayStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 32, 32, 0.76);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+`;
+
+export const fullscreenModalStyle = css`
+  position: relative;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const fullscreenImageStyle = css`
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;

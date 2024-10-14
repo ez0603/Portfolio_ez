@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio_ez/static/css/main.43002d09.css",
-    "main.js": "/Portfolio_ez/static/js/main.1707b24b.js",
+    "main.js": "/Portfolio_ez/static/js/main.0cbf8a1a.js",
     "static/js/453.d0ded385.chunk.js": "/Portfolio_ez/static/js/453.d0ded385.chunk.js",
     "static/media/관광지추천.gif": "/Portfolio_ez/static/media/관광지추천.e376f77974111c26ec6b.gif",
     "static/media/매출조회.gif": "/Portfolio_ez/static/media/매출조회.bca004356f82969d8521.gif",
@@ -31,11 +31,11 @@
     "static/media/React.png": "/Portfolio_ez/static/media/React.98ff38735baa4c1b0381.png",
     "index.html": "/Portfolio_ez/index.html",
     "main.43002d09.css.map": "/Portfolio_ez/static/css/main.43002d09.css.map",
-    "main.1707b24b.js.map": "/Portfolio_ez/static/js/main.1707b24b.js.map",
+    "main.0cbf8a1a.js.map": "/Portfolio_ez/static/js/main.0cbf8a1a.js.map",
     "453.d0ded385.chunk.js.map": "/Portfolio_ez/static/js/453.d0ded385.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43002d09.css",
-    "static/js/main.1707b24b.js"
+    "static/js/main.0cbf8a1a.js"
   ]
 }

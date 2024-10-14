@@ -353,6 +353,7 @@ export const projectContainer = css`
   margin: clamp(5px, 1vw, 10px) auto;
   padding: 0 0 30px 0;
   list-style-type: none;
+  transition: height 0.5s ease, opacity 0.5s ease;
 
   @media (max-width: 1350px) {
     width: 80%;
@@ -422,7 +423,6 @@ export const project = css`
     width: 75%;
     height: auto;
     min-height: 300px;
-    transition-delay: 0s;
   }
 `;
 
@@ -448,12 +448,13 @@ export const textBox = css`
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.1s ease, opacity 0.1s ease;
+transition: height 0.5s ease, opacity 0.5s ease;
+
 
   h1 {
     font-size: clamp(15px, 2vw, 19px);
     font-weight: 700;
-    margin: 7px 0 0 0;
+    margin: 15px 0 0 0;
   }
 
   p {

@@ -266,13 +266,13 @@ export const projectLayout = css`
 `;
 
 export const projectContainer = css`
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: clamp(15px, 5vw, 35px);
+  gap: 50px;
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
@@ -294,7 +294,8 @@ export const projectContainer = css`
 export const project = css`
   height: 95%;
   width: 100%;
-  max-width: 350px;
+  max-width: 370px;
+  min-width: 330px;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -361,7 +362,7 @@ export const textBox = css`
   h1 {
     font-size: clamp(15px, 2vw, 19px);
     font-weight: 700;
-    margin: 7px 0 0 0;
+    margin: 15px 0 0 0;
   }
 
   p {

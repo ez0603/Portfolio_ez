@@ -188,16 +188,16 @@ export const contributionsStyle = css`
 
   h3 {
     font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   ul {
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
     line-height: 1.3;
+    font-size: 1.1rem;
     margin: 0;
   }
 
@@ -214,6 +214,7 @@ export const contributionsStyle = css`
       height: 100%;
       padding-left: 5px;
       line-height: 1.8;
+      font-size: 1rem;
     }
     li {
       word-break: break-word;
@@ -234,11 +235,11 @@ export const screenshotsStyle = css`
   h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   ul {
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -295,9 +296,42 @@ export const contributionsHeadingStyle = css`
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  font-weight: 400;
   gap: 10px;
+`;
+
+export const contributionsgStyle = css`
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+  div {
+    width: 95%;
+    background-color: #e7e5e4;
+    padding: 13px 15px;
+  }
+
+  p {
+    padding: 0 20px;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin: 15px 0 20px 0;
+  }
+
+  svg {
+    padding-right: 5px;
+  }
+
+  @media (max-width: 700px) {
+    p {
+      padding: 0;
+    }
+
+    div {
+      width: 100%;
+      background-color: #dbdbdb;
+      padding: 7px 0px 7px 7px;
+    }
+  }
 `;
 
 export const fullscreenOverlayStyle = css`

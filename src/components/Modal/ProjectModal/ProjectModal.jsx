@@ -7,7 +7,7 @@ import { TiPin } from "react-icons/ti";
 import { SlScreenDesktop } from "react-icons/sl";
 
 function ProjectModal({ isOpen, onClose, content }) {
-  const [selectedImage, setSelectedImage] = useState(null); // 전체화면에 표시할 이미지 상태 관리
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -30,16 +30,15 @@ function ProjectModal({ isOpen, onClose, content }) {
   };
 
   const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc); // 클릭한 이미지로 상태 업데이트
+    setSelectedImage(imageSrc);
   };
 
   const handleCloseImageModal = () => {
-    setSelectedImage(null); // 이미지 모달 닫기
+    setSelectedImage(null);
   };
 
   return (
     <div>
-      {/* 기본 모달 */}
       <div css={s.overlayStyle} onClick={handleOverlayClick}>
         <div css={s.modalStyle}>
           <button css={s.closeButtonStyle} onClick={onClose}>
@@ -71,24 +70,18 @@ function ProjectModal({ isOpen, onClose, content }) {
               </a>
             )}
 
-            {content.contributions && (
+            {content.contributions && content.detailedContributions && (
               <div css={s.contributionsStyle}>
                 <h3 css={s.contributionsHeadingStyle}>
                   <TiPin size={30} /> 기여 부분
                 </h3>
                 <ul>
                   {content.contributions.map((contribution, index) => (
-                    <li
-                      key={index}
-                      className={
-                        contribution === "Back"
-                          ? "highlight-back"
-                          : contribution === "Front"
-                          ? "highlight-front"
-                          : ""
-                      }
-                    >
-                      {contribution}
+                    <li key={index} css={s.contributionsgStyle}>
+                      <div>{contribution}</div>
+                      {content.detailedContributions[index] && (
+                        <p>{content.detailedContributions[index]}</p>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -98,8 +91,7 @@ function ProjectModal({ isOpen, onClose, content }) {
             {content.screenshots && (
               <div css={s.screenshotsStyle}>
                 <h3 css={s.contributionsHeadingStyle}>
-                  <SlScreenDesktop size={23} />
-                  구현 화면
+                  <SlScreenDesktop size={23} /> 구현 화면
                 </h3>
                 <div css={s.screenshotsContainerStyle}>
                   {content.screenshots.map((screenshot, index) => (

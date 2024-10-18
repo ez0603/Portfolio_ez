@@ -518,7 +518,7 @@ export const skillIcon = css`
 `;
 
 export const aboutmeExLayout = css`
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -528,8 +528,13 @@ export const aboutmeExLayout = css`
 `;
 
 export const exContainer = css`
-  width: 100%;
+  width: 90%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* align-items: center; */
+  justify-content: flex-start;
 
   h2 {
     font-weight: 500;
@@ -538,6 +543,10 @@ export const exContainer = css`
   }
 
   @media (max-width: 700px) {
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     h2 {
       font-size: 25px;
       margin-bottom: 35px;

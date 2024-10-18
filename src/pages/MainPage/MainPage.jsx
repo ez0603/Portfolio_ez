@@ -217,11 +217,12 @@ function MainPage(props) {
                 ))}
               </ul>
             </div>
-
             <div css={s.aboutmeExLayout}>
               <div css={s.exContainer}>
                 <h2># 나에 관하여</h2>
-                <AboutMeList onImageClick={handleOpenAboutMeModal} />
+                <div>
+                  <AboutMeList onImageClick={handleOpenAboutMeModal} />
+                </div>
               </div>
             </div>
           </div>

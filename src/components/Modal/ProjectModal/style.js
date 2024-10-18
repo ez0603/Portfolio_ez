@@ -234,7 +234,7 @@ export const screenshotsStyle = css`
 
   h3 {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 700;
   }
 
@@ -252,6 +252,10 @@ export const screenshotsStyle = css`
     height: 100%;
     white-space: normal;
     word-break: break-word;
+  }
+  
+  p {
+    margin: 0 0 10px 0;
   }
 
   @media (max-width: 700px) {

@@ -306,13 +306,13 @@ export const project = css`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
-  &:nth-child(1) {
+  &::nth-of-type(1) {
     transition-delay: 0.2s;
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     transition-delay: 0.4s;
   }
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     transition-delay: 0.6s;
   }
 

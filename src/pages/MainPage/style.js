@@ -185,25 +185,25 @@ export const bounceText = css`
     opacity: 0;
   }
 
-  span:nth-child(1) {
+  span:nth-of-type(1) {
     animation-delay: 0.1s;
   }
-  span:nth-child(2) {
+  span:nth-of-type(2) {
     animation-delay: 0.5s;
   }
-  span:nth-child(3) {
+  span:nth-of-type(3) {
     animation-delay: 1s;
   }
-  span:nth-child(4) {
+  span:nth-of-type(4) {
     animation-delay: 1.5s;
   }
-  span:nth-child(6) {
+  span:nth-of-type(6) {
     animation-delay: 2s;
   }
-  span:nth-child(7) {
+  span:nth-of-type(7) {
     animation-delay: 2.5s;
   }
-  span:nth-child(8) {
+  span:nth-of-type(8) {
     animation-delay: 3s;
   }
 
@@ -308,8 +308,8 @@ export const projectLayout = css`
   align-items: center;
   flex-direction: column;
   transition: all 0.4s ease-in-out;
-    padding: 20px 0;
-    
+  padding: 20px 0;
+
   @media (max-width: 700px) {
     height: auto;
   }
@@ -371,10 +371,11 @@ export const projectContainer = css`
 `;
 
 export const project = css`
+  box-sizing: border-box;
   width: 100%;
   max-width: 300px;
   height: 200px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -382,16 +383,16 @@ export const project = css`
   opacity: 0;
   transform: translateY(50px);
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 
-  &:nth-child(1) {
+  &:nth-of-type(1) {
     transition-delay: 0.2s;
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     transition-delay: 0.4s;
   }
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     transition-delay: 0.6s;
   }
 
@@ -445,11 +446,12 @@ export const projectImg = (image) => css`
 
 export const textBox = css`
   width: 90%;
+  padding: 0 20px;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-transition: height 0.5s ease, opacity 0.5s ease;
-
+  transition: height 0.5s ease, opacity 0.5s ease;
+  background-color: #fff;
 
   h1 {
     font-size: clamp(15px, 2vw, 19px);
@@ -485,6 +487,7 @@ transition: height 0.5s ease, opacity 0.5s ease;
 
 export const skillIconsContainer = css`
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
   margin: 10px 0;
@@ -492,9 +495,10 @@ export const skillIconsContainer = css`
 
 export const skillIconWrapper = css`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   text-align: center;
+  gap: 10px;
 `;
 
 export const skillIcon = css`

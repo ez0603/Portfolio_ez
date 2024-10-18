@@ -93,6 +93,7 @@ function ProjectModal({ isOpen, onClose, content }) {
                 <h3 css={s.contributionsHeadingStyle}>
                   <SlScreenDesktop size={23} /> 구현 화면
                 </h3>
+                <p>이미지를 클릭하면 크게 볼 수 있습니다</p>
                 <div css={s.screenshotsContainerStyle}>
                   {content.screenshots.map((screenshot, index) => (
                     <img
@@ -100,6 +101,8 @@ function ProjectModal({ isOpen, onClose, content }) {
                       src={screenshot}
                       alt={`screenshot-${index}`}
                       css={s.screenshotImageStyle}
+                      onContextMenu={(e) => e.preventDefault()}
+                      onTouchStart={(e) => e.preventDefault()}
                       onClick={() => handleImageClick(screenshot)}
                     />
                   ))}
@@ -117,6 +120,8 @@ function ProjectModal({ isOpen, onClose, content }) {
               src={selectedImage}
               alt="fullscreen"
               css={s.fullscreenImageStyle}
+              onContextMenu={(e) => e.preventDefault()}
+              onTouchStart={(e) => e.preventDefault()}
             />
           </div>
         </div>

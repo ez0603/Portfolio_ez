@@ -156,7 +156,7 @@ function AboutMeList({ onImageClick }) {
           )
         }
       />
-      <img
+      {/* <img
         src={target}
         alt="가치 2"
         onClick={() =>
@@ -186,7 +186,7 @@ function AboutMeList({ onImageClick }) {
             target
           )
         }
-      />
+      /> */}
     </div>
   );
 }

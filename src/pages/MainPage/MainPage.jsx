@@ -193,13 +193,24 @@ function MainPage(props) {
                       <p>{project.period}</p>
                       <h3>{project.description}</h3>
                       <div css={s.skillIconsContainer}>
-                        {Object.entries(skillIcons.list).map(
-                          ([skill, icon]) => (
-                            <div key={skill} css={s.skillIconWrapper}>
+                        {Object.entries(
+                          index === 2 ? skillIcons.frontend : skillIcons.list
+                        ).map(([skill, icon]) => (
+                          <div key={skill} css={s.skillIconWrapper}>
+                            {Array.isArray(icon) ? (
+                              icon.map((subIcon, subIndex) => (
+                                <img
+                                  key={`${skill}-${subIndex}`}
+                                  src={subIcon}
+                                  alt={skill}
+                                  css={s.skillIcon}
+                                />
+                              ))
+                            ) : (
                               <img src={icon} alt={skill} css={s.skillIcon} />
-                            </div>
-                          )
-                        )}
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </li>

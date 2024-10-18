@@ -7,13 +7,25 @@ import js from "../assets/icon/JavaScript.png";
 import mysql from "../assets/icon/MySQL.png";
 import react from "../assets/icon/React.png";
 import Github from "../assets/icon/GitHub.png";
-import main from "../assets/img/메뉴선택.gif";
-import sale from "../assets/img/매출조회.gif";
-import feedback from "../assets/img/피드백.gif";
-import tour from "../assets/img/관광지추천.gif";
-import logo from "../assets/img/로고 변경.gif";
+import gumeongmain from "../assets/img/메뉴선택.gif";
+import gumeongsale from "../assets/img/매출조회.gif";
+import gumeongfeedback from "../assets/img/피드백.gif";
+import gumeongtour from "../assets/img/관광지추천.gif";
+import gumeonglogo from "../assets/img/로고 변경.gif";
+import gumeong from "../assets/img/구멍가게.jpg";
 import tableMaid from "../assets/img/tableMaid.jpg";
-import gumeong from "../assets/img/rotated_바다사진.jpg";
+import tableMaidbord from "../assets/img/대시보드2.png";
+import tableMaidsale from "../assets/img/매출 조회.png";
+import tableMaidmenusale from "../assets/img/메뉴 매출 상세조회.png";
+import tableMaidmenu from "../assets/img/메뉴 매출 조회.png";
+import tableMaidphone from "../assets/img/메뉴 주문.png";
+import tableMaidcart from "../assets/img/장바구니.png";
+import tableMaidcartposmain from "../assets/img/포스 메인.png";
+import tableMaidcartpos from "../assets/img/포스.png";
+import projectMain from "../assets/img/mainpage.jpg";
+import projectAboutme from "../assets/img/aboutme.png";
+import projectpage from "../assets/img/project.jpg";
+import portfolio from "../assets/img/portfolio.jpg";
 
 const useProjectDetails = () => {
   return [
@@ -47,7 +59,13 @@ const useProjectDetails = () => {
         "사용자로부터 피드백을 받을 수 있는 기능을 제공하고, 수집된 피드백 데이터를 그래프 API를 활용해 시각적으로 표현하여 쉽게 이해할 수 있는 형태로 제공.",
         "관리자가 점포의 대표 이미지를 추가, 수정, 삭제할 수 있는 기능을 추가하고, 비밀번호를 업데이트할 수 있도록 제공",
       ],
-      screenshots: [main, sale, feedback, tour, logo],
+      screenshots: [
+        gumeongmain,
+        gumeongsale,
+        gumeongfeedback,
+        gumeongtour,
+        gumeonglogo,
+      ],
     },
     {
       title: "Table Maid",
@@ -69,52 +87,43 @@ const useProjectDetails = () => {
       githubUrl: "https://github.com/table-maid/table_maid_front",
 
       contributions: [
-        "UI/UX 디자인 기획 및 개발",
-        "Spring Boot와 React 연동 작업",
-        "결제 모듈 개발 및 테스트",
+        "React 기반의 전체 화면 UI 개발",
+        "회원가입 및 로그인 기능",
+        "아이디 및 비밀번호 찾기",
+        "매출 대시보드와 총 매출 및 선택된 날짜 매출 조회",
       ],
       detailedContributions: [
-        "사용자 친화적인 UI/UX를 고려한 디자인 작업 및 피드백 반영",
-        "Spring Boot API와 React 간의 데이터 통신 연동 구현",
-        "다양한 결제 방법을 테스트하고 안정성 확보",
+        "React와 CSS를 사용하여 UI 구현",
+        "사용자 인증을 위한 회원가입 및 로그인 기능을 구현, 비밀번호 암호화 및 JWT를 활용한 세션 관리",
+        "사용자가 아이디 또는 비밀번호를 잊었을 경우, 사용자 정보를 통해 이메일로 아이디와 임시 비밀번호 전송",
+        "매출 데이터를 그래프로 표현하는 대시보드를 구현, 총 매출 및 특정 날짜별 매출을 조회할 수 있는 기능을 개발",
       ],
       screenshots: [
-        "../assets/img/screenshot3.png",
-        "../assets/img/screenshot4.png",
+        tableMaidbord,
+        tableMaidsale,
+        tableMaidmenusale,
+        tableMaidmenu,
+        tableMaidphone,
+        tableMaidcart,
+        tableMaidcartposmain,
+        tableMaidcartpos,
       ],
     },
     {
-      title: "Third Project",
-      period: "2022.11.01 ~ 2023.02.15",
-      description: "온라인 교육 플랫폼",
-      techStack: [
-        spring,
-        cssIcon,
-        firebase,
-        html,
-        java,
-        js,
-        mysql,
-        react,
-        Github,
-      ],
-      image: tableMaid,
+      title: "Portfolio",
+      period: "2024.09.02 ~ 진행 중",
+      description: "포트폴리오",
+      techStack: [cssIcon, html, js, react, Github],
+      image: portfolio,
       githubUrl: "https://github.com/your-repo/table-maid",
 
       contributions: [
-        "백엔드 API 설계 및 구현",
-        "React로 강의 리스트 및 상세 페이지 개발",
-        "AWS 배포 자동화 스크립트 작성",
+        "다양한 기기나 화면의 크기에 따라 자동으로 맞춤 렌더링이 되도록 반응형 웹 디자인을 구현",
       ],
       detailedContributions: [
-        "강의 및 사용자 관리 기능을 포함한 RESTful API 설계 및 개발",
-        "React를 사용하여 강의 검색, 필터, 상세 페이지와 같은 프론트엔드 기능 구현",
-        "CI/CD 파이프라인을 활용하여 AWS 서버로의 자동 배포 스크립트 작성",
+        "진행했던 프로젝트, 개발 스택 등을 한번에 확인할 수 있는 포트폴리오 사이트 구현,  헤더 메뉴 통해 각각의 프로젝트를 클릭하면 세부 내용을 확인할 수 있는 모달창 구현",
       ],
-      screenshots: [
-        "../assets/img/screenshot5.png",
-        "../assets/img/screenshot6.png",
-      ],
+      screenshots: [projectMain, projectAboutme, projectpage],
     },
   ];
 };

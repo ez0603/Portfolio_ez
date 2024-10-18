@@ -12,6 +12,8 @@
 /build
 
 # misc
+src/assets/img
+**/assets/img
 .DS_Store
 .env.local
 .env.development.local

@@ -476,7 +476,7 @@ export const textBox = css`
     height: 200px;
     height: auto;
     opacity: 1;
-    overflow: visible; 
+    overflow: visible;
   }
 
   @media (max-width: 700px) {
@@ -484,6 +484,8 @@ export const textBox = css`
     height: auto;
     opacity: 1;
     overflow: visible;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 `;
 

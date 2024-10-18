@@ -232,6 +232,7 @@ export const screenshotsStyle = css`
   flex-direction: column;
   padding-bottom: 40px;
 
+
   h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -275,6 +276,7 @@ export const screenshotsContainerStyle = css`
   margin-top: 10px;
   padding: 0 20px;
   padding-bottom: 30px;
+  cursor: pointer;
 
   @media (max-width: 700px) {
     padding: 0 0 30px 0;

@@ -115,7 +115,7 @@ const useProjectDetails = () => {
       description: "포트폴리오",
       techStack: [cssIcon, html, js, react, Github],
       image: portfolio,
-      githubUrl: "https://github.com/your-repo/table-maid",
+      githubUrl: "https://github.com/ez0603/Portfolio_ez",
 
       contributions: [
         "다양한 기기나 화면의 크기에 따라 자동으로 맞춤 렌더링이 되도록 반응형 웹 디자인을 구현",

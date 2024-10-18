@@ -452,6 +452,8 @@ export const textBox = css`
   overflow: hidden;
   transition: height 0.5s ease, opacity 0.5s ease;
   background-color: #fff;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 
   h1 {
     font-size: clamp(15px, 2vw, 19px);

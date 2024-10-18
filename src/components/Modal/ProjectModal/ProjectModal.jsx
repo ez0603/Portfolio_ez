@@ -105,6 +105,7 @@ function ProjectModal({ isOpen, onClose, content }) {
                       onTouchStart={(e) => e.preventDefault()}
                       onClick={(e) => {
                         e.preventDefault();
+                        e.stopPropagation();
                         handleImageClick(screenshot);
                       }}
                     />
@@ -125,7 +126,10 @@ function ProjectModal({ isOpen, onClose, content }) {
               css={s.fullscreenImageStyle}
               onContextMenu={(e) => e.preventDefault()}
               onTouchStart={(e) => e.preventDefault()}
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
             />
           </div>
         </div>

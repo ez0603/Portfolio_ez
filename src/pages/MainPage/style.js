@@ -424,6 +424,7 @@ export const project = css`
     width: 75%;
     height: auto;
     min-height: 300px;
+    background-color: #fff;
   }
 `;
 

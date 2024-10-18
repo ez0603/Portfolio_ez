@@ -476,7 +476,7 @@ export const textBox = css`
     height: 200px;
     height: auto;
     opacity: 1;
-    overflow: visible;
+    overflow: visible; 
   }
 
   @media (max-width: 700px) {
